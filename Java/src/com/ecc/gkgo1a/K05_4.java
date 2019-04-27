@@ -15,7 +15,7 @@ public class K05_4 implements IExecutable {
 
         int playerHp = 200 + randomNumber.nextInt(100);
 
-        System.out.println(String.format("ゴーレム　（HP:%d　防御力：%d)\n", golem.hp, golem.defense));
+        System.out.println(String.format("ゴーレム　（HP:%d　防御力：%d）\n", golem.hp, golem.defense));
 
         while (golem.hp > 0)
         {

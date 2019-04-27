@@ -14,7 +14,7 @@ namespace CSharp
                     defense = 80
                 };
 
-                Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1})\n", golem.hp, golem.defense));
+                Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1}）\n", golem.hp, golem.defense));
                 Console.WriteLine("HP：" + golem.hp);
                 Console.Write("今回の攻撃の値を入力してください＞");
                 int atk = int.Parse(Console.ReadLine());

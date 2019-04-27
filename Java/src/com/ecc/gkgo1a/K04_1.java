@@ -1,6 +1,5 @@
 package com.ecc.gkgo1a;
 
-import javax.swing.plaf.synth.SynthDesktopIconUI;
 import java.util.Scanner;
 
 public class K04_1 implements IExecutable {

@@ -17,7 +17,7 @@ namespace CSharp
             int golemAttack = 50;
             int playerHp = 200 + randomNumber.Next(0, 100);
 
-            Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1})\n", golem.hp, golem.defense));
+            Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1}）\n", golem.hp, golem.defense));
 
             while (golem.hp > 0)
             {

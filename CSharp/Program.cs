@@ -5,6 +5,16 @@ namespace CSharp
 {
     public class Program
     {
+        private static void ShowSelections(int chapter)
+        {
+            int j = 1;
+
+            for (int i = 4 * chapter - 3; i < 4 * chapter + 1; i++)
+            {
+                Console.WriteLine(string.Format("\t{0}) K0{1}_{2}", i, chapter, j));
+                j++;
+            }
+        }
 
         public static void Main(string[] args)
         {
@@ -21,74 +31,32 @@ namespace CSharp
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");
-            Console.WriteLine("1) K01");
-            Console.WriteLine("2) K02");
-            Console.WriteLine("3) K03");
-            Console.WriteLine("4) K04");
-            Console.WriteLine("5) K05");
-            Console.WriteLine("6) K06");
+
+            for (int i = 1; i < 7; i++)
+            {
+                Console.WriteLine(string.Format("{0}) K0{1}", i, i));
+            }
 
             try
             {
                 choice = int.Parse(Console.ReadLine());
 
-                switch (choice)
+                if (choice < 1 || choice > 6)
                 {
-                    case 1:
-                        Console.WriteLine("\t1) K01_1");
-                        Console.WriteLine("\t2) K01_2");
-                        Console.WriteLine("\t3) K01_3");
-                        Console.WriteLine("\t4) K01_4");
-
-                        break;
-                    case 2:
-                        Console.WriteLine("\t5) K02_1");
-                        Console.WriteLine("\t6) K02_2");
-                        Console.WriteLine("\t7) K02_3");
-                        Console.WriteLine("\t8) K02_4");
-
-                        break;
-                    case 3:
-                        Console.WriteLine("\t9) K03_1");
-                        Console.WriteLine("\t10) K03_2");
-                        Console.WriteLine("\t11) K03_3");
-                        Console.WriteLine("\t12) K03_4");
-
-                        break;
-                    case 4:
-                        Console.WriteLine("\t13) K04_1");
-                        Console.WriteLine("\t14) K04_2");
-                        Console.WriteLine("\t15) K04_3");
-                        Console.WriteLine("\t16) K04_4");
-
-                        break;
-                    case 5:
-                        Console.WriteLine("\t17) K05_1");
-                        Console.WriteLine("\t18) K05_2");
-                        Console.WriteLine("\t19) K05_3");
-                        Console.WriteLine("\t20) K05_4");
-
-                        break;
-                    case 6:
-                        Console.WriteLine("\t21) K06_1");
-                        Console.WriteLine("\t22) K06_2");
-                        Console.WriteLine("\t23) K06_3");
-                        Console.WriteLine("\t24) K06_4");
-
-                        break;
-                    default:
-                        break;
+                    throw new Exception("無効の選択です。");
                 }
+
+                ShowSelections(choice);
+
                 choice2 = int.Parse(Console.ReadLine());
                 executables[choice2 - 1].Execute();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                Console.WriteLine("無効の選択です。");
+                Console.WriteLine(ex.Message);
                 return;
             }
-
-            return;  
+ 
         }
     }
 }

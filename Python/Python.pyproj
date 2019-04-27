@@ -1,0 +1,68 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>851e0462-1489-477e-8f48-a3d7e98288bc</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Python.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Python</Name>
+    <RootNamespace>Python</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Golem.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k01_1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k01_3.py" />
+    <Compile Include="k01_4.py" />
+    <Compile Include="k01_2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k02_3.py" />
+    <Compile Include="k06_2.py" />
+    <Compile Include="k06_3.py" />
+    <Compile Include="k06_4.py" />
+    <Compile Include="k06_1.py" />
+    <Compile Include="k05_2.py" />
+    <Compile Include="k05_3.py" />
+    <Compile Include="k05_4.py" />
+    <Compile Include="k05_1.py" />
+    <Compile Include="k04_2.py" />
+    <Compile Include="k04_3.py" />
+    <Compile Include="k04_4.py" />
+    <Compile Include="k04_1.py" />
+    <Compile Include="k03_1.py" />
+    <Compile Include="k03_3.py" />
+    <Compile Include="k03_4.py" />
+    <Compile Include="k03_2.py" />
+    <Compile Include="k02_4.py" />
+    <Compile Include="k02_2.py" />
+    <Compile Include="k02_1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Python.py" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>

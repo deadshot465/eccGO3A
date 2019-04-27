@@ -7,6 +7,6 @@ public class K01_2 implements IExecutable {
     {
         System.out.println("Hello World!");
         System.out.println("ようこそ");
-        System.out.println("C#言語の世界へ！");
+        System.out.println("Java言語の世界へ！");
     }
 }

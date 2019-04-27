@@ -13,7 +13,7 @@ public class K02_4 implements IExecutable {
             golem.hp = 300;
             golem.defense = 80;
 
-            System.out.println(String.format("ゴーレム　（HP:%d　防御力：%d)\n", golem.hp, golem.defense));
+            System.out.println(String.format("ゴーレム　（HP:%d　防御力：%d）\n", golem.hp, golem.defense));
             System.out.println("HP：" + golem.hp);
             System.out.print("今回の攻撃の値を入力してください＞");
             Scanner in = new Scanner(System.in);
