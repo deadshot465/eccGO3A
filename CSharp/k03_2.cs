@@ -9,9 +9,9 @@ namespace CSharp
             try
             {
                 Console.Write("身長を入力してください。＞");
-                double height = int.Parse(Console.ReadLine());
+                double height = double.Parse(Console.ReadLine());
                 Console.Write("体重を入力してください。＞");
-                double weight = int.Parse(Console.ReadLine());
+                double weight = double.Parse(Console.ReadLine());
                 height /= 100.0;
                 double standard = height * height * 22.0;
                 Console.WriteLine("あなたの標準体重は" + standard + "です。");

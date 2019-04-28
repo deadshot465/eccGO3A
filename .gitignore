@@ -1,5 +1,11 @@
+.gitignore
 .vs/
 .git/
+CSharp/bin/
+CSharp/obj/
 Java/.idea/
 Java/out/
+Kotlin/
+Kotlin Koans/
 Python/__pycache__
+Rust/
