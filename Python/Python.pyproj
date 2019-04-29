@@ -24,34 +24,22 @@
     <Compile Include="Golem.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="k01_1.py">
+    <Compile Include="k01.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="k01_3.py" />
-    <Compile Include="k01_4.py" />
-    <Compile Include="k01_2.py">
+    <Compile Include="k02.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="k02_3.py" />
-    <Compile Include="k06_2.py" />
-    <Compile Include="k06_3.py" />
-    <Compile Include="k06_4.py" />
-    <Compile Include="k06_1.py" />
-    <Compile Include="k05_2.py" />
-    <Compile Include="k05_3.py" />
-    <Compile Include="k05_4.py" />
-    <Compile Include="k05_1.py" />
-    <Compile Include="k04_2.py" />
-    <Compile Include="k04_3.py" />
-    <Compile Include="k04_4.py" />
-    <Compile Include="k04_1.py" />
-    <Compile Include="k03_1.py" />
-    <Compile Include="k03_3.py" />
-    <Compile Include="k03_4.py" />
-    <Compile Include="k03_2.py" />
-    <Compile Include="k02_4.py" />
-    <Compile Include="k02_2.py" />
-    <Compile Include="k02_1.py">
+    <Compile Include="k03.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k04.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k05.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k06.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Python.py" />

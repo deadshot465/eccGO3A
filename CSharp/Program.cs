@@ -7,12 +7,9 @@ namespace CSharp
     {
         private static void ShowSelections(int chapter)
         {
-            int j = 1;
-
-            for (int i = 4 * chapter - 3; i < 4 * chapter + 1; i++)
+            for (int i = 1; i <= 4; i++)
             {
-                Console.WriteLine(string.Format("\t{0}) K0{1}_{2}", i, chapter, j));
-                j++;
+                Console.WriteLine(string.Format("\t{0}) K0{1}_{2}", i, chapter, i));
             }
         }
 
@@ -22,12 +19,8 @@ namespace CSharp
 
             List<IExecutable> executables = new List<IExecutable>
             {
-                new K01_1(), new K01_2(), new K01_3(), new K01_4(),
-                new K02_1(), new K02_2(), new K02_3(), new K02_4(),
-                new K03_1(), new K03_2(), new K03_3(), new K03_4(),
-                new K04_1(), new K04_2(), new K04_3(), new K04_4(),
-                new K05_1(), new K05_2(), new K05_3(), new K05_4(),
-                new K06_1(), new K06_2(), new K06_3(), new K06_4()
+                new K01(), new K02(), new K03(),
+                new K04(), new K05(), new K06()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");
@@ -49,7 +42,7 @@ namespace CSharp
                 ShowSelections(choice);
 
                 choice2 = int.Parse(Console.ReadLine());
-                executables[choice2 - 1].Execute();
+                executables[choice - 1].Execute(choice2);
             }
             catch (Exception ex)
             {

@@ -7,12 +7,9 @@ public class Main {
 
     private static void showSelections(int chapter)
     {
-        int j = 1;
-
-        for (int i = 4 * chapter - 3; i < 4 * chapter + 1; i++)
+        for (int i = 1; i < 5; i++)
         {
-            System.out.println(String.format("\t%d) K0%d_%d", i, chapter, j));
-            j++;
+            System.out.println(String.format("\t%d) K0%d_%d", i, chapter, i));
         }
     }
 
@@ -21,30 +18,12 @@ public class Main {
         int choice, choice2;
 
         Vector<IExecutable> executables = new Vector<>();
-        executables.add(new K01_1());
-        executables.add(new K01_2());
-        executables.add(new K01_3());
-        executables.add(new K01_4());
-        executables.add(new K02_1());
-        executables.add(new K02_2());
-        executables.add(new K02_3());
-        executables.add(new K02_4());
-        executables.add(new K03_1());
-        executables.add(new K03_2());
-        executables.add(new K03_3());
-        executables.add(new K03_4());
-        executables.add(new K04_1());
-        executables.add(new K04_2());
-        executables.add(new K04_3());
-        executables.add(new K04_4());
-        executables.add(new K05_1());
-        executables.add(new K05_2());
-        executables.add(new K05_3());
-        executables.add(new K05_4());
-        executables.add(new K06_1());
-        executables.add(new K06_2());
-        executables.add(new K06_3());
-        executables.add(new K06_4());
+        executables.add(new K01());
+        executables.add(new K02());
+        executables.add(new K03());
+        executables.add(new K04());
+        executables.add(new K05());
+        executables.add(new K06());
 
         System.out.println("実行したいプログラムを選択してください。");
         for (int i = 1; i < 7; i++)
@@ -64,7 +43,7 @@ public class Main {
             showSelections(choice);
 
             choice2 = in.nextInt();
-            executables.get(choice2 - 1).Execute();
+            executables.get(choice - 1).Execute(choice2);
         }
         catch (Exception ex)
         {
