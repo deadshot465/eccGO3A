@@ -45,7 +45,7 @@ class k02(object):
         try:
             golem = Golem()
 
-            print('ゴーレム　（HP:{}　防御力：{}）'.format(golem.hp, golem.defense))
+            print('ゴーレム　（HP：{}　防御力：{}）'.format(golem.hp, golem.defense))
             print('HP：{}'.format(golem.hp))
             print('今回の攻撃の値を入力してください＞')
             damage = int(input())
