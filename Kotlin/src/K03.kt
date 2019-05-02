@@ -25,7 +25,7 @@ class K03 : IExectuable() {
             val weight = reader.nextDouble()
             height /= 100.0
             val standard = height * height * 22.0
-            println("あなたの標準体重は" + standard + "です。")
+            println("あなたの標準体重は${standard}です。")
 
             if (weight > standard && (weight - standard) / standard * 100 > 14) {
                 println("太り気味です。")
@@ -49,7 +49,7 @@ class K03 : IExectuable() {
             print("決められた数値を予想し、この数値よりも大きな値を入力してください＞")
             val reader = Scanner(System.`in`)
             val guess = reader.nextInt()
-            println("決められた数値は" + n + "です。")
+            println("決められた数値は${n}です。")
 
             println(if (guess > n) "正解です。" else "不正解です。")
 
@@ -66,7 +66,7 @@ class K03 : IExectuable() {
             print("決められた数値を予想し、この数値よりも大きな値を入力してください＞")
             val reader = Scanner(System.`in`)
             val guess = reader.nextInt()
-            println("決められた数値は" + n + "です。")
+            println("決められた数値は${n}です。")
 
             if (guess > 100 || guess < 0) {
                 println("反則です！")

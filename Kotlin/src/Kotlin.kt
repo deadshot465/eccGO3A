@@ -4,7 +4,7 @@ import java.util.*
 fun showSelection(chapter: Int) {
     for (i: Int in 1..4)
     {
-        println("$i) K0${chapter}_$i")
+        println("\t$i) K0${chapter}_$i")
     }
 }
 

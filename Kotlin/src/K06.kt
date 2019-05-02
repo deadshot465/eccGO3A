@@ -8,7 +8,7 @@ class K06 : IExectuable() {
 
         val reader = Scanner(System.`in`)
         for (i in 0..4) {
-            print((i + 1).toString() + "人目の年齢を入力して下さい：")
+            print("${i + 1}人目の年齢を入力して下さい：")
             ages.add(reader.nextInt())
         }
 
@@ -72,11 +72,11 @@ class K06 : IExectuable() {
     override fun question_04() {
         print("\t|\t")
         for (i in 1..9) {
-            print(i.toString() + "\t")
+            print("$i\t")
         }
         println()
 
-        for (i in 0..84) {
+        for (i in 0..74) {
             print("-")
         }
         println()
