@@ -1,0 +1,18 @@
+.vs/
+.git/
+Cpp/Debug/
+CSharp/bin/
+CSharp/obj/
+Debug/
+DirectX/
+Go/
+Java/.idea/
+Java/out/
+Kotlin/
+Kotlin Koans/
+Nodejs/
+OpenGL/
+Python/__pycache__
+Ruby/.idea
+rust/
+SwiftProject/
