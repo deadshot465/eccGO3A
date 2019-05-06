@@ -2,6 +2,7 @@
 .git/
 Clojure/
 Cpp/Debug/
+Crystal/
 CSharp/bin/
 CSharp/obj/
 Debug/
@@ -11,6 +12,7 @@ Java/.idea/
 Java/out/
 Kotlin/
 Kotlin Koans/
+Nim/
 Nodejs/
 OpenGL/
 Python/__pycache__
