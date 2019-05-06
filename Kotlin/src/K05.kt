@@ -68,7 +68,7 @@ class K05 : IExectuable() {
             println("ゴーレム　（HP:${golem.hp}　防御力：${golem.defense}）\n")
 
             GolemLoop@ while (golem.hp > 0) {
-                System.out.println("残りHP：" + golem.hp)
+                println("残りHP：" + golem.hp)
                 print("攻撃手段を選択してください（1．攻撃　2．特技　3．魔法）　＞")
                 val reader = Scanner(System.`in`)
                 val option = reader.nextInt()
