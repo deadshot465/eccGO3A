@@ -1,0 +1,22 @@
+.vs/
+.git/
+Clojure/
+Cpp/Debug/
+Crystal/
+CSharp/bin/
+CSharp/obj/
+Debug/
+DirectX/
+Go/
+Java/.idea/
+Java/out/
+Kotlin/
+Kotlin Koans/
+Nim/
+Nodejs/
+OpenGL/
+Python/__pycache__
+Ruby/.idea
+rust/
+Scala/
+SwiftProject/
