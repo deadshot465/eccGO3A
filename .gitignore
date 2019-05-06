@@ -1,5 +1,6 @@
 .vs/
 .git/
+Clojure/
 Cpp/Debug/
 CSharp/bin/
 CSharp/obj/
@@ -15,4 +16,5 @@ OpenGL/
 Python/__pycache__
 Ruby/.idea
 rust/
+Scala/
 SwiftProject/
