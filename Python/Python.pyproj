@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="executable.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Golem.py">
       <SubType>Code</SubType>
     </Compile>
@@ -40,6 +43,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="k06.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k07.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Python.py" />

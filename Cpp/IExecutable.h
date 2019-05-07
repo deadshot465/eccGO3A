@@ -10,9 +10,11 @@ public:
 
 	virtual void execute(int num);
 
+
 	// IDispatchable ÇâÓÇµÇƒåpè≥Ç≥ÇÍÇ‹ÇµÇΩ
-	virtual void question1() override;
-	virtual void question2() override;
-	virtual void question3() override;
-	virtual void question4() override;
+	virtual void question1() override = 0;
+	virtual void question2() override = 0;
+	virtual void question3() override = 0;
+	virtual void question4() override = 0;
+
 };
