@@ -163,6 +163,9 @@
     <ClCompile Include="K05.cpp" />
     <ClCompile Include="K06.cpp" />
     <ClCompile Include="K07.cpp" />
+    <ClCompile Include="K08.cpp" />
+    <ClCompile Include="K08_1sub.cpp" />
+    <ClCompile Include="K08_2sub.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Golem.h" />
@@ -175,6 +178,9 @@
     <ClInclude Include="K05.h" />
     <ClInclude Include="K06.h" />
     <ClInclude Include="K07.h" />
+    <ClInclude Include="K08.h" />
+    <ClInclude Include="K08_1sub.h" />
+    <ClInclude Include="K08_2sub.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

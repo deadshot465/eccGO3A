@@ -1,4 +1,4 @@
-class K01 : IExectuable() {
+class K01 : IExecutable() {
 
     override fun question_01() {
         println("Hello World! ようこそKotlin言語の世界へ！")

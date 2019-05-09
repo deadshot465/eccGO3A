@@ -59,20 +59,16 @@ namespace CSharp
         {
             try
             {
-                Golem golem = new Golem()
-                {
-                    hp = 300,
-                    defense = 80
-                };
+                Golem golem = new Golem();
 
-                Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1}）\n", golem.hp, golem.defense));
-                Console.WriteLine("HP：" + golem.hp);
+                Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1}）\n", golem.Hp, golem.Defense));
+                Console.WriteLine("HP：" + golem.Hp);
                 Console.Write("今回の攻撃の値を入力してください＞");
                 int atk = int.Parse(Console.ReadLine());
-                atk = atk - golem.defense > 0 ? atk - golem.defense : 0;
+                atk = atk - golem.Defense > 0 ? atk - golem.Defense : 0;
                 Console.WriteLine("ダメージは" + atk + "です");
-                golem.hp -= atk;
-                Console.WriteLine("残りのHPは" + golem.hp + "です");
+                golem.Hp -= atk;
+                Console.WriteLine("残りのHPは" + golem.Hp + "です");
 
             }
             catch (Exception ex)

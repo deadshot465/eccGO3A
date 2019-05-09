@@ -54,15 +54,11 @@ impl Executable for K05 {
     }
 
     fn question_4(&self) {
-        let rand_num = rand::thread_rng().gen_range(0, 200);
+        let rand_num = rand::thread_rng().gen_range(0, 201);
 
-        let mut golem = Golem {
-            hp: 300 + rand_num,
-            defense: 80,
-            attack: 50
-        };
+        let mut golem = Golem::new(300 + rand_num);
 
-        let mut player_hp = 200 + rand::thread_rng().gen_range(0, 100);
+        let mut player_hp = 200 + rand::thread_rng().gen_range(0, 101);
 
         println!("ゴーレム　（HP:{}　防御力：{}）", golem.hp, golem.defense);
 
@@ -84,7 +80,8 @@ impl Executable for K05 {
             }
 
             println!("基礎攻撃力は{}です。", damage);
-            if damage - golem.defense <= 0
+            damage -= golem.defense;
+            if damage <= 0
             {
                 damage = 0;
                 println!("ゴーレム：「ハハハハハ、情けないな！貴様は弱すぎる！」");

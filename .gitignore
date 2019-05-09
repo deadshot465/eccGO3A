@@ -1,12 +1,13 @@
 .vs/
 .git/
-Clojure/
+clojure_project/
 Cpp/Debug/
 Crystal/
 CSharp/bin/
 CSharp/obj/
 Debug/
 DirectX/
+ElixirProject/
 Go/
 Java/.idea/
 Java/out/

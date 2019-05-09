@@ -1,7 +1,7 @@
 import java.lang.Exception
 import java.util.*
 
-class K04 : IExectuable() {
+class K04 : IExecutable() {
 
     override fun question_01() {
         try {
@@ -67,7 +67,7 @@ class K04 : IExectuable() {
 
             if (choice >= 1) {
                 val randomNumber = Random()
-                val oracle = randomNumber.nextInt(5)
+                val oracle = randomNumber.nextInt(4)
                 when (oracle) {
                     0 -> println("大吉　とってもいいことがありそう！！")
                     1 -> println("中吉　きっといいことあるんじゃないかな")

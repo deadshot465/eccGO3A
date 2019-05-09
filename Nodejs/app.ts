@@ -5,6 +5,8 @@ import { K03 } from './K03';
 import { K04 } from './K04';
 import { K05 } from './K05';
 import { K06 } from './K06';
+import { K07 } from './K07';
+import { K08 } from './K08';
 import { IExecutable } from './IExecutable';
 
 function ShowSelections(chapter: number) {
@@ -20,10 +22,12 @@ executables[2] = new K03();
 executables[3] = new K04();
 executables[4] = new K05();
 executables[5] = new K06();
+executables[6] = new K07();
+executables[7] = new K08();
 
 console.log("実行したいプログラムを選択してください。\n");
 
-for (let i = 1; i < 7; i++) {
+for (let i = 1; i <= executables.length; i++) {
     console.log(i + ") K0" + i);
 }
 

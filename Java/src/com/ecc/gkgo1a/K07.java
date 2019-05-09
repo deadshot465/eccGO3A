@@ -41,7 +41,7 @@ public class K07 extends IExecutable {
                 if (choice == 1)
                     ShowText();
             } while (choice != 0);
-
+            System.out.println("終了します。");
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

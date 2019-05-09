@@ -104,7 +104,7 @@ impl Executable for K02
 
     fn question_4(&self)
     {
-        let mut golem = Golem { hp: 300, defense: 80, attack: 50 };
+        let mut golem = Golem::default();
 
         println!("ゴーレム　（HP:{}　防御力：{}）", golem.hp, golem.defense);
         println!("HP：{}", golem.hp);

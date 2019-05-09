@@ -93,7 +93,7 @@ namespace CSharp
                 if (choice >= 1)
                 {
                     Random randomNumber = new Random();
-                    int oracle = randomNumber.Next(0, 4);
+                    int oracle = randomNumber.Next(0, 5);
                     switch (oracle)
                     {
                         case 0:

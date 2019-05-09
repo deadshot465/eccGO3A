@@ -37,6 +37,7 @@ void K07::question1()
 			std::cerr << ex.what();
 		}
 	} while (choice != 0);
+	std::cout << "I—¹‚µ‚Ü‚·B";
 }
 
 int max(int value1, int value2, int value3)

@@ -7,7 +7,7 @@ import (
 
 func showSelection(chapter int) {
 	for i := 1; i < 5; i++ {
-		fmt.Println(fmt.Sprintf("\t%d) K%d_%d", i, chapter, i))
+		fmt.Println(fmt.Sprintf("\t%d) K0%d_%d", i, chapter, i))
 	}
 }
 
@@ -17,11 +17,11 @@ func main() {
 	var inputText string
 
 	executable := []IExecutable {
-		K01{}, K02{}, K03{}, K04{}, K05{}, K06{},
+		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{},
 	}
 
 	fmt.Println("実行したいプログラムを選択してください。")
-	for i := 1; i < 7; i++ {
+	for i := 1; i <= len(executable); i++ {
 		fmt.Println(fmt.Sprintf("%d) K0%d", i, i))
 	}
 
@@ -29,7 +29,7 @@ func main() {
 	_, _ = fmt.Scanln(&inputText)
 	choice, _ = strconv.Atoi(inputText)
 
-	if choice < 1 || choice > 6 {
+	if choice < 1 || choice > len(executable) {
 		fmt.Println("無効の選択です。")
 		return
 	}

@@ -1,7 +1,7 @@
 import java.lang.Exception
 import java.util.*
 
-class K03 : IExectuable() {
+class K03 : IExecutable() {
 
     override fun question_01() {
         try {
@@ -44,7 +44,7 @@ class K03 : IExectuable() {
     override fun question_03() {
         try {
             val randomNumber = Random()
-            val n = randomNumber.nextInt(100)
+            val n = randomNumber.nextInt(99)
             println("０から９９の範囲の数値が決定されました。")
             print("決められた数値を予想し、この数値よりも大きな値を入力してください＞")
             val reader = Scanner(System.`in`)
@@ -61,7 +61,7 @@ class K03 : IExectuable() {
     override fun question_04() {
         try {
             val randomNumber = Random()
-            val n = randomNumber.nextInt(100)
+            val n = randomNumber.nextInt(99)
             println("０から９９の範囲の数値が決定されました。")
             print("決められた数値を予想し、この数値よりも大きな値を入力してください＞")
             val reader = Scanner(System.`in`)

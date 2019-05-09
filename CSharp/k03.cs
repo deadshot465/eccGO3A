@@ -59,7 +59,7 @@ namespace CSharp
             try
             {
                 Random randomNumber = new Random();
-                int n = randomNumber.Next(0, 99);
+                int n = randomNumber.Next(0, 100);
                 Console.WriteLine("０から９９の範囲の数値が決定されました。");
                 Console.Write("決められた数値を予想し、この数値よりも大きな値を入力してください＞");
                 int guess = int.Parse(Console.ReadLine());
@@ -79,7 +79,7 @@ namespace CSharp
             try
             {
                 Random randomNumber = new Random();
-                int n = randomNumber.Next(0, 99);
+                int n = randomNumber.Next(0, 100);
                 Console.WriteLine("０から９９の範囲の数値が決定されました。");
                 Console.Write("決められた数値を予想し、この数値よりも大きな値を入力してください＞");
                 int guess = int.Parse(Console.ReadLine());

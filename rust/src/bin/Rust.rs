@@ -5,6 +5,8 @@ use Rust::K03;
 use Rust::K04;
 use Rust::K05;
 use Rust::K06;
+use Rust::K07;
+use Rust::K08;
 use Rust::Executable;
 use std::io;
 
@@ -23,10 +25,12 @@ fn main() {
         Box::new(K03::new()),
         Box::new(K04::new()),
         Box::new(K05::new()),
-        Box::new(K06::new())
+        Box::new(K06::new()),
+        Box::new(K07::new()),
+        Box::new(K08::new())
     ];
     println!("実行したいプログラムを選択してください。");
-    for n in 1..7 {
+    for n in 1..executables.len() + 1 {
         println!("{}) K0{}", n, n);
     }
 

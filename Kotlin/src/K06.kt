@@ -1,7 +1,6 @@
-import java.lang.Exception
 import java.util.*
 
-class K06 : IExectuable() {
+class K06 : IExecutable() {
 
     override fun question_01() {
         val ages = Vector<Int>()

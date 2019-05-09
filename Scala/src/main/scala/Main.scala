@@ -5,6 +5,8 @@ import PrimaryClasses.K03
 import PrimaryClasses.K04
 import PrimaryClasses.K05
 import PrimaryClasses.K06
+import PrimaryClasses.K07
+import PrimaryClasses.K08
 
 object Main {
 
@@ -17,10 +19,11 @@ object Main {
   def main(Args: Array[String]): Unit = {
     val executables: Vector[IExecutable] =
       Vector[IExecutable](new K01, new K02, new K03,
-        new K04, new K05, new K06)
+        new K04, new K05, new K06,
+        new K07, new K08)
 
     println("実行したいプログラムを選択してください。")
-    for (i <- 1 to 6) {
+    for (i <- 1 to executables.length) {
       printf("%d) K0%d\n", i, i)
     }
     val choice = scala.io.StdIn.readInt

@@ -32,6 +32,7 @@ class k07(executable):
                 choice = int(input())
                 if choice == 1:
                     self.show_texts()
+            print("終了します。")
         except ValueError as ve:
             print(ve)
 

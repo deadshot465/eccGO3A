@@ -13,16 +13,18 @@ fun main()
     var choice: Int
     var choice2: Int
 
-    val executables = Vector<IExectuable>()
+    val executables = Vector<IExecutable>()
     executables.add(K01())
     executables.add(K02())
     executables.add(K03())
     executables.add(K04())
     executables.add(K05())
     executables.add(K06())
+    executables.add(K07())
+    executables.add(K08())
 
     println("実行したいプログラムを選択してください。")
-    for (i: Int in 1..6)
+    for (i: Int in 1 until executables.size + 1)
     {
         println("$i) K0$i")
     }
@@ -31,7 +33,7 @@ fun main()
         val reader = Scanner(System.`in`)
         choice = reader.nextInt()
 
-        if (choice < 1 || choice > 6)
+        if (choice < 1 || choice > executables.size)
         {
             throw Exception("無効の選択です。")
         }

@@ -48,6 +48,15 @@
     <Compile Include="k07.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="k08.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k08_1sub.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="k08_2sub.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Python.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

@@ -21,12 +21,12 @@ namespace CSharp
             {
                 new K01(), new K02(), new K03(),
                 new K04(), new K05(), new K06(),
-                new K07()
+                new K07(), new K08()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");
 
-            for (int i = 1; i < 8; i++)
+            for (int i = 1; i <= executables.Count; i++)
             {
                 Console.WriteLine(string.Format("{0}) K0{1}", i, i));
             }
@@ -35,7 +35,7 @@ namespace CSharp
             {
                 choice = int.Parse(Console.ReadLine());
 
-                if (choice < 1 || choice > 7)
+                if (choice < 1 || choice > executables.Count)
                 {
                     throw new Exception("無効の選択です。");
                 }

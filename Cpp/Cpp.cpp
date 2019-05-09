@@ -10,6 +10,7 @@
 #include "K05.h"
 #include "K06.h"
 #include "K07.h"
+#include "K08.h"
 
 void showSelections(int chapter)
 {
@@ -29,12 +30,13 @@ int main()
 	executables.push_back(std::make_unique<K05>());
 	executables.push_back(std::make_unique<K06>());
 	executables.push_back(std::make_unique<K07>());
+	executables.push_back(std::make_unique<K08>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";
 
 	int choice = 0;
 
-	for (int i = 1; i < 8; ++i)
+	for (int i = 1; i <= executables.size(); ++i)
 	{
 		std::cout << i << ") K0" << i << "\n";
 	}

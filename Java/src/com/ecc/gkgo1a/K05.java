@@ -67,9 +67,7 @@ public class K05 extends IExecutable {
     {
         Random randomNumber = new Random();
 
-        Golem golem = new Golem();
-        golem.hp = 300 + randomNumber.nextInt(200);
-        golem.defense = 80;
+        Golem golem = new Golem(300 + randomNumber.nextInt(200));
 
         int playerHp = 200 + randomNumber.nextInt(100);
 

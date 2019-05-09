@@ -1,7 +1,7 @@
 import java.lang.Exception
 import java.util.*
 
-class K02 : IExectuable() {
+class K02 : IExecutable() {
 
     override fun question_01() {
         val seisuu = 3

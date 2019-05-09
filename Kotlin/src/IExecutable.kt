@@ -1,4 +1,4 @@
-abstract class IExectuable : IDispatchable
+abstract class IExecutable : IDispatchable
 {
     fun execute(num: Int)
     {

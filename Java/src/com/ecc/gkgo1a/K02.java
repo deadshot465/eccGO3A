@@ -72,8 +72,6 @@ public class K02 extends IExecutable
         try
         {
             Golem golem = new Golem();
-            golem.hp = 300;
-            golem.defense = 80;
 
             System.out.println(String.format("ゴーレム　（HP:%d　防御力：%d）\n", golem.hp, golem.defense));
             System.out.println("HP：" + golem.hp);

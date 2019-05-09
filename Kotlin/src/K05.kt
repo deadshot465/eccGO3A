@@ -1,7 +1,7 @@
 import java.lang.Exception
 import java.util.*
 
-class K05 : IExectuable() {
+class K05 : IExecutable() {
 
     override fun question_01() {
         var salary = 19.0f
@@ -59,9 +59,7 @@ class K05 : IExectuable() {
         try {
             val randomNumber = Random()
 
-            val golem = Golem()
-            golem.hp = 300 + randomNumber.nextInt(200)
-            golem.defense = 80
+            val golem = Golem(300 + randomNumber.nextInt(200))
 
             var playerHp = 200 + randomNumber.nextInt(100)
 

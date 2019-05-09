@@ -26,6 +26,7 @@ namespace CSharp
                 
 
             } while (choice != 0);
+            Console.WriteLine("終了します。");
         }
 
         public override void Question02()

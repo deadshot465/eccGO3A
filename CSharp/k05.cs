@@ -54,20 +54,15 @@ namespace CSharp
         {
             Random randomNumber = new Random();
 
-            Golem golem = new Golem()
+            Golem golem = new Golem(hp: 300 + randomNumber.Next(0, 201));
+
+            int playerHp = 200 + randomNumber.Next(0, 101);
+
+            Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1}）\n", golem.Hp, golem.Defense));
+
+            while (golem.Hp > 0)
             {
-                hp = 300 + randomNumber.Next(0, 200),
-                defense = 80
-            };
-
-            int golemAttack = 50;
-            int playerHp = 200 + randomNumber.Next(0, 100);
-
-            Console.WriteLine(string.Format("ゴーレム　（HP:{0}　防御力：{1}）\n", golem.hp, golem.defense));
-
-            while (golem.hp > 0)
-            {
-                Console.WriteLine("残りHP：" + golem.hp);
+                Console.WriteLine("残りHP：" + golem.Hp);
                 Console.Write("攻撃手段を選択してください（1．攻撃　2．特技　3．魔法）　＞");
                 int option = int.Parse(Console.ReadLine());
                 int damage = 0;
@@ -75,13 +70,13 @@ namespace CSharp
                 switch (option)
                 {
                     case 1:
-                        damage = 60 + randomNumber.Next(0, 40);
+                        damage = 60 + randomNumber.Next(0, 41);
                         break;
                     case 2:
-                        damage = 30 + randomNumber.Next(0, 100);
+                        damage = 30 + randomNumber.Next(0, 101);
                         break;
                     case 3:
-                        damage = 20 + randomNumber.Next(0, 180);
+                        damage = 20 + randomNumber.Next(0, 181);
                         break;
                     default:
                         continue;
@@ -89,15 +84,15 @@ namespace CSharp
 
                 Console.WriteLine("基礎攻撃力は" + damage + "です。");
 
-                damage -= golem.defense;
+                damage -= golem.Defense;
 
                 if (damage <= 0)
                 {
                     damage = 0;
 
                     Console.WriteLine("ゴーレム：「ハハハハハ、情けないな！貴様は弱すぎる！」");
-                    Console.WriteLine("ゴーレムがあなたを攻撃しました！攻撃値：" + golemAttack);
-                    playerHp -= golemAttack;
+                    Console.WriteLine("ゴーレムがあなたを攻撃しました！攻撃値：" + golem.Attack);
+                    playerHp -= golem.Attack;
 
                     if (playerHp <= 0)
                     {
@@ -110,16 +105,16 @@ namespace CSharp
 
                 Console.WriteLine("ダメージは" + damage + "です");
 
-                golem.hp -= damage;
+                golem.Hp -= damage;
 
-                if (golem.hp < 0)
+                if (golem.Hp < 0)
                 {
-                    golem.hp = 0;
+                    golem.Hp = 0;
                 }
 
-                Console.WriteLine("残りのHPは" + golem.hp + "です");
+                Console.WriteLine("残りのHPは" + golem.Hp + "です");
 
-                if (golem.hp == 0)
+                if (golem.Hp == 0)
                 {
                     Console.WriteLine("ゴーレムを倒しました！");
                 }

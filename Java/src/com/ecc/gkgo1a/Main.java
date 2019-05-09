@@ -25,9 +25,10 @@ public class Main {
         executables.add(new K05());
         executables.add(new K06());
         executables.add(new K07());
+        executables.add(new K08());
 
         System.out.println("実行したいプログラムを選択してください。");
-        for (int i = 1; i < 8; i++)
+        for (int i = 1; i <= executables.size(); i++)
         {
             System.out.println(String.format("%d) K0%d", i, i));
         }
@@ -36,7 +37,7 @@ public class Main {
             Scanner in = new Scanner(System.in);
             choice = in.nextInt();
 
-            if (choice < 1 || choice > 7)
+            if (choice < 1 || choice > executables.size())
             {
                 throw new Exception("無効の選択です。");
             }
