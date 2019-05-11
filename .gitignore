@@ -49,4 +49,6 @@ Scala/target/
 Scala/src/test/
 
 SharpDXProject/
-SwiftProject/
+
+SwiftProject/Index
+SwiftProject/XCode_Build
