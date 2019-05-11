@@ -14,17 +14,20 @@ func ShowSelections(chapter: Int) {
     }
 }
 
-var executables = [IExecutable]()
+var executables = [IDispatchable]()
 executables.append(K01())
 executables.append(K02())
 executables.append(K03())
 executables.append(K04())
 executables.append(K05())
 executables.append(K06())
+executables.append(K07())
+executables.append(K08())
+executables.append(FileControl())
 
 print("実行したいプログラムを選択してください。")
 
-for i in 1...6 {
+for i in 1...executables.count {
     print("\(i)) K0\(i)")
 }
 

@@ -17,7 +17,7 @@ public struct Golem {
         
     }
     
-    init(hp: Int, defense: Int, attack: Int) {
+    init(hp: Int = 300, defense: Int = 80, attack: Int = 50) {
         self.hp = hp
         self.defense = defense
         self.attack = attack

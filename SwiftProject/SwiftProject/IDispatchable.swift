@@ -14,3 +14,20 @@ public protocol IDispatchable {
     func Question3()
     func Question4()
 }
+
+extension IDispatchable {
+    public func Execute(num: Int) {
+        switch num {
+        case 1:
+            Question1()
+        case 2:
+            Question2()
+        case 3:
+            Question3()
+        case 4:
+            Question4()
+        default:
+            break
+        }
+    }
+}
