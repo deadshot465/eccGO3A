@@ -27,38 +27,42 @@ class K07
   end
 
   def question2
-    numbers = []
-    (1..3).each do |x|
-      print "#{x}つ目の値を入力してください。＞"
-      numbers.append(gets.chomp.to_i)
-    end
+    begin
+      numbers = []
+      (1..3).each do |x|
+        print "#{x}つ目の値を入力してください。＞"
+        numbers.append(gets.chomp.to_i)
+      end
 
-    puts "#{numbers.count}つの中で最大値は#{get_max_value(numbers[0], numbers[1], numbers[2])}です。"
-  rescue TypeError => e
-    puts e.message
+      puts "#{numbers.count}つの中で最大値は#{get_max_value(numbers[0], numbers[1], numbers[2])}です。"
+    rescue TypeError => e
+      puts e.message
+    end
   end
 
   def question3
-    age = 0
-    no = 0
-    puts '年齢を入力して下さい。＞'
-    age = gets.chomp.to_i
+    begin
+      age = 0
+      no = 0
+      puts '年齢を入力して下さい。＞'
+      age = gets.chomp.to_i
 
-    no = get_type(age)
-    case no
-    when 0
-      puts '不適切な値が入力されました。'
-    when 1
-      puts '入場料金無料です。'
-    when 2
-      puts '子供料金で半額です。'
-    when 3
-      puts 'シニア割引で１割引きです。'
-    else
-      puts '通常料金です。'
+      no = get_type(age)
+      case no
+      when 0
+        puts '不適切な値が入力されました。'
+      when 1
+        puts '入場料金無料です。'
+      when 2
+        puts '子供料金で半額です。'
+      when 3
+        puts 'シニア割引で１割引きです。'
+      else
+        puts '通常料金です。'
+      end
+    rescue TypeError => e
+      puts e.message
     end
-  rescue TypeError => e
-    puts e.message
   end
 
   def question4; end

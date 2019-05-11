@@ -11,6 +11,7 @@
 #include "K06.h"
 #include "K07.h"
 #include "K08.h"
+#include "FileControl.h"
 
 void showSelections(int chapter)
 {
@@ -31,6 +32,7 @@ int main()
 	executables.push_back(std::make_unique<K06>());
 	executables.push_back(std::make_unique<K07>());
 	executables.push_back(std::make_unique<K08>());
+	executables.push_back(std::make_unique<FileControl>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";
 

@@ -26,6 +26,7 @@ public class Main {
         executables.add(new K06());
         executables.add(new K07());
         executables.add(new K08());
+        executables.add(new FileControl());
 
         System.out.println("実行したいプログラムを選択してください。");
         for (int i = 1; i <= executables.size(); i++)

@@ -17,7 +17,7 @@ func main() {
 	var inputText string
 
 	executable := []IExecutable {
-		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{},
+		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{}, FileControl{},
 	}
 
 	fmt.Println("実行したいプログラムを選択してください。")

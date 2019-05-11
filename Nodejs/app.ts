@@ -7,6 +7,7 @@ import { K05 } from './K05';
 import { K06 } from './K06';
 import { K07 } from './K07';
 import { K08 } from './K08';
+import { FileControl } from './FileControl';
 import { IExecutable } from './IExecutable';
 
 function ShowSelections(chapter: number) {
@@ -24,6 +25,7 @@ executables[4] = new K05();
 executables[5] = new K06();
 executables[6] = new K07();
 executables[7] = new K08();
+executables[8] = new FileControl();
 
 console.log("実行したいプログラムを選択してください。\n");
 

@@ -1,5 +1,5 @@
 use crate::executable::Executable;
-use std::io::{self, Write, stdin};
+use std::io::Write;
 
 pub struct K06 {}
 impl K06 {

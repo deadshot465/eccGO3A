@@ -22,6 +22,7 @@ fun main()
     executables.add(K06())
     executables.add(K07())
     executables.add(K08())
+    executables.add(FileControl())
 
     println("実行したいプログラムを選択してください。")
     for (i: Int in 1 until executables.size + 1)

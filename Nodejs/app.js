@@ -17,6 +17,7 @@ const K05_1 = require("./K05");
 const K06_1 = require("./K06");
 const K07_1 = require("./K07");
 const K08_1 = require("./K08");
+const FileControl_1 = require("./FileControl");
 function ShowSelections(chapter) {
     for (let i = 1; i < 5; i++) {
         console.log("\t" + i + ") K0" + chapter + "_" + i);
@@ -31,6 +32,7 @@ executables[4] = new K05_1.K05();
 executables[5] = new K06_1.K06();
 executables[6] = new K07_1.K07();
 executables[7] = new K08_1.K08();
+executables[8] = new FileControl_1.FileControl();
 console.log("実行したいプログラムを選択してください。\n");
 for (let i = 1; i <= executables.length; i++) {
     console.log(i + ") K0" + i);

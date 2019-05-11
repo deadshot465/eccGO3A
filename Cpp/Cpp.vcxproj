@@ -154,6 +154,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cpp.cpp" />
+    <ClCompile Include="FileControl.cpp" />
     <ClCompile Include="IDispatchable.cpp" />
     <ClCompile Include="IExecutable.cpp" />
     <ClCompile Include="K01.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="K08_2sub.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="FileControl.h" />
     <ClInclude Include="Golem.h" />
     <ClInclude Include="IDispatchable.h" />
     <ClInclude Include="IExecutable.h" />
