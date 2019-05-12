@@ -10,7 +10,7 @@ type FileControl struct {}
 
 func (fileControl FileControl) execute(num int) {
 	switch num {
-	case 1:  fileControl.question1()
+	case 1: fileControl.question1()
 	case 2: fileControl.question2()
 	case 3: fileControl.question3()
 	case 4: fileControl.question4()

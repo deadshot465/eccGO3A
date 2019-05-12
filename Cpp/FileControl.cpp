@@ -1,9 +1,13 @@
+#include <chrono>
 #include <fstream>
 #include <iostream>
 #include <stdexcept>
 #include <string>
 
 #include "FileControl.h"
+
+using hClock = std::chrono::high_resolution_clock;
+using dSecond = std::chrono::duration<double, std::ratio<1>>;
 
 void FileControl::question1()
 {
@@ -30,6 +34,16 @@ void FileControl::question1()
 
 void FileControl::question2()
 {
+	hClock clock;
+	auto begin = clock.now();
+	double multiply = 1.0;
+	for (int i = 1; i < 150; ++i)
+	{
+		multiply *= i;
+	}
+	auto end = clock.now();
+	double result = std::chrono::duration_cast<dSecond>(end - begin).count();
+	std::cout << result;
 }
 
 void FileControl::question3()

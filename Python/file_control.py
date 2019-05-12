@@ -1,5 +1,6 @@
 from fileinput import *
 from executable import executable
+import time
 
 class FileControl(executable):
     
@@ -12,3 +13,11 @@ class FileControl(executable):
             print("Completed.")
         except Exception as ex:
             print(ex)
+
+    def question2(self):
+        begin = time.time()
+        multiply = 1.0
+        for x in range(1, 151):
+            multiply = multiply * x
+        end = time.time()
+        print(end - begin)

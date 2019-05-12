@@ -4,16 +4,13 @@
 clojure_project/
 
 Cpp/Debug/
-
-Crystal/
-
 CSharp/bin/
 CSharp/obj/
 
 Debug/
 DirectX/
 
-ElixirProject/
+elixir_project/
 
 Go/.idea/
 
@@ -23,7 +20,8 @@ Java/out/
 Kotlin/.idea/
 Kotlin/out/
 
-Nim/
+Nim/*.exe
+Nim/tempCodeRunnerFile.nim
 
 Nodejs/bin/
 Nodejs/node_modules/
