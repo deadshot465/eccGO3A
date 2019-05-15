@@ -1,9 +1,11 @@
 from strutils import parseInt
-import IExecutable, K01, K02, K03, K04, K05, K06, K07, K08, FileControl
+import IExecutable, K01, K02, K03, K04, K05, K06, K07, K08, K09, FileControl
 
 proc show_selections(chapter: int) =
     for i in 1..4:
         echo "\t", i, ") K0", chapter, "_", i
+    if chapter == 9:
+        echo "\t5) K0", chapter, "_5"
 
 var executables: seq[IExecutable]
 executables.add(K01())
@@ -14,6 +16,7 @@ executables.add(K05())
 executables.add(K06())
 executables.add(K07())
 executables.add(K08())
+executables.add(K09())
 executables.add(FileControl())
 
 echo "実行したいプログラムを選択してください。"

@@ -167,6 +167,7 @@
     <ClCompile Include="K08.cpp" />
     <ClCompile Include="K08_1sub.cpp" />
     <ClCompile Include="K08_2sub.cpp" />
+    <ClCompile Include="K09.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileControl.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="K08.h" />
     <ClInclude Include="K08_1sub.h" />
     <ClInclude Include="K08_2sub.h" />
+    <ClInclude Include="K09.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

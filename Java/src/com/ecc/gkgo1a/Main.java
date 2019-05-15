@@ -11,6 +11,9 @@ public class Main {
         {
             System.out.println(String.format("\t%d) K0%d_%d", i, chapter, i));
         }
+        if (chapter == 9) {
+            System.out.println(String.format("\t5) K0%d_5", chapter));
+        }
     }
 
     public static void main(String[] args) {
@@ -26,6 +29,7 @@ public class Main {
         executables.add(new K06());
         executables.add(new K07());
         executables.add(new K08());
+        executables.add(new K09());
         executables.add(new FileControl());
 
         System.out.println("実行したいプログラムを選択してください。");

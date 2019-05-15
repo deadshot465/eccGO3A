@@ -62,6 +62,9 @@
     <Compile Include="k08_2sub.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="k09.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Python.py" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,5 @@
 extern crate Rust;
-use Rust::{Executable, K01, K02, K03, K04, K05, K06, K07, K08, FileControl};
+use Rust::{Executable, K01, K02, K03, K04, K05, K06, K07, K08, K09, FileControl};
 use std::io;
 
 fn show_selection(chapter: usize)
@@ -7,7 +7,9 @@ fn show_selection(chapter: usize)
     for n in 1..5 {
         println!("\t{}) K0{}_{}", n, chapter, n);
     }
-
+    if chapter == 9 {
+        println!("\t5) K0{}_5", chapter);
+    }
 }
 
 fn main() {
@@ -20,6 +22,7 @@ fn main() {
         Box::new(K06::new()),
         Box::new(K07::new()),
         Box::new(K08::new()),
+        Box::new(K09::new()),
         Box::new(FileControl::new())
     ];
     println!("実行したいプログラムを選択してください。");

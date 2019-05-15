@@ -11,6 +11,7 @@
 #include "K06.h"
 #include "K07.h"
 #include "K08.h"
+#include "K09.h"
 #include "FileControl.h"
 
 void showSelections(int chapter)
@@ -18,6 +19,11 @@ void showSelections(int chapter)
 	for (int i = 1; i < 5; ++i)
 	{
 		std::cout << "\t" << i << ") K0" << chapter << "_" << i << "\n";
+	}
+
+	if (chapter == 9)
+	{
+		std::cout << "\t5) K0" << chapter << "_5\n";
 	}
 }
 
@@ -32,6 +38,7 @@ int main()
 	executables.push_back(std::make_unique<K06>());
 	executables.push_back(std::make_unique<K07>());
 	executables.push_back(std::make_unique<K08>());
+	executables.push_back(std::make_unique<K09>());
 	executables.push_back(std::make_unique<FileControl>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";

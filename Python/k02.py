@@ -12,7 +12,7 @@ class k02(object):
 
         print('変数seisuuの値は{}'.format(seisuu))
         print('変数jissuuの値は{}'.format(jissuu))
-        print('変数mojiの値は{}' + moji)
+        print('変数mojiの値は{}'.format(moji))
 
     def question2(self):
         try:
