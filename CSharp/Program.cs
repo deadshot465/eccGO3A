@@ -9,7 +9,12 @@ namespace CSharp
         {
             for (int i = 1; i <= 4; i++)
             {
-                Console.WriteLine(string.Format("\t{0}) K0{1}_{2}", i, chapter, i));
+                Console.WriteLine($"\t{i}) K0{chapter}_{i}");
+            }
+
+            if (chapter == 9)
+            {
+                Console.WriteLine($"\t5) K0{chapter}_5");
             }
         }
 
@@ -21,7 +26,8 @@ namespace CSharp
             {
                 new K01(), new K02(), new K03(),
                 new K04(), new K05(), new K06(),
-                new K07(), new K08()
+                new K07(), new K08(), new K09(),
+                new K10(), new FileControl()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");

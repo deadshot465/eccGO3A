@@ -30,7 +30,7 @@ impl Executable for K05 {
             let choice_ptr: &mut i32 = &mut choice_num;
             println!("起きろ～");
             print!("1．起きた　2．あと5分…　3．Zzzz…\t入力：");
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
             let mut choice = String::new();
             std::io::stdin().read_line(&mut choice).expect("入力失敗！");
             *choice_ptr = choice.trim().parse::<i32>().expect("入力失敗！");
@@ -43,7 +43,7 @@ impl Executable for K05 {
         loop {
             println!("起きろ～");
             print!("1．起きた　2．あと5分…　3．Zzzz…\t入力：");
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
             let mut choice = String::new();
             std::io::stdin().read_line(&mut choice).expect("入力失敗！");
             let choice = choice.trim().parse::<i32>().expect("入力失敗！");
@@ -65,7 +65,7 @@ impl Executable for K05 {
         while golem.hp > 0 {
             println!("HP：{}", golem.hp);
             print!("攻撃手段を選択してください（1．攻撃　2．特技　3．魔法）　＞");
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
 
             let mut option = String::new();
             std::io::stdin().read_line(&mut option).expect("入力失敗！");

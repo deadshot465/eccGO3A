@@ -36,7 +36,7 @@ pub fn attack_golem(lv: i32, player_hp: &mut i32) {
             }
         };
 
-        let mut damage = match choice {
+        let damage = match choice {
             1 => attack_options.get(&AttackMethod::Attack).unwrap(),
             2 => attack_options.get(&AttackMethod::Skill).unwrap(),
             3 => attack_options.get(&AttackMethod::Magic).unwrap(),

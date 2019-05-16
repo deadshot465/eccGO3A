@@ -1,4 +1,3 @@
-use std::io;
 use std::num::ParseIntError;
 
 pub fn read_user_input(input_param: &mut String) -> Result<i32, ParseIntError> {

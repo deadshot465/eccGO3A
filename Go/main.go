@@ -9,6 +9,9 @@ func showSelection(chapter int) {
 	for i := 1; i < 5; i++ {
 		fmt.Println(fmt.Sprintf("\t%d) K0%d_%d", i, chapter, i))
 	}
+	if chapter == 9 {
+		fmt.Println(fmt.Sprintf("\t5) K0%d_5", chapter))
+	}
 }
 
 func main() {
@@ -17,7 +20,7 @@ func main() {
 	var inputText string
 
 	executable := []IExecutable {
-		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{},
+		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{}, K09{}, K10{}, FileControl{},
 	}
 
 	fmt.Println("実行したいプログラムを選択してください。")

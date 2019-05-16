@@ -1,6 +1,6 @@
 abstract class IExecutable : IDispatchable
 {
-    fun execute(num: Int)
+    open fun execute(num: Int)
     {
         when (num)
         {
