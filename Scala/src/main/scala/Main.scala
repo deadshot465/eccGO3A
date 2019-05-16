@@ -1,5 +1,5 @@
 import IExecutable.IExecutable
-import PrimaryClasses.{FileControl, K01, K02, K03, K04, K05, K06, K07, K08, K09}
+import PrimaryClasses.{FileControl, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10}
 
 object Main {
 
@@ -17,7 +17,7 @@ object Main {
       Vector[IExecutable](new K01, new K02, new K03,
         new K04, new K05, new K06,
         new K07, new K08, new K09,
-        new FileControl)
+        new K10, new FileControl)
 
     println("実行したいプログラムを選択してください。")
     for (i <- 1 to executables.length) {

@@ -7,6 +7,7 @@ require_relative 'k06'
 require_relative 'k07'
 require_relative 'k08'
 require_relative 'k09'
+require_relative 'k10'
 require_relative 'file_control'
 
 def show_selection(chapter)
@@ -18,7 +19,7 @@ end
 
 executables = [K01.new, K02.new, K03.new, K04.new,
                K05.new, K06.new, K07.new, K08.new,
-               K09.new, FileControl.new]
+               K09.new, K10.new, FileControl.new]
 puts '実行したいプログラムを選択してください。'
 
 (1..executables.count).each do |x|

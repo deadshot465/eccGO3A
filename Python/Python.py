@@ -7,6 +7,7 @@ from k06 import k06
 from k07 import k07
 from k08 import k08
 from k09 import k09
+from k10 import k10
 from file_control import FileControl
 
 def show_selections(chapter):
@@ -15,7 +16,7 @@ def show_selections(chapter):
     if chapter == 9:
         print('\t5) K0%d_5' % chapter)
 
-executables = [ k01(), k02(), k03(), k04(), k05(), k06(), k07(), k08(), k09(), FileControl() ]
+executables = [ k01(), k02(), k03(), k04(), k05(), k06(), k07(), k08(), k09(), k10(), FileControl() ]
 
 print("実行したいプログラムを選択してください。")
 

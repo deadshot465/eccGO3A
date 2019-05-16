@@ -6,7 +6,7 @@ class IExecutable :
 {
 public:
 	IExecutable();
-	~IExecutable();
+	virtual ~IExecutable();
 
 	virtual void execute(int num);
 

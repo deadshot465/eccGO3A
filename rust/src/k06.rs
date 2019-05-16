@@ -14,7 +14,7 @@ impl Executable for K06 {
 
         for i in 0..5 {
             print!("{}人目の年齢を入力して下さい：", i + 1);
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
             let mut reader = String::new();
             std::io::stdin().read_line(&mut reader).expect("入力失敗！");
             ages.push(reader.trim().parse::<f32>().expect("入力失敗！"));
@@ -26,32 +26,32 @@ impl Executable for K06 {
 
     fn question_2(&self) {
         for i in 0..9 {
-            for j in 0..i + 1 {
+            for _ in 0..i + 1 {
                 print!("*");
-                std::io::stdout().flush();
+                std::io::stdout().flush().unwrap();
             }
             println!();
         }
         println!();
 
         for i in (0..9).rev() {
-            for j in 0..i + 1 {
+            for _ in 0..i + 1 {
                 print!("*");
-                std::io::stdout().flush();
+                std::io::stdout().flush().unwrap();
             }
             println!();
         }
         println!();
 
         for i in (0..9).rev() {
-            for j in 0..i {
+            for _ in 0..i {
                 print!(" ");
-                std::io::stdout().flush();
+                std::io::stdout().flush().unwrap();
             }
 
-            for k in i..9 {
+            for _ in i..9 {
                 print!("*");
-                std::io::stdout().flush();
+                std::io::stdout().flush().unwrap();
             }
             println!();
         }
@@ -75,25 +75,25 @@ impl Executable for K06 {
 
     fn question_4(&self) {
         print!("\t|\t");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
         for i in 1..10 {
             print!("{}\t", i);
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
         }
         println!();
 
-        for i in 0..75 {
+        for _ in 0..75 {
             print!("-");
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
         }
         println!();
 
         for i in 1..10 {
             print!("{}\t|\t", i);
-            std::io::stdout().flush();
+            std::io::stdout().flush().unwrap();
             for j in 1..10 {
                 print!("{}\t", i * j);
-                std::io::stdout().flush();
+                std::io::stdout().flush().unwrap();
             }
             println!();
         }

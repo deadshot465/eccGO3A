@@ -12,7 +12,7 @@ impl K04 {
 impl Executable for K04 {
     fn question_1(&self) {
         print!("年齢を入力してください。＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
 
         let mut age = String::new();
         std::io::stdin().read_line(&mut age).expect("入力失敗！");
@@ -29,7 +29,7 @@ impl Executable for K04 {
 
     fn question_2(&self) {
         print!("性別を選択してください。（０：男性　１：女性）＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
         let mut gender = String::new();
         std::io::stdin().read_line(&mut gender).expect("入力失敗！");
         let gender = gender.trim().parse::<i32>().expect("入力失敗！");
@@ -42,7 +42,7 @@ impl Executable for K04 {
 
     fn question_3(&self) {
         print!("年齢を入力してください。＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
 
         let mut age = String::new();
         std::io::stdin().read_line(&mut age).expect("入力失敗！");
@@ -66,7 +66,7 @@ impl Executable for K04 {
     fn question_4(&self) {
         println!("＊＊＊おみくじプログラム＊＊＊");
         print!("おみくじを引きますか　（はい：１　いいえ：０）　＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
         let mut choice = String::new();
         std::io::stdin().read_line(&mut choice).expect("入力失敗！");
         let choice = choice.trim().parse::<i32>().expect("入力失敗！");

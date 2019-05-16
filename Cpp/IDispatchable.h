@@ -4,7 +4,7 @@ class IDispatchable
 {
 public:
 	IDispatchable();
-	~IDispatchable();
+	virtual ~IDispatchable();
 
 	virtual void question1() = 0;
 	virtual void question2() = 0;

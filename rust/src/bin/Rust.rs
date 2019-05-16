@@ -1,5 +1,5 @@
 extern crate Rust;
-use Rust::{Executable, K01, K02, K03, K04, K05, K06, K07, K08, K09, FileControl};
+use Rust::{Executable, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, FileControl};
 use std::io;
 
 fn show_selection(chapter: usize)
@@ -23,6 +23,7 @@ fn main() {
         Box::new(K07::new()),
         Box::new(K08::new()),
         Box::new(K09::new()),
+        Box::new(K10::new()),
         Box::new(FileControl::new())
     ];
     println!("実行したいプログラムを選択してください。");

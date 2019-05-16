@@ -12,7 +12,7 @@ impl K03 {
 impl Executable for K03 {
     fn question_1(&self) {
         print!("年齢を入力してください。＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
 
         let mut age = String::new();
         std::io::stdin().read_line(&mut age).expect("入力失敗！");
@@ -25,14 +25,14 @@ impl Executable for K03 {
 
     fn question_2(&self) {
         print!("身長を入力してください。＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
         let mut height = String::new();
         std::io::stdin().read_line(&mut height).expect("入力失敗！");
         let mut height = height.trim().parse::<f64>().expect("入力失敗！");
         height /= 100.0;
 
         print!("体重を入力してください。＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
         let mut weight = String::new();
         std::io::stdin().read_line(&mut weight).expect("入力失敗！");
         let weight = weight.trim().parse::<f64>().expect("入力失敗！");
@@ -58,7 +58,7 @@ impl Executable for K03 {
         let secret_number = rand::thread_rng().gen_range(0, 100);
         println!("０から９９の範囲の数値が決定されました。");
         print!("決められた数値を予想し、この数値よりも大きな値を入力してください＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
 
         let mut guess = String::new();
         std::io::stdin().read_line(&mut guess).expect("入力失敗！");
@@ -77,7 +77,7 @@ impl Executable for K03 {
         let secret_number = rand::thread_rng().gen_range(0, 100);
         println!("０から９９の範囲の数値が決定されました。");
         print!("決められた数値を予想し、この数値よりも大きな値を入力してください＞");
-        std::io::stdout().flush();
+        std::io::stdout().flush().unwrap();
 
         let mut guess = String::new();
         std::io::stdin().read_line(&mut guess).expect("入力失敗！");

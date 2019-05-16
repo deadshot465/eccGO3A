@@ -27,6 +27,7 @@ executables.append(K06())
 executables.append(K07())
 executables.append(K08())
 executables.append(K09())
+executables.append(K10())
 executables.append(FileControl())
 
 print("実行したいプログラムを選択してください。")

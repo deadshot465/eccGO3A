@@ -8,6 +8,7 @@ import { K06 } from './K06';
 import { K07 } from './K07';
 import { K08 } from './K08';
 import { K09 } from "./K09";
+import { K10 } from "./K10";
 import { FileControl } from './FileControl';
 import { IExecutable } from './IExecutable';
 
@@ -30,7 +31,8 @@ executables[5] = new K06();
 executables[6] = new K07();
 executables[7] = new K08();
 executables[8] = new K09();
-executables[9] = new FileControl();
+executables[9] = new K10();
+executables[10] = new FileControl();
 
 console.log("実行したいプログラムを選択してください。\n");
 

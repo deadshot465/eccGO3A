@@ -27,7 +27,7 @@ namespace CSharp
                 new K01(), new K02(), new K03(),
                 new K04(), new K05(), new K06(),
                 new K07(), new K08(), new K09(),
-                new FileControl()
+                new K10(), new FileControl()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");

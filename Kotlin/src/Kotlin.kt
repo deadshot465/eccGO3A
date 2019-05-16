@@ -26,6 +26,7 @@ fun main()
     executables.add(K07())
     executables.add(K08())
     executables.add(K09())
+    executables.add(K10())
     executables.add(FileControl())
 
     println("実行したいプログラムを選択してください。")

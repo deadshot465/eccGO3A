@@ -30,6 +30,7 @@ public class Main {
         executables.add(new K07());
         executables.add(new K08());
         executables.add(new K09());
+        executables.add(new K10());
         executables.add(new FileControl());
 
         System.out.println("実行したいプログラムを選択してください。");
