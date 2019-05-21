@@ -1,4 +1,4 @@
-from functools import reduce;
+from functools import reduce
 
 class k06(object):
     

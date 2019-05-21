@@ -9,12 +9,18 @@ namespace CSharp
         {
             for (int i = 1; i <= 4; i++)
             {
-                Console.WriteLine($"\t{i}) K0{chapter}_{i}");
-            }
-
-            if (chapter == 9)
-            {
-                Console.WriteLine($"\t5) K0{chapter}_5");
+                if (chapter < 10)
+                {
+                    Console.WriteLine($"\t{i}) K0{chapter}_{i}");
+                    if (chapter == 9)
+                    {
+                        Console.WriteLine($"\t5) K0{chapter}_5");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine($"\t{i}) K{chapter}_{i}");
+                }
             }
         }
 
@@ -27,14 +33,21 @@ namespace CSharp
                 new K01(), new K02(), new K03(),
                 new K04(), new K05(), new K06(),
                 new K07(), new K08(), new K09(),
-                new K10(), new FileControl()
+                new K10(), new K11(), new FileControl()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");
 
             for (int i = 1; i <= executables.Count; i++)
             {
-                Console.WriteLine(string.Format("{0}) K0{1}", i, i));
+                if (i < 10)
+                {
+                    Console.WriteLine($"{i}) K0{i}");
+                }
+                else
+                {
+                    Console.WriteLine($"{i}) K{i}");
+                }
             }
 
             try

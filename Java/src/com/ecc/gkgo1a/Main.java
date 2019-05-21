@@ -1,7 +1,6 @@
 package com.ecc.gkgo1a;
 
 import java.util.Scanner;
-import java.util.Vector;
 
 public class Main {
 
@@ -9,41 +8,43 @@ public class Main {
     {
         for (int i = 1; i < 5; i++)
         {
-            System.out.println(String.format("\t%d) K0%d_%d", i, chapter, i));
-        }
-        if (chapter == 9) {
-            System.out.println(String.format("\t5) K0%d_5", chapter));
+            if (chapter < 10)
+            {
+                System.out.println(String.format("\t%d) K0%d_%d", i, chapter, i));
+                if (chapter == 9) {
+                    System.out.println(String.format("\t5) K0%d_5", chapter));
+                }
+            }
+            else
+            {
+                System.out.println(String.format("\t%d) K%d_%d", i, chapter, i));
+            }
         }
     }
 
     public static void main(String[] args) {
 
         int choice, choice2;
-
-        Vector<IExecutable> executables = new Vector<>();
-        executables.add(new K01());
-        executables.add(new K02());
-        executables.add(new K03());
-        executables.add(new K04());
-        executables.add(new K05());
-        executables.add(new K06());
-        executables.add(new K07());
-        executables.add(new K08());
-        executables.add(new K09());
-        executables.add(new K10());
-        executables.add(new FileControl());
+        IExecutable[] executables = {
+                new K01(), new K02(), new K03(), new K04(), new K05(),
+                new K06(), new K07(), new K08(), new K09(), new K10(),
+                new K11(), new FileControl()
+        };
 
         System.out.println("実行したいプログラムを選択してください。");
-        for (int i = 1; i <= executables.size(); i++)
+        for (int i = 1; i <= executables.length; i++)
         {
-            System.out.println(String.format("%d) K0%d", i, i));
+            if (i < 10)
+                System.out.println(String.format("%d) K0%d", i, i));
+            else
+                System.out.println(String.format("%d) K%d", i, i));
         }
 
         try {
             Scanner in = new Scanner(System.in);
             choice = in.nextInt();
 
-            if (choice < 1 || choice > executables.size())
+            if (choice < 1 || choice > executables.length)
             {
                 throw new Exception("無効の選択です。");
             }
@@ -51,7 +52,7 @@ public class Main {
             showSelections(choice);
 
             choice2 = in.nextInt();
-            executables.get(choice - 1).Execute(choice2);
+            executables[choice - 1].Execute(choice2);
         }
         catch (Exception ex)
         {

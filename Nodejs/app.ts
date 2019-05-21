@@ -9,35 +9,37 @@ import { K07 } from './K07';
 import { K08 } from './K08';
 import { K09 } from "./K09";
 import { K10 } from "./K10";
+import { K11 } from "./K11";
 import { FileControl } from './FileControl';
 import { IExecutable } from './IExecutable';
 
 function ShowSelections(chapter: number) {
     for (let i = 1; i < 5; i++) {
-        console.log("\t" + i + ") K0" + chapter + "_" + i);
-    }
-    if (chapter === 9) {
-        console.log(`\t5) K0${chapter}_5`);
+        if (chapter < 10) {
+            console.log("\t" + i + ") K0" + chapter + "_" + i);
+            if (chapter === 9) {
+                console.log(`\t5) K0${chapter}_5`);
+            }
+        } else {
+            console.log("\t" + i + ") K" + chapter + "_" + i);
+        }
     }
 }
 
-var executables: Array<IExecutable> = new Array<IExecutable>();
-executables[0] = new K01();
-executables[1] = new K02();
-executables[2] = new K03();
-executables[3] = new K04();
-executables[4] = new K05();
-executables[5] = new K06();
-executables[6] = new K07();
-executables[7] = new K08();
-executables[8] = new K09();
-executables[9] = new K10();
-executables[10] = new FileControl();
+var executables: Array<IExecutable> = [
+    new K01(), new K02(), new K03(), new K04(), new K05(),
+    new K06(), new K07(), new K08(), new K09(), new K10(),
+    new K11(), new FileControl()
+];
 
 console.log("実行したいプログラムを選択してください。\n");
 
 for (let i = 1; i <= executables.length; i++) {
-    console.log(i + ") K0" + i);
+    if (i < 10) {
+        console.log(i + ") K0" + i);
+    } else {
+        console.log(i + ") K" + i);
+    }
 }
 
 try {
