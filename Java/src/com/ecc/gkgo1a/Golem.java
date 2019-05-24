@@ -24,3 +24,21 @@ class Golem {
         this.attack = attack;
     }
 }
+
+class GolemEx {
+    private final int GOLEM_HIT = 70;
+    private final int GOLEM_FLEE = 20;
+    public int Hp;
+    public int Defense;
+    public int Attack;
+    public int Hit;
+    public int Flee;
+
+    GolemEx(int hp, int defense, int attack) {
+        this.Hp = hp;
+        this.Defense = defense;
+        this.Attack = attack;
+        this.Hit = GOLEM_HIT;
+        this.Flee = GOLEM_FLEE;
+    }
+}

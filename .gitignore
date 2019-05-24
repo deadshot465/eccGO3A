@@ -1,14 +1,21 @@
 .vs/
 .git/
 
+actix-project/
+angular-project/
+
+C/
 clojure_project/
 
 Cpp/Debug/
+Cpp/include
+Cpp/test.db
 CSharp/bin/
 CSharp/obj/
 
 Debug/
 DirectX/
+DirectX_Tutorial/
 
 elixir_project/
 
@@ -34,6 +41,9 @@ OpenGL/
 OpenTK/
 packages/
 
+prism.css
+prism.js
+Python/.idea/
 Python/__pycache__
 
 Ruby/.idea/
@@ -51,3 +61,5 @@ SharpDXProject/
 SwiftProject/Index
 SwiftProject/XCode_Build
 SwiftProjectWindows/
+
+vue_project/

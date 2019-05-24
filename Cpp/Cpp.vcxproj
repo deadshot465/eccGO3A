@@ -75,6 +75,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <LibraryPath>$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\local\boost_1_70_0;C:\Users\sonic\source\repos\eccGO1A\Cpp\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -112,6 +114,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -157,6 +160,7 @@
     <ClCompile Include="FileControl.cpp" />
     <ClCompile Include="IDispatchable.cpp" />
     <ClCompile Include="IExecutable.cpp" />
+    <ClCompile Include="include\sqlite3.c" />
     <ClCompile Include="K01.cpp" />
     <ClCompile Include="K02.cpp" />
     <ClCompile Include="K03.cpp" />
@@ -169,6 +173,9 @@
     <ClCompile Include="K08_2sub.cpp" />
     <ClCompile Include="K09.cpp" />
     <ClCompile Include="K10.cpp" />
+    <ClCompile Include="K11.cpp" />
+    <ClCompile Include="Kex.cpp" />
+    <ClCompile Include="Kex_1sub.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileControl.h" />
@@ -187,6 +194,9 @@
     <ClInclude Include="K08_2sub.h" />
     <ClInclude Include="K09.h" />
     <ClInclude Include="K10.h" />
+    <ClInclude Include="K11.h" />
+    <ClInclude Include="Kex.h" />
+    <ClInclude Include="Kex_1sub.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

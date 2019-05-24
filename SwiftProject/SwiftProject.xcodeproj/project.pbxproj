@@ -14,6 +14,10 @@
 		2398D1DE22871FF100C30B0A /* FileControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398D1DD22871FF100C30B0A /* FileControl.swift */; };
 		2398D1E0228CC5B800C30B0A /* K09.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398D1DF228CC5B800C30B0A /* K09.swift */; };
 		2398D1E2228D9FDF00C30B0A /* K10.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398D1E1228D9FDF00C30B0A /* K10.swift */; };
+		2398D1E42294931700C30B0A /* K11.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2398D1E32294931700C30B0A /* K11.swift */; };
+		23D823072297647500B01C72 /* Kex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D823062297647500B01C72 /* Kex.swift */; };
+		23D823092297648200B01C72 /* Kex_1sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D823082297648200B01C72 /* Kex_1sub.swift */; };
+		23D8230B2297649600B01C72 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23D8230A2297649600B01C72 /* Player.swift */; };
 		23EFF4BB227DF73800474205 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFF4BA227DF73800474205 /* main.swift */; };
 		23EFF4C2227DF74F00474205 /* IDispatchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFF4C1227DF74F00474205 /* IDispatchable.swift */; };
 		23EFF4C4227DF7D600474205 /* IExecutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EFF4C3227DF7D600474205 /* IExecutable.swift */; };
@@ -46,6 +50,10 @@
 		2398D1DD22871FF100C30B0A /* FileControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileControl.swift; sourceTree = "<group>"; };
 		2398D1DF228CC5B800C30B0A /* K09.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K09.swift; sourceTree = "<group>"; };
 		2398D1E1228D9FDF00C30B0A /* K10.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K10.swift; sourceTree = "<group>"; };
+		2398D1E32294931700C30B0A /* K11.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K11.swift; sourceTree = "<group>"; };
+		23D823062297647500B01C72 /* Kex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kex.swift; sourceTree = "<group>"; };
+		23D823082297648200B01C72 /* Kex_1sub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kex_1sub.swift; sourceTree = "<group>"; };
+		23D8230A2297649600B01C72 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		23EFF4B7227DF73800474205 /* SwiftProject */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftProject; sourceTree = BUILT_PRODUCTS_DIR; };
 		23EFF4BA227DF73800474205 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		23EFF4C1227DF74F00474205 /* IDispatchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IDispatchable.swift; sourceTree = "<group>"; };
@@ -106,6 +114,10 @@
 				2398D1DD22871FF100C30B0A /* FileControl.swift */,
 				2398D1DF228CC5B800C30B0A /* K09.swift */,
 				2398D1E1228D9FDF00C30B0A /* K10.swift */,
+				2398D1E32294931700C30B0A /* K11.swift */,
+				23D823062297647500B01C72 /* Kex.swift */,
+				23D823082297648200B01C72 /* Kex_1sub.swift */,
+				23D8230A2297649600B01C72 /* Player.swift */,
 			);
 			path = SwiftProject;
 			sourceTree = "<group>";
@@ -171,9 +183,12 @@
 				23EFF4C6227DF8A800474205 /* K01.swift in Sources */,
 				23EFF4CC227E06F400474205 /* K03.swift in Sources */,
 				23EFF4D2227E111700474205 /* K06.swift in Sources */,
+				23D8230B2297649600B01C72 /* Player.swift in Sources */,
 				23EFF4CE227E0A3D00474205 /* K04.swift in Sources */,
 				23EFF4BB227DF73800474205 /* main.swift in Sources */,
 				23EFF4C4227DF7D600474205 /* IExecutable.swift in Sources */,
+				23D823092297648200B01C72 /* Kex_1sub.swift in Sources */,
+				2398D1E42294931700C30B0A /* K11.swift in Sources */,
 				2398D1DA228714C800C30B0A /* K08_2sub.swift in Sources */,
 				2398D1E2228D9FDF00C30B0A /* K10.swift in Sources */,
 				2398D1E0228CC5B800C30B0A /* K09.swift in Sources */,
@@ -181,6 +196,7 @@
 				23EFF4C8227E01B500474205 /* K02.swift in Sources */,
 				23EFF4D0227E0D0700474205 /* K05.swift in Sources */,
 				2398D1D82287147200C30B0A /* K08_1sub.swift in Sources */,
+				23D823072297647500B01C72 /* Kex.swift in Sources */,
 				23EFF4C2227DF74F00474205 /* IDispatchable.swift in Sources */,
 				2398D1DE22871FF100C30B0A /* FileControl.swift in Sources */,
 				2398D1DC2287191F00C30B0A /* K08.swift in Sources */,

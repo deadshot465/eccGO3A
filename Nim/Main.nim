@@ -1,5 +1,5 @@
 from strutils import parseInt
-import IExecutable, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, FileControl
+import IExecutable, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, Kex, FileControl
 
 proc show_selections(chapter: int) =
     for i in 1..4:
@@ -18,14 +18,20 @@ executables.add(K07())
 executables.add(K08())
 executables.add(K09())
 executables.add(K10())
+executables.add(K11())
 executables.add(FileControl())
 
 echo "実行したいプログラムを選択してください。"
 
 for i in countup(1, executables.len):
     echo i, ") K0", i
+echo "100) Kex"
 
 var choice = parseInt(readLine(stdin))
-show_selections(choice)
-var choice2 = parseInt(readLine(stdin))
-executables[choice - 1].execute(choice2)
+if choice == 100:
+    var kex = Kex()
+    kex.execute
+else:
+    show_selections(choice)
+    var choice2 = parseInt(readLine(stdin))
+    executables[choice - 1].execute(choice2)
