@@ -1,4 +1,4 @@
-package PrimaryClasses
+﻿package PrimaryClasses
 
 import Golem.GolemEx
 import Player.Player
@@ -70,7 +70,7 @@ object Kex_1sub {
         println("攻撃を外した！")
       }
 
-      printf("プレーヤー残りHP：%d\n", player.Hp)
+      printf("プレイヤー残りHP：%d\n", player.Hp)
       if (golem.Hp <= 0)
         golem.Hp = 0
       if (golem.Hp == 0)

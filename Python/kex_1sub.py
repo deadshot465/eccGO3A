@@ -1,4 +1,4 @@
-from Golem import GolemEx
+﻿from Golem import GolemEx
 from random import Random
 
 ATTACK_HIT = 110
@@ -56,7 +56,7 @@ def attack_golem(lv, player):
         else:
             print('攻撃を外した！')
 
-        print('プレーヤー残りHP：%d' % player.hp)
+        print('プレイヤー残りHP：%d' % player.hp)
         if golem.hp <= 0:
             golem.hp = 0
         if golem.hp == 0:

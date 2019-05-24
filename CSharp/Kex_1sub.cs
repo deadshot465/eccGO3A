@@ -86,7 +86,7 @@ namespace CSharp
                         Console.WriteLine("攻撃を外した！");
                     }
 
-                    Console.WriteLine($"プレーヤー残りHP：{player.Hp}");
+                    Console.WriteLine($"プレイヤー残りHP：{player.Hp}");
                     if (golem.Hp <= 0)
                         golem.Hp = 0;
 

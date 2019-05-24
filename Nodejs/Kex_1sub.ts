@@ -80,7 +80,7 @@ export function AttackGolem(lv: number, player: PlayerEx, rl?: readline.ReadLine
                 console.log("攻撃を外した！");
             }
 
-            console.log(`プレーヤー残りHP：${player.hp}`);
+            console.log(`プレイヤー残りHP：${player.hp}`);
 
             if (golem.hp <= 0)
                 golem.hp = 0;

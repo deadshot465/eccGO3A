@@ -94,7 +94,7 @@ void Kex_1sub::AttackGolem(int lv, PlayerEx& player)
 		else
 			cout << "攻撃を外した！\n";
 
-		cout << "プレーヤー残りHP：" << player.Hp << "\n";
+		cout << "プレイヤー残りHP：" << player.Hp << "\n";
 
 		if (golem.Hp <= 0)
 			golem.Hp = 0;

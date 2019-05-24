@@ -1,4 +1,4 @@
-"use strict";
+﻿"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -76,7 +76,7 @@ function AttackGolem(lv, player, rl) {
             else {
                 console.log("攻撃を外した！");
             }
-            console.log(`プレーヤー残りHP：${player.hp}`);
+            console.log(`プレイヤー残りHP：${player.hp}`);
             if (golem.hp <= 0)
                 golem.hp = 0;
             if (golem.hp === 0)

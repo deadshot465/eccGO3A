@@ -1,4 +1,4 @@
-package com.ecc.gkgo1a;
+﻿package com.ecc.gkgo1a;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -72,7 +72,7 @@ public class Kex_1sub {
                     System.out.println("攻撃を外した！");
                 }
 
-                System.out.printf("プレーヤー残りHP：%d\n", player.Hp);
+                System.out.printf("プレイヤー残りHP：%d\n", player.Hp);
                 if (golem.Hp <= 0)
                     golem.Hp = 0;
                 if (golem.Hp == 0)

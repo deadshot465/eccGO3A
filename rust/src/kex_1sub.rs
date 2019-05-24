@@ -1,4 +1,4 @@
-use crate::golem::GolemEx;
+﻿use crate::golem::GolemEx;
 use crate::player::Player;
 use crate::read_user_input::read_user_input;
 use rand::Rng;
@@ -77,7 +77,7 @@ pub fn attack_golem(lv: i32, player: &mut Player) {
             println!("攻撃を外した！");
         }
 
-        println!("プレーヤー残りHP：{}", player.hp);
+        println!("プレイヤー残りHP：{}", player.hp);
         if golem.hp <= 0 { golem.hp = 0; }
         if golem.hp == 0 {
             println!("ゴーレムLv.{}を倒した！", lv + 1);

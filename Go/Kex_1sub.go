@@ -1,4 +1,4 @@
-package main
+﻿package main
 
 import (
 	"fmt"
@@ -75,7 +75,7 @@ func AttackGolemEx(lv int, player *Player) {
 			fmt.Println("攻撃を外した！")
 		}
 
-		fmt.Printf("プレーヤー残りHP：%d\n", player.Hp)
+		fmt.Printf("プレイヤー残りHP：%d\n", player.Hp)
 		if golem.Hp <= 0 {
 			golem.Hp = 0
 		}

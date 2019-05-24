@@ -1,4 +1,4 @@
-ATTACK_HIT = 110
+﻿ATTACK_HIT = 110
 SKILL_HIT = 100
 MAGIC_HIT = 70
 
@@ -54,7 +54,7 @@ def attack_golem_ex(lv, player)
       puts '攻撃を外した！'
     end
 
-    puts "プレーヤー残りHP：#{player.hp}"
+    puts "プレイヤー残りHP：#{player.hp}"
     golem.hp = 0 if golem.hp <= 0
     puts "ゴーレムLv.#{lv + 1}を倒した！" if golem.hp == 0
   end

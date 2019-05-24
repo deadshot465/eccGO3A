@@ -1,4 +1,4 @@
-import java.util.*
+﻿import java.util.*
 import kotlin.random.Random
 
 object Kex_1sub {
@@ -68,7 +68,7 @@ object Kex_1sub {
                 println("攻撃を外した！")
             }
 
-            println("プレーヤー残りHP：${player.Hp}")
+            println("プレイヤー残りHP：${player.Hp}")
             if (golem.Hp <= 0)
                 golem.Hp = 0
             if (golem.Hp == 0)
