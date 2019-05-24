@@ -20,6 +20,7 @@ const K08_1 = require("./K08");
 const K09_1 = require("./K09");
 const K10_1 = require("./K10");
 const K11_1 = require("./K11");
+const Kex_1 = require("./Kex");
 const FileControl_1 = require("./FileControl");
 function ShowSelections(chapter) {
     for (let i = 1; i < 5; i++) {
@@ -48,6 +49,7 @@ for (let i = 1; i <= executables.length; i++) {
         console.log(i + ") K" + i);
     }
 }
+console.log("100) Kex");
 try {
     let rl = readline.createInterface({
         input: process.stdin,
@@ -59,7 +61,9 @@ try {
         return new Promise((resolve, reject) => {
             rl.question("", (value) => {
                 choice = Number.parseInt(value);
-                ShowSelections(choice);
+                if (choice !== 100) {
+                    ShowSelections(choice);
+                }
                 resolve();
             });
         });
@@ -80,8 +84,14 @@ try {
     };
     let mainProgram = () => __awaiter(this, void 0, void 0, function* () {
         yield selectChapter();
-        yield selectQuestions();
-        yield executeQuestion();
+        if (choice === 100) {
+            let kex = new Kex_1.Kex();
+            yield kex.Execute(rl);
+        }
+        else {
+            yield selectQuestions();
+            yield executeQuestion();
+        }
         rl.close();
         process.stdin.setRawMode(true);
         process.stdin.resume();

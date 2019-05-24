@@ -10,6 +10,7 @@ import { K08 } from './K08';
 import { K09 } from "./K09";
 import { K10 } from "./K10";
 import { K11 } from "./K11";
+import { Kex } from "./Kex";
 import { FileControl } from './FileControl';
 import { IExecutable } from './IExecutable';
 
@@ -41,6 +42,7 @@ for (let i = 1; i <= executables.length; i++) {
         console.log(i + ") K" + i);
     }
 }
+console.log("100) Kex");
 
 try {
     let rl = readline.createInterface({
@@ -55,7 +57,9 @@ try {
         return new Promise<string>((resolve, reject) => {
             rl.question("", (value) => {
                 choice = Number.parseInt(value);
-                ShowSelections(choice);
+                if (choice !== 100) {
+                    ShowSelections(choice);
+                }
                 resolve();
             });
         });
@@ -79,8 +83,14 @@ try {
 
     let mainProgram = async () => {
         await selectChapter();
-        await selectQuestions();
-        await executeQuestion();
+        if (choice === 100) {
+            let kex = new Kex();
+            await kex.Execute(rl);
+        } else {
+            await selectQuestions();
+            await executeQuestion();
+        }
+        
         rl.close();
         process.stdin.setRawMode(true);
         process.stdin.resume();

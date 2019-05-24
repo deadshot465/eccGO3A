@@ -1,5 +1,5 @@
 import IExecutable.IExecutable
-import PrimaryClasses.{FileControl, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11}
+import PrimaryClasses.{FileControl, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, Kex}
 
 object Main {
 
@@ -30,10 +30,16 @@ object Main {
       else
         printf("%d) K%d\n", i, i)
     }
-    val choice = scala.io.StdIn.readInt
-    ShowSelections(choice)
-    val choice2 = scala.io.StdIn.readInt
+    println("100) Kex")
 
-    executables(choice - 1).Execute(choice2)
+    val choice = scala.io.StdIn.readInt
+    if (choice == 100) {
+      Kex.Execute()
+    } else {
+      ShowSelections(choice)
+      val choice2 = scala.io.StdIn.readInt
+
+      executables(choice - 1).Execute(choice2)
+    }
   }
 }

@@ -49,10 +49,18 @@ namespace CSharp
                     Console.WriteLine($"{i}) K{i}");
                 }
             }
+            Console.WriteLine("100) Kex_1");
 
             try
             {
                 choice = int.Parse(Console.ReadLine());
+
+                if (choice == 100)
+                {
+                    Kex kex = new Kex();
+                    kex.Execute();
+                    return;
+                }
 
                 if (choice < 1 || choice > executables.Count)
                 {

@@ -35,20 +35,27 @@ func main() {
 			fmt.Println(fmt.Sprintf("%d) K%d", i, i))
 		}
 	}
+	fmt.Println("100) Kex")
 
 
 	_, _ = fmt.Scanln(&inputText)
 	choice, _ = strconv.Atoi(inputText)
 
-	if choice < 1 || choice > len(executable) {
-		fmt.Println("無効の選択です。")
+	if choice == 100 {
+		kex := Kex{}
+		kex.Execute()
 		return
+	} else {
+		if choice < 1 || choice > len(executable) {
+			fmt.Println("無効の選択です。")
+			return
+		}
+
+		showSelection(choice)
+
+		_, _ = fmt.Scanln(&inputText)
+		choice2, _ = strconv.Atoi(inputText)
+
+		executable[choice - 1].execute(choice2)
 	}
-
-	showSelection(choice)
-
-	_, _ = fmt.Scanln(&inputText)
-	choice2, _ = strconv.Atoi(inputText)
-
-	executable[choice - 1].execute(choice2)
 }

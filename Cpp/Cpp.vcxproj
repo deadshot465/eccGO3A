@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <LibraryPath>$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\sonic\source\repos\eccGO1A\Cpp\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\local\boost_1_70_0;C:\Users\sonic\source\repos\eccGO1A\Cpp\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -174,6 +174,8 @@
     <ClCompile Include="K09.cpp" />
     <ClCompile Include="K10.cpp" />
     <ClCompile Include="K11.cpp" />
+    <ClCompile Include="Kex.cpp" />
+    <ClCompile Include="Kex_1sub.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileControl.h" />
@@ -193,6 +195,8 @@
     <ClInclude Include="K09.h" />
     <ClInclude Include="K10.h" />
     <ClInclude Include="K11.h" />
+    <ClInclude Include="Kex.h" />
+    <ClInclude Include="Kex_1sub.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

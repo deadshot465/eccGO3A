@@ -18,8 +18,8 @@ fun showSelection(chapter: Int) {
 
 fun main()
 {
-    var choice: Int
-    var choice2: Int
+    val choice: Int
+    val choice2: Int
 
     val executables = arrayOf(
         K01(), K02(), K03(), K04(), K05(),
@@ -37,10 +37,17 @@ fun main()
             println("$i) K$i")
         }
     }
+    println("100) Kex")
 
     try {
         val reader = Scanner(System.`in`)
         choice = reader.nextInt()
+
+        if (choice == 100) {
+            val kex = Kex()
+            kex.execute()
+            return
+        }
 
         if (choice < 1 || choice > executables.size)
         {

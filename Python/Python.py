@@ -9,6 +9,7 @@ from k08 import k08
 from k09 import k09
 from k10 import k10
 from k11 import k11
+from kex import kex
 from file_control import FileControl
 
 def show_selections(chapter):
@@ -32,12 +33,17 @@ for x in range(1, len(executables) + 1):
         print('{}) K0{}'.format(x, x))
     else:
         print('{}) K{}'.format(x, x))
+print('100) Kex')
 
 try:
     choice = int(input())
-    show_selections(choice)
-    choice2 = int(input())
-    executables[choice - 1].execute(choice2)
+    if choice == 100:
+        _kex = kex()
+        _kex.execute()
+    else:
+        show_selections(choice)
+        choice2 = int(input())
+        executables[choice - 1].execute(choice2)
 except ValueError as ve:
     print('無効の選択です。')
     print(ve)

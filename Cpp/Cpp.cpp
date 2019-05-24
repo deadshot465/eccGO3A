@@ -14,6 +14,7 @@
 #include "K09.h"
 #include "K10.h"
 #include "K11.h"
+#include "Kex.h"
 #include "FileControl.h"
 
 void showSelections(int chapter)
@@ -66,7 +67,15 @@ int main()
 			std::cout << i << ") K" << i << "\n";
 		}
 	}
+	std::cout << "100) Kex\n";
 	std::cin >> choice;
+
+	if (choice == 100)
+	{
+		Kex kex;
+		kex.Execute();
+		return 0;
+	}
 
 	showSelections(choice);
 	int choice2 = 0;

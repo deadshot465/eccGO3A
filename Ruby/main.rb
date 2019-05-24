@@ -9,6 +9,7 @@ require_relative 'k08'
 require_relative 'k09'
 require_relative 'k10'
 require_relative 'k11'
+require_relative 'kex'
 require_relative 'file_control'
 
 def show_selection(chapter)
@@ -36,12 +37,18 @@ puts '実行したいプログラムを選択してください。'
     puts "#{x}) K#{x}"
   end
 end
+puts '100) Kex'
 
 begin
   choice = gets.chomp.to_i
-  show_selection(choice)
-  choice2 = gets.chomp.to_i
-  executables[choice - 1].execute(choice2)
+  if choice == 100
+    kex = Kex.new
+    kex.execute
+  else
+    show_selection(choice)
+    choice2 = gets.chomp.to_i
+    executables[choice - 1].execute(choice2)
+  end
 rescue TypeError => e
   puts '無効の選択です。'
   puts e.message

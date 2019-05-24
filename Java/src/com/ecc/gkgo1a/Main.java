@@ -39,10 +39,16 @@ public class Main {
             else
                 System.out.println(String.format("%d) K%d", i, i));
         }
+        System.out.println("100) Kex");
 
         try {
             Scanner in = new Scanner(System.in);
             choice = in.nextInt();
+
+            if (choice == 100) {
+                Kex.Execute();
+                return;
+            }
 
             if (choice < 1 || choice > executables.length)
             {

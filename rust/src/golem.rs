@@ -22,3 +22,25 @@ impl Default for Golem {
         }
     }
 }
+
+pub struct GolemEx {
+    pub hp: i32,
+    pub defense: i32,
+    pub attack: i32,
+    pub hit: i32,
+    pub flee: i32
+}
+impl GolemEx {
+    const GOLEM_HIT: i32 = 70;
+    const GOLEM_FLEE: i32 = 20;
+    pub fn new(hp: i32, defense: i32, attack: i32) -> GolemEx {
+        let mut golem = GolemEx {
+            hp,
+            defense,
+            attack,
+            hit: GolemEx::GOLEM_HIT,
+            flee: GolemEx::GOLEM_FLEE
+        };
+        golem
+    }
+}
