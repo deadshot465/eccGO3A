@@ -7,17 +7,21 @@ namespace CSharp
     {
         private static void ShowSelections(int chapter)
         {
-            for (int i = 1; i <= 4; i++)
+            if (chapter < 10)
             {
-                if (chapter < 10)
+                for (int i = 1; i <= 4; i++)
                 {
                     Console.WriteLine($"\t{i}) K0{chapter}_{i}");
-                    if (chapter == 9)
-                    {
-                        Console.WriteLine($"\t5) K0{chapter}_5");
-                    }
                 }
-                else
+
+                if (chapter == 9)
+                {
+                    Console.WriteLine($"\t5) K0{chapter}_5");
+                }
+            }
+            else
+            {
+                for (int i = 1; i <= 4; i++)
                 {
                     Console.WriteLine($"\t{i}) K{chapter}_{i}");
                 }

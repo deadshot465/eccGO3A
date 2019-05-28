@@ -19,17 +19,20 @@
 
 void showSelections(int chapter)
 {
-	for (int i = 1; i < 5; ++i)
+	if (chapter < 10)
 	{
-		if (chapter < 10)
+		for (int i = 1; i <= 4; ++i)
 		{
 			std::cout << "\t" << i << ") K0" << chapter << "_" << i << "\n";
-			if (chapter == 9)
-			{
-				std::cout << "\t5) K0" << chapter << "_5\n";
-			}
 		}
-		else
+		if (chapter == 9)
+		{
+			std::cout << "\t5) K0" << chapter << "_5\n";
+		}
+	} 
+	else
+	{
+		for (int i = 1; i <= 4; ++i)
 		{
 			std::cout << "\t" << i << ") K" << chapter << "_" << i << "\n";
 		}

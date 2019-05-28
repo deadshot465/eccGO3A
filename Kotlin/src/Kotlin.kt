@@ -2,15 +2,15 @@ import java.lang.Exception
 import java.util.*
 
 fun showSelection(chapter: Int) {
-    for (i: Int in 1..4)
-    {
-        if (chapter < 10) {
+    if  (chapter < 10) {
+        for (i: Int in 1..4) {
             println("\t$i) K0${chapter}_$i")
-            if (chapter == 9) {
-                println("\t5) K0${chapter}_5")
-            }
         }
-        else {
+        if (chapter == 9) {
+            println("\t5) K0${chapter}_5")
+        }
+    } else {
+        for (i: Int in 1..4) {
             println("\t$i) K${chapter}_$i")
         }
     }

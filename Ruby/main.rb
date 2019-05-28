@@ -13,15 +13,16 @@ require_relative 'kex'
 require_relative 'file_control'
 
 def show_selection(chapter)
-  (1..4).each do |x|
-    if chapter < 10
+  if chapter < 10
+    (1..4).each do |x|
       puts "\t#{x}) K0#{chapter}_#{x}"
-      puts "\t5) K0#{chapter}_5" if chapter == 9
-    else
+    end
+    puts "\t5) K0#{chapter}_5" if chapter == 9
+  else
+    (1..4).each do |x|
       puts "\t#{x}) K#{chapter}_#{x}"
     end
   end
-
 end
 
 executables = [K01.new, K02.new, K03.new, K04.new,

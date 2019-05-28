@@ -17,9 +17,9 @@ class k07(executable):
             return 0
         elif age < 3 or age >= 70:
             return 1
-        elif age >= 3 and age <= 15:
+        elif 3 <= age <= 15:
             return 2
-        elif age >= 60 and age < 70:
+        elif 60 <= age < 70:
             return 3
         else:
             return 4

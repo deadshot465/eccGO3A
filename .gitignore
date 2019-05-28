@@ -13,6 +13,10 @@ Cpp/test.db
 CSharp/bin/
 CSharp/obj/
 
+Dart/.dart_tool/
+Dart/.idea/
+Dart/test/
+
 Debug/
 DirectX/
 DirectX_Tutorial/
@@ -59,6 +63,7 @@ Scala/src/test/
 SharpDXProject/
 
 SwiftProject/Index
+SwiftProject/SwiftProject.xcodeproj/
 SwiftProject/XCode_Build
 SwiftProjectWindows/
 

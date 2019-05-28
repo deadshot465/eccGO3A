@@ -8,7 +8,7 @@ class k09(executable):
             ages = []
 
             for x in range(0, 3):
-                print('%d人目の年齢を入力＞' % (x + 1))
+                print('%d人目の年齢を入力＞' % (x + 1), end='')
                 ages.append(int(input()))
         
             print("-" * 20)
@@ -41,13 +41,13 @@ class k09(executable):
             [73, 98, 94, 95]
             ]
 
-        print('\t|\t科目A\t科目B\t科目C\t科目D')
+        print('\t\t|\t科目A\t科目B\t科目C\t科目D')
         print('-' * 45)
         
         for x in range(0, len(student_scores)):
             print('学生%d\t|\t' % (x + 1), end='')
             for y in range(0, len(student_scores[x])):
-                print('%d\t' % (student_scores[x][y]), end='')
+                print('%d\t\t' % (student_scores[x][y]), end='')
             print()
 
     def question4(self):
@@ -60,13 +60,13 @@ class k09(executable):
         total = 0
         average = [0, 0, 0, 0]
 
-        print('\t|\t科目A\t科目B\t科目C\t科目D\t|\t合計点')
+        print('\t\t|\t科目A\t科目B\t科目C\t科目D\t|\t合計点')
         print('-' * 65)
 
         for x in range(0, len(student_scores)):
             print('学生%d\t|\t' % (x + 1), end='')
             for y in range(0, len(student_scores[x])):
-                print('%d\t' % (student_scores[x][y]), end='')
+                print('%d\t\t' % (student_scores[x][y]), end='')
                 total += student_scores[x][y]
                 average[y] += student_scores[x][y]
             print('|\t%d' % (total), end='')

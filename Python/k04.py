@@ -37,9 +37,9 @@ class k04(object):
             age = int(input())
             if age < 3 or age >= 70:
                 print('入場料金無料です。')
-            elif age >= 3 and age <= 15:
+            elif 3 <= age <= 15:
                 print('子供料金で半額です。')
-            elif age >= 60 and age < 70:
+            elif 60 <= age < 70:
                 print('シニア割引で一割引きです。')
             else:
                 print('通常料金です。')

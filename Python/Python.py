@@ -13,12 +13,13 @@ from kex import kex
 from file_control import FileControl
 
 def show_selections(chapter):
-    for i in range(1, 5):
-        if chapter < 10:
+    if chapter < 10:
+        for i in range(1, 5):
             print('\t{}) K0{}_{}'.format(i, chapter, i))
-            if chapter == 9:
-                print('\t5) K0%d_5' % chapter)
-        else:
+        if chapter == 9:
+            print('\t5) K0{}_5'.format(chapter))
+    else:
+        for i in range(1, 5):
             print('\t{}) K{}_{}'.format(i, chapter, i))
 
 

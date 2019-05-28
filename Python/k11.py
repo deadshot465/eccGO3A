@@ -39,10 +39,10 @@ class k11(executable):
         if char.islower():
             print('この文字は英小文字です。')
             applied = True
-        if re.search('^[A-Fa-f0-9]{6}$', char) is not None:
+        if re.search('^[A-Fa-f0-9]$', char) is not None:
             print('この文字は16進数として使える文字です。')
             applied = True
-        if re.search('^(\'[.,!?:;"\'\-()]\')*$', char) is not None:
+        if re.search('^(.|,|!?|:|;|"|\'|-|\(|\))$', char) is not None:
             print('この文字は区切り文字です。')
             applied = True
         if not applied:

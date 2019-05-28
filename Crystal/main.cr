@@ -13,13 +13,15 @@ require "./kex"
 require "./file_control"
 
 def show_selection(chapter : Int32)
-    (1..4).each do |x|
-        if chapter < 10
+    if (chapter < 10)
+        (1..4).each do |x|
             puts "\t#{x}) K0#{chapter}_#{x}"
-            if chapter == 9
-                puts "\t5) K0#{chapter}_5"
-            end
-        else
+        end
+        if chapter == 9
+            puts "\t5) K0#{chapter}_5"
+        end
+    else
+        (1..4).each do |x|
             puts "\t#{x}) K#{chapter}_#{x}"
         end
     end

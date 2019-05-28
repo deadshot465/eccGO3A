@@ -4,14 +4,15 @@ import PrimaryClasses.{FileControl, K01, K02, K03, K04, K05, K06, K07, K08, K09,
 object Main {
 
   def ShowSelections(chapter: Int): Unit = {
-    for (i <- 1 to 4) {
-      if (chapter < 10) {
+    if (chapter < 10) {
+      for (i <- 1 to 4) {
         printf("\t%d) K0%d_%d\n", i, chapter, i)
-        if (chapter == 9) {
-          printf("\t5) K0%d_5\n", chapter)
-        }
       }
-      else {
+      if (chapter == 9) {
+        printf("\t5) K0%d_5\n", chapter)
+      }
+    } else {
+      for (i <- 1 to 4) {
         printf("\t%d) K%d_%d\n", i, chapter, i)
       }
     }

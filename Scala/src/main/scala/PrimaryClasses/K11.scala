@@ -44,7 +44,7 @@ class K11 extends IExecutable {
       println("この文字は英小文字です。")
       applied = true
     }
-    var rx = raw"[A-Fa-f0-9]{6}".r
+    var rx = raw"[A-Fa-f0-9]".r
     var result: Unit = rx.findFirstMatchIn(chr.toString) match {
       case Some(_) => {
         println("この文字は16進数として使える文字です。")
@@ -53,7 +53,7 @@ class K11 extends IExecutable {
       case None => ()
     }
 
-    rx = new Regex("^([.,!?:;\"'\\-()])*$")
+    rx = new Regex("^(|.|,|!|\\?|:|;|\"|'|\\|-|(|))$")
     result = rx.findFirstMatchIn(chr.toString) match {
       case Some(_) => {
         println("この文字は区切り文字です。")

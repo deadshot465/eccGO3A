@@ -73,7 +73,7 @@ namespace CSharp
                     applied = true;
                 }
 
-                Regex rx = new Regex("^[A-Fa-f0-9]{6}$");
+                Regex rx = new Regex("^[A-Fa-f0-9]$");
 
                 if (rx.IsMatch(chr.ToString()))
                 {

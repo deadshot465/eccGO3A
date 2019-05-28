@@ -64,7 +64,7 @@ public class K11 extends IExecutable {
             System.out.println("この文字は英小文字です。");
             applied = true;
         }
-        Pattern pattern = Pattern.compile("^[A-Fa-f0-9]{6}$");
+        Pattern pattern = Pattern.compile("^[A-Fa-f0-9]$");
         Matcher matcher = pattern.matcher(Character.toString(chr));
         if (matcher.matches())
         {
@@ -72,7 +72,7 @@ public class K11 extends IExecutable {
             applied = true;
         }
 
-        pattern = Pattern.compile("^([.,!?:;\"'\\-()])*$");
+        pattern = Pattern.compile("^(.|,|!|\\?|:|;|\"|'|\\|-|\\(|\\)])$");
         matcher = pattern.matcher(Character.toString(chr));
         if (matcher.matches())
         {

@@ -6,14 +6,16 @@ import (
 )
 
 func showSelection(chapter int) {
-	for i := 1; i < 5; i++ {
-		if chapter < 10 {
-			fmt.Println(fmt.Sprintf("\t%d) K0%d_%d", i, chapter, i))
-			if chapter == 9 {
-				fmt.Println(fmt.Sprintf("\t5) K0%d_5", chapter))
-			}
-		} else {
-			fmt.Println(fmt.Sprintf("\t%d) K%d_%d", i, chapter, i))
+	if chapter < 10 {
+		for i := 1; i <= 4; i++ {
+			fmt.Printf("\t%d) K0%d_%d\n", i, chapter, i)
+		}
+		if chapter == 9 {
+			fmt.Printf("\t5) K0%d_5\n", chapter)
+		}
+	} else {
+		for i := 1; i <= 4; i++ {
+			fmt.Printf("\t%d) K%d_%d\n", i, chapter, i)
 		}
 	}
 }

@@ -15,13 +15,15 @@ import { FileControl } from './FileControl';
 import { IExecutable } from './IExecutable';
 
 function ShowSelections(chapter: number) {
-    for (let i = 1; i < 5; i++) {
-        if (chapter < 10) {
+    if (chapter < 10) {
+        for (let i = 1; i < 5; i++) {
             console.log("\t" + i + ") K0" + chapter + "_" + i);
-            if (chapter === 9) {
-                console.log(`\t5) K0${chapter}_5`);
-            }
-        } else {
+        }
+        if (chapter == 9) {
+            console.log(`\t5) K0${chapter}_5`);
+        }
+    } else {
+        for (let i = 1; i < 5; i++) {
             console.log("\t" + i + ") K" + chapter + "_" + i);
         }
     }

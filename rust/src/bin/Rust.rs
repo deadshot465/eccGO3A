@@ -4,15 +4,16 @@ use std::io;
 
 fn show_selection(chapter: u32)
 {
-    for n in 1..5 {
-        if chapter < 10 {
-            println!("\t{}) K0{}_{}", n, chapter, n);
-            if chapter == 9 {
-                println!("\t5) K0{}_5", chapter);
-            }
+    if chapter < 10 {
+        for i in 1..5 {
+            println!("\t{}) K0{}_{}", i, chapter, i);
         }
-        else {
-            println!("\t{}) K{}_{}", n, chapter, n);
+        if chapter == 9 {
+            println!("\t5) K0{}_5", chapter);
+        }
+    } else {
+        for i in 1..5 {
+            println!("\t{}) K{}_{}", i, chapter, i);
         }
     }
 }

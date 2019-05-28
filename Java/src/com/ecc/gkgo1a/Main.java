@@ -6,17 +6,15 @@ public class Main {
 
     private static void showSelections(int chapter)
     {
-        for (int i = 1; i < 5; i++)
-        {
-            if (chapter < 10)
-            {
+        if (chapter < 10) {
+            for (int i = 1; i <= 4; i++) {
                 System.out.println(String.format("\t%d) K0%d_%d", i, chapter, i));
-                if (chapter == 9) {
-                    System.out.println(String.format("\t5) K0%d_5", chapter));
-                }
             }
-            else
-            {
+            if (chapter == 9)
+                System.out.println(String.format("\t5) K0%d_5", chapter));
+        }
+        else {
+            for (int i = 1; i <= 4; i++) {
                 System.out.println(String.format("\t%d) K%d_%d", i, chapter, i));
             }
         }
