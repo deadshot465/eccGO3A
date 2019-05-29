@@ -9,14 +9,15 @@
 import Foundation
 
 func ShowSelections(chapter: Int) {
-    for i in 1...4 {
-        if chapter < 10 {
+    if chapter < 10 {
+        for i in 1...4 {
             print("\t\(i)) K0\(chapter)_\(i)")
-            if chapter == 9 {
-                print("\t5) K0\(chapter)_5")
-            }
         }
-        else {
+        if chapter == 9 {
+            print("\t5) K0\(chapter)_5")
+        }
+    } else {
+        for i in 1...4 {
             print("\t\(i)) K\(chapter)_\(i)")
         }
     }
