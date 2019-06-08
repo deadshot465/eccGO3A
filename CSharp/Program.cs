@@ -7,17 +7,21 @@ namespace CSharp
     {
         private static void ShowSelections(int chapter)
         {
-            for (int i = 1; i <= 4; i++)
+            if (chapter < 10)
             {
-                if (chapter < 10)
+                for (int i = 1; i <= 4; i++)
                 {
                     Console.WriteLine($"\t{i}) K0{chapter}_{i}");
-                    if (chapter == 9)
-                    {
-                        Console.WriteLine($"\t5) K0{chapter}_5");
-                    }
                 }
-                else
+
+                if (chapter == 9)
+                {
+                    Console.WriteLine($"\t5) K0{chapter}_5");
+                }
+            }
+            else
+            {
+                for (int i = 1; i <= 4; i++)
                 {
                     Console.WriteLine($"\t{i}) K{chapter}_{i}");
                 }
@@ -33,7 +37,8 @@ namespace CSharp
                 new K01(), new K02(), new K03(),
                 new K04(), new K05(), new K06(),
                 new K07(), new K08(), new K09(),
-                new K10(), new K11(), new FileControl()
+                new K10(), new K11(), new K12(),
+                new K13(), new FileControl()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");
@@ -46,7 +51,8 @@ namespace CSharp
                 }
                 else
                 {
-                    Console.WriteLine($"{i}) K{i}");
+                    int addedNumber = i >= 12 ? i + 3 : i;
+                    Console.WriteLine($"{i}) K{addedNumber}");
                 }
             }
             Console.WriteLine("100) Kex_1");

@@ -1,4 +1,4 @@
-﻿package com.ecc.gkgo1a;
+package com.ecc.gkgo1a;
 
 import java.util.Random;
 import java.util.Scanner;

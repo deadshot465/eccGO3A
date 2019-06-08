@@ -2,10 +2,14 @@ from strutils import parseInt
 import IExecutable, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, Kex, FileControl
 
 proc show_selections(chapter: int) =
-    for i in 1..4:
-        echo "\t", i, ") K0", chapter, "_", i
-    if chapter == 9:
-        echo "\t5) K0", chapter, "_5"
+    if chapter < 10:
+        for i in 1..4:
+            echo "\t", i, ") K0", chapter, "_", i
+        if chapter == 9:
+            echo "\t5) K0", chapter, "_5"
+    else:
+        for i in 1..4:
+            echo "\t", i, ") K", chapter, "_", i
 
 var executables: seq[IExecutable]
 executables.add(K01())

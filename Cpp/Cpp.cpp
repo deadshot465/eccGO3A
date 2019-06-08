@@ -14,22 +14,28 @@
 #include "K09.h"
 #include "K10.h"
 #include "K11.h"
+#include "K12.h"
+#include "K13.h"
 #include "Kex.h"
 #include "FileControl.h"
 
+
 void showSelections(int chapter)
 {
-	for (int i = 1; i < 5; ++i)
+	if (chapter < 10)
 	{
-		if (chapter < 10)
+		for (int i = 1; i <= 4; ++i)
 		{
 			std::cout << "\t" << i << ") K0" << chapter << "_" << i << "\n";
-			if (chapter == 9)
-			{
-				std::cout << "\t5) K0" << chapter << "_5\n";
-			}
 		}
-		else
+		if (chapter == 9)
+		{
+			std::cout << "\t5) K0" << chapter << "_5\n";
+		}
+	} 
+	else
+	{
+		for (int i = 1; i <= 4; ++i)
 		{
 			std::cout << "\t" << i << ") K" << chapter << "_" << i << "\n";
 		}
@@ -50,6 +56,8 @@ int main()
 	executables.push_back(std::make_unique<K09>());
 	executables.push_back(std::make_unique<K10>());
 	executables.push_back(std::make_unique<K11>());
+	executables.push_back(std::make_unique<K12>());
+	executables.push_back(std::make_unique<K13>());
 	executables.push_back(std::make_unique<FileControl>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";
@@ -64,7 +72,8 @@ int main()
 		}
 		else
 		{
-			std::cout << i << ") K" << i << "\n";
+			int addedChapterNum = i >= 12 ? i + 3 : i;
+			std::cout << i << ") K" << addedChapterNum << "\n";
 		}
 	}
 	std::cout << "100) Kex\n";

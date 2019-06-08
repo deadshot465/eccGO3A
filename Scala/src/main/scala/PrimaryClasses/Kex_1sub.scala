@@ -1,4 +1,4 @@
-﻿package PrimaryClasses
+package PrimaryClasses
 
 import Golem.GolemEx
 import Player.Player

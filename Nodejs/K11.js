@@ -86,7 +86,7 @@ class K11 extends IExecutable_1.IExecutable {
                 console.log("この文字は英小文字です。");
                 applied = true;
             }
-            if (/^[A-Fa-f0-9]{6}$/.test(str)) {
+            if (/^[A-Fa-f0-9]$/.test(str)) {
                 console.log("この文字は16進数として使える文字です。");
                 applied = true;
             }

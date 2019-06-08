@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -9,15 +9,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Golem_1 = require("./Golem");
+const ATTACK_HIT = 110;
+const SKILL_HIT = 100;
+const MAGIC_HIT = 70;
 function CheckHitOrMiss(hit) {
     let value = Math.floor(Math.random() * 99);
     return value <= hit - 1;
 }
 function AttackGolem(lv, player, rl) {
     let golem = new Golem_1.GolemEx(lv * 50 + 100, lv * 10 + 40, lv * 10 + 40);
-    const ATTACK_HIT = 110;
-    const SKILL_HIT = 100;
-    const MAGIC_HIT = 70;
     console.log(`ゴーレムLv.${lv + 1}が現れた！`);
     let choice = 0;
     let question = () => {

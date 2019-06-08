@@ -46,12 +46,12 @@ method question3*(this: K11) =
         echo "この文字は英小文字です。"
         applied = true
     
-    var rx = re"^[A-Fa-f0-9]{6}$"
+    var rx = re"^[A-Fa-f0-9]$"
     if match($chr, rx):
         echo "この文字は16進数として使える文字です。"
         applied = true
     
-    rx = re"^(\'[.,!?:;\'""\-()]\')*$"
+    rx = re"^(.|,|!|\?|:|;|'|\|-|(|))$"
     if match($chr, rx):
         echo "この文字は区切り文字です。"
         applied = true

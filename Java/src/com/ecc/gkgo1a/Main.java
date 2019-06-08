@@ -6,18 +6,17 @@ public class Main {
 
     private static void showSelections(int chapter)
     {
-        for (int i = 1; i < 5; i++)
-        {
-            if (chapter < 10)
-            {
+        if (chapter < 10) {
+            for (int i = 1; i <= 4; i++) {
                 System.out.println(String.format("\t%d) K0%d_%d", i, chapter, i));
-                if (chapter == 9) {
-                    System.out.println(String.format("\t5) K0%d_5", chapter));
-                }
             }
-            else
-            {
-                System.out.println(String.format("\t%d) K%d_%d", i, chapter, i));
+            if (chapter == 9)
+                System.out.println(String.format("\t5) K0%d_5", chapter));
+        }
+        else {
+            int addedNumber = chapter >= 12 ? chapter + 3 : chapter;
+            for (int i = 1; i <= 4; i++) {
+                System.out.println(String.format("\t%d) K%d_%d", i, addedNumber, i));
             }
         }
     }
@@ -28,7 +27,7 @@ public class Main {
         IExecutable[] executables = {
                 new K01(), new K02(), new K03(), new K04(), new K05(),
                 new K06(), new K07(), new K08(), new K09(), new K10(),
-                new K11(), new FileControl()
+                new K11(), new K12(), new FileControl()
         };
 
         System.out.println("実行したいプログラムを選択してください。");
@@ -36,8 +35,11 @@ public class Main {
         {
             if (i < 10)
                 System.out.println(String.format("%d) K0%d", i, i));
-            else
-                System.out.println(String.format("%d) K%d", i, i));
+            else {
+                int addedNumber = i >= 12 ? i + 3 : i;
+                System.out.println(String.format("%d) K%d", i, addedNumber));
+            }
+
         }
         System.out.println("100) Kex");
 
@@ -64,5 +66,6 @@ public class Main {
         {
             System.out.println(ex.getMessage());
         }
+
     }
 }

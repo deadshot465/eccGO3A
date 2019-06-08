@@ -24,11 +24,11 @@ class k10(executable):
         print('連結した文字列：%s' % str_combined)
 
     def question4(self):
-        alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        alphabets = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         inputString = 'I AM A STUDENT. I AM GOOD AT GAME PROGRAMMING.'
 
-        count = 0;
-        _count = 0;
+        count = 0
+        _count = 0
 
         print('文字列：%s' % inputString)
         print('\n文字頻度')

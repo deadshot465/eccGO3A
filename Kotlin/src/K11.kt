@@ -50,13 +50,13 @@ class K11 : IExecutable() {
             println("この文字は英小文字です。")
             applied = true
         }
-        var pattern = Pattern.compile("^[A-Fa-f0-9]{6}\$")
+        var pattern = Pattern.compile("^[A-Fa-f0-9]$")
         var matcher = pattern.matcher(chr.toString())
         if (matcher.matches()) {
             println("この文字は16進数として使える文字です。")
             applied = true
         }
-        pattern = Pattern.compile("^([.,!?:;\"'\\-()])*$")
+        pattern = Pattern.compile("^(.|,|!|\\?|:|;|\"|'|\\|-|\\(|\\))$")
         matcher = pattern.matcher(chr.toString())
         if (matcher.matches()) {
             println("この文字は区切り文字です。")

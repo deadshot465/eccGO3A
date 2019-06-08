@@ -46,11 +46,11 @@ class K11 < IExecutable
         puts "この文字は英小文字です。"
         applied = true
         end
-        if chr =~ /[A-Fa-f0-9]{6}/
+        if chr =~ /[A-Fa-f0-9]/
         puts "この文字は16進数として使える文字です。"
         applied = true
         end
-        if chr =~ /([.,!?:;"'\-()])*/
+        if chr =~ /(.|,|!|\?|:|;|"|'|-|\(|\))/
         puts "この文字は区切り文字です。"
         applied = true
         end
