@@ -9,6 +9,7 @@ from k08 import k08
 from k09 import k09
 from k10 import k10
 from k11 import k11
+from k12 import k12
 from kex import kex
 from file_control import FileControl
 
@@ -25,7 +26,7 @@ def show_selections(chapter):
 
 executables = [ k01(), k02(), k03(), k04(), k05(),
                 k06(), k07(), k08(), k09(), k10(),
-                k11(), FileControl() ]
+                k11(), k12(), FileControl() ]
 
 print("実行したいプログラムを選択してください。")
 
@@ -33,7 +34,8 @@ for x in range(1, len(executables) + 1):
     if x < 10:
         print('{}) K0{}'.format(x, x))
     else:
-        print('{}) K{}'.format(x, x))
+        added_num = x + 3 if x >= 12 else x
+        print('{}) K{}'.format(x, added_num))
 print('100) Kex')
 
 try:

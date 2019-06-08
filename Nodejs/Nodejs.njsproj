@@ -78,6 +78,9 @@
     <TypeScriptCompile Include="K11.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>
+    <TypeScriptCompile Include="K12.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="Kex.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

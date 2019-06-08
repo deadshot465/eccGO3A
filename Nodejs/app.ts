@@ -10,6 +10,7 @@ import { K08 } from './K08';
 import { K09 } from "./K09";
 import { K10 } from "./K10";
 import { K11 } from "./K11";
+import { K12 } from "./K12";
 import { Kex } from "./Kex";
 import { FileControl } from './FileControl';
 import { IExecutable } from './IExecutable';
@@ -32,7 +33,7 @@ function ShowSelections(chapter: number) {
 var executables: Array<IExecutable> = [
     new K01(), new K02(), new K03(), new K04(), new K05(),
     new K06(), new K07(), new K08(), new K09(), new K10(),
-    new K11(), new FileControl()
+    new K11(), new K12(), new FileControl()
 ];
 
 console.log("実行したいプログラムを選択してください。\n");
@@ -41,7 +42,8 @@ for (let i = 1; i <= executables.length; i++) {
     if (i < 10) {
         console.log(i + ") K0" + i);
     } else {
-        console.log(i + ") K" + i);
+        let addedNumber = i >= 12 ? i + 3 : i;
+        console.log(i + ") K" + addedNumber);
     }
 }
 console.log("100) Kex");

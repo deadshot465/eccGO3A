@@ -37,7 +37,8 @@ namespace CSharp
                 new K01(), new K02(), new K03(),
                 new K04(), new K05(), new K06(),
                 new K07(), new K08(), new K09(),
-                new K10(), new K11(), new FileControl()
+                new K10(), new K11(), new K12(),
+                new K13(), new FileControl()
             };
 
             Console.WriteLine("実行したいプログラムを選択してください。");
@@ -50,7 +51,8 @@ namespace CSharp
                 }
                 else
                 {
-                    Console.WriteLine($"{i}) K{i}");
+                    int addedNumber = i >= 12 ? i + 3 : i;
+                    Console.WriteLine($"{i}) K{addedNumber}");
                 }
             }
             Console.WriteLine("100) Kex_1");

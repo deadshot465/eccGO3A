@@ -14,8 +14,11 @@
 #include "K09.h"
 #include "K10.h"
 #include "K11.h"
+#include "K12.h"
+#include "K13.h"
 #include "Kex.h"
 #include "FileControl.h"
+
 
 void showSelections(int chapter)
 {
@@ -53,6 +56,8 @@ int main()
 	executables.push_back(std::make_unique<K09>());
 	executables.push_back(std::make_unique<K10>());
 	executables.push_back(std::make_unique<K11>());
+	executables.push_back(std::make_unique<K12>());
+	executables.push_back(std::make_unique<K13>());
 	executables.push_back(std::make_unique<FileControl>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";
@@ -67,7 +72,8 @@ int main()
 		}
 		else
 		{
-			std::cout << i << ") K" << i << "\n";
+			int addedChapterNum = i >= 12 ? i + 3 : i;
+			std::cout << i << ") K" << addedChapterNum << "\n";
 		}
 	}
 	std::cout << "100) Kex\n";

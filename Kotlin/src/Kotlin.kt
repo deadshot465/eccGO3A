@@ -10,8 +10,13 @@ fun showSelection(chapter: Int) {
             println("\t5) K0${chapter}_5")
         }
     } else {
+        val addedNumber = if (chapter >= 12) {
+            chapter + 3
+        } else {
+            chapter
+        }
         for (i: Int in 1..4) {
-            println("\t$i) K${chapter}_$i")
+            println("\t$i) K${addedNumber}_$i")
         }
     }
 }
@@ -24,7 +29,7 @@ fun main()
     val executables = arrayOf(
         K01(), K02(), K03(), K04(), K05(),
         K06(), K07(), K08(), K09(), K10(),
-        K11(), FileControl()
+        K11(), K12(), FileControl()
         )
 
     println("実行したいプログラムを選択してください。")
@@ -34,7 +39,12 @@ fun main()
             println("$i) K0$i")
         }
         else {
-            println("$i) K$i")
+            val addedNumber = if (i >= 12) {
+                i + 3
+            } else {
+                i
+            }
+            println("$i) K$addedNumber")
         }
     }
     println("100) Kex")
@@ -63,4 +73,5 @@ fun main()
     {
         println(ex.message)
     }
+
 }

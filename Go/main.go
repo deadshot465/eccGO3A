@@ -14,8 +14,14 @@ func showSelection(chapter int) {
 			fmt.Printf("\t5) K0%d_5\n", chapter)
 		}
 	} else {
+		var addedNumber int
+		if chapter >= 12 {
+			addedNumber = chapter + 3
+		} else {
+			addedNumber = chapter
+		}
 		for i := 1; i <= 4; i++ {
-			fmt.Printf("\t%d) K%d_%d\n", i, chapter, i)
+			fmt.Printf("\t%d) K%d_%d\n", i, addedNumber, i)
 		}
 	}
 }
@@ -26,7 +32,7 @@ func main() {
 	var inputText string
 
 	executable := []IExecutable {
-		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{}, K09{}, K10{}, K11{}, FileControl{},
+		K01{}, K02{}, K03{}, K04{}, K05{}, K06{}, K07{}, K08{}, K09{}, K10{}, K11{}, K12{}, FileControl{},
 	}
 
 	fmt.Println("実行したいプログラムを選択してください。")
@@ -34,7 +40,13 @@ func main() {
 		if i < 10 {
 			fmt.Println(fmt.Sprintf("%d) K0%d", i, i))
 		} else {
-			fmt.Println(fmt.Sprintf("%d) K%d", i, i))
+			var addedNumber int
+			if i >= 12 {
+				addedNumber = i + 3
+			} else {
+				addedNumber = i
+			}
+			fmt.Println(fmt.Sprintf("%d) K%d", i, addedNumber))
 		}
 	}
 	fmt.Println("100) Kex")

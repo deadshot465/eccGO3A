@@ -20,6 +20,7 @@ const K08_1 = require("./K08");
 const K09_1 = require("./K09");
 const K10_1 = require("./K10");
 const K11_1 = require("./K11");
+const K12_1 = require("./K12");
 const Kex_1 = require("./Kex");
 const FileControl_1 = require("./FileControl");
 function ShowSelections(chapter) {
@@ -40,7 +41,7 @@ function ShowSelections(chapter) {
 var executables = [
     new K01_1.K01(), new K02_1.K02(), new K03_1.K03(), new K04_1.K04(), new K05_1.K05(),
     new K06_1.K06(), new K07_1.K07(), new K08_1.K08(), new K09_1.K09(), new K10_1.K10(),
-    new K11_1.K11(), new FileControl_1.FileControl()
+    new K11_1.K11(), new K12_1.K12(), new FileControl_1.FileControl()
 ];
 console.log("実行したいプログラムを選択してください。\n");
 for (let i = 1; i <= executables.length; i++) {
@@ -48,7 +49,8 @@ for (let i = 1; i <= executables.length; i++) {
         console.log(i + ") K0" + i);
     }
     else {
-        console.log(i + ") K" + i);
+        let addedNumber = i >= 12 ? i + 3 : i;
+        console.log(i + ") K" + addedNumber);
     }
 }
 console.log("100) Kex");

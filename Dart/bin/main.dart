@@ -12,6 +12,7 @@ import 'package:Dart/K08.dart';
 import 'package:Dart/K09.dart';
 import 'package:Dart/K10.dart';
 import 'package:Dart/K11.dart';
+import 'package:Dart/K12.dart';
 import 'package:Dart/Kex.dart';
 
 void ShowSelections(int chapter) {
@@ -24,8 +25,9 @@ void ShowSelections(int chapter) {
     }
   }
   else {
+    int addedNumber = chapter >= 12 ? chapter + 3 : chapter;
     for (int i = 1; i <= 4; i++) {
-      print("\t$i) K${chapter}_$i");
+      print("\t$i) K${addedNumber}_$i");
     }
   }
 }
@@ -33,14 +35,15 @@ void ShowSelections(int chapter) {
 main(List<String> arguments) {
   List<Executable> executables =
   <Executable>[K01(), K02(), K03(), K04(), K05(), K06(),
-  K07(), K08(), K09(), K10(), K11(), FileControl()];
+  K07(), K08(), K09(), K10(), K11(), K12(), FileControl()];
 
   print("実行したいプログラムを選択してください。");
   for (int i = 1; i <= executables.length; i++) {
     if (i < 10) {
       print("$i) K0$i");
     } else {
-      print("$i) K$i");
+      int addedNumber = i >= 12 ? i + 3 : i;
+      print("$i) K$addedNumber");
     }
   }
   print('100) Kex');
