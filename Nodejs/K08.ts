@@ -58,7 +58,7 @@ export class K08 extends IExecutable {
     Question2(rl?: readline.ReadLine): Promise<string> {
         try {
             console.log("冒険が今始まる！");
-            let playerHp = 200 + Math.floor(Math.random() * 100);
+            let playerHp = 200 + Math.round(Math.random() * 100);
             let continueGame = true;
 
             let goForward = () => {
@@ -79,7 +79,7 @@ export class K08 extends IExecutable {
                     console.log(format("あなたのHP：%d", playerHp));
                     await goForward();
                     if (continueGame) {
-                        let golemLv = Math.floor(Math.random() * 4);
+                        let golemLv = Math.round(Math.random() * 4);
                         await AttackGolem(golemLv, playerHp, rl).then((value) => {
                             playerHp = value;
                         });

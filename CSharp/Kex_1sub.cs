@@ -1,14 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CSharp
 {
     static class Kex_1sub
     {
-        private const int ATTACK_HIT = 110;
-        private const int SKILL_HIT = 100;
-        private const int MAGIC_HIT = 70;
+        public const int ATTACK_HIT = 110;
+        public const int SKILL_HIT = 100;
+        public const int MAGIC_HIT = 70;
 
         private static bool CheckHitOrMiss(int hit)
         {

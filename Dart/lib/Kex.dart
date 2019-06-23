@@ -16,7 +16,7 @@ class Kex {
       continueGame = int.parse(stdin.readLineSync());
       if (continueGame == 1) {
         int golemLv = rand.nextInt(5);
-        player = AttackGolemEx(golemLv, player);
+        AttackGolemEx(golemLv, player);
         kills++;
         if (player.Hp == 0) {
           break;

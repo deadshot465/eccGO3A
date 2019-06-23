@@ -50,6 +50,7 @@ func main() {
 		}
 	}
 	fmt.Println("100) Kex")
+	fmt.Println("101) Kex_2")
 
 
 	_, _ = fmt.Scanln(&inputText)
@@ -58,6 +59,10 @@ func main() {
 	if choice == 100 {
 		kex := Kex{}
 		kex.Execute()
+		return
+	} else if choice == 101 {
+		kex_2 := Kex_2{}
+		kex_2.Execute()
 		return
 	} else {
 		if choice < 1 || choice > len(executable) {

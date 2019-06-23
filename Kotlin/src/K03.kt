@@ -43,8 +43,7 @@ class K03 : IExecutable() {
 
     override fun question_03() {
         try {
-            val randomNumber = Random()
-            val n = randomNumber.nextInt(99)
+            val n = (0..99).random()
             println("０から９９の範囲の数値が決定されました。")
             print("決められた数値を予想し、この数値よりも大きな値を入力してください＞")
             val reader = Scanner(System.`in`)
@@ -60,8 +59,7 @@ class K03 : IExecutable() {
 
     override fun question_04() {
         try {
-            val randomNumber = Random()
-            val n = randomNumber.nextInt(99)
+            val n = (0..99).random()
             println("０から９９の範囲の数値が決定されました。")
             print("決められた数値を予想し、この数値よりも大きな値を入力してください＞")
             val reader = Scanner(System.`in`)

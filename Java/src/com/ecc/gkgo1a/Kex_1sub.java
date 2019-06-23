@@ -4,17 +4,17 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Kex_1sub {
-    private static final int ATTACK_HIT = 110;
-    private static final int SKILL_HIT = 100;
-    private static final int MAGIC_HIT = 70;
+    public static final int ATTACK_HIT = 110;
+    public static final int SKILL_HIT = 100;
+    public static final int MAGIC_HIT = 70;
 
-    private static boolean CheckHitOrMiss(int hit) {
+    public static boolean CheckHitOrMiss(int hit) {
         Random rand = new Random();
         int val = rand.nextInt(100);
         return val <= hit - 1;
     }
 
-    public static Player AttackGolem(int lv, Player player) {
+    public static void AttackGolem(int lv, Player player) {
         GolemEx golem = new GolemEx(
                 lv * 50 + 100,
                 lv * 10 + 40,
@@ -66,7 +66,7 @@ public class Kex_1sub {
                     if (player.Hp <= 0) {
                         player.Hp = 0;
                         System.out.println("あなたはゴーレムに負けました！ゲームオーバー！");
-                        return player;
+                        return;
                     }
                 } else {
                     System.out.println("攻撃を外した！");
@@ -81,6 +81,5 @@ public class Kex_1sub {
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }
-        return player;
     }
 }

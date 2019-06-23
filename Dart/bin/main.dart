@@ -14,6 +14,7 @@ import 'package:Dart/K10.dart';
 import 'package:Dart/K11.dart';
 import 'package:Dart/K12.dart';
 import 'package:Dart/Kex.dart';
+import 'package:Dart/Kex_2.dart';
 
 void ShowSelections(int chapter) {
   if (chapter < 10) {
@@ -47,11 +48,15 @@ main(List<String> arguments) {
     }
   }
   print('100) Kex');
+  print('101) Kex_2');
   
   int choice = int.parse(stdin.readLineSync());
   if (choice == 100) {
     Kex kex = Kex();
     kex.Execute();
+    return;
+  } else if (choice == 101) {
+    Kex_2.Execute();
     return;
   }
   ShowSelections(choice);

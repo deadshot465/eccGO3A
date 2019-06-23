@@ -11,6 +11,7 @@ from k10 import k10
 from k11 import k11
 from k12 import k12
 from kex import kex
+from kex_2 import Kex_2
 from file_control import FileControl
 
 def show_selections(chapter):
@@ -37,12 +38,15 @@ for x in range(1, len(executables) + 1):
         added_num = x + 3 if x >= 12 else x
         print('{}) K{}'.format(x, added_num))
 print('100) Kex')
+print('101) Kex_2')
 
 try:
     choice = int(input())
     if choice == 100:
         _kex = kex()
         _kex.execute()
+    elif choice == 101:
+        Kex_2.execute()
     else:
         show_selections(choice)
         choice2 = int(input())

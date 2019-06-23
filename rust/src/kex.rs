@@ -24,7 +24,7 @@ impl Kex {
                     return;
                 }
             };
-            if continue_game != 0 {
+            if continue_game == 1 {
                 let golem_lv = rand::thread_rng().gen_range(0, 5);
                 attack_golem(golem_lv, &mut player);
                 kills += 1;

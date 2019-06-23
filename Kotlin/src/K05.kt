@@ -57,11 +57,10 @@ class K05 : IExecutable() {
 
     override fun question_04() {
         try {
-            val randomNumber = Random()
 
-            val golem = Golem(300 + randomNumber.nextInt(200))
+            val golem = Golem(300 + (0..200).random())
 
-            var playerHp = 200 + randomNumber.nextInt(100)
+            var playerHp = 200 + (0..100).random()
 
             println("ゴーレム　（HP:${golem.hp}　防御力：${golem.defense}）\n")
 
@@ -73,9 +72,9 @@ class K05 : IExecutable() {
                 var damage: Int
 
                 when (option) {
-                    1 -> damage = 60 + randomNumber.nextInt(40)
-                    2 -> damage = 30 + randomNumber.nextInt(100)
-                    3 -> damage = 20 + randomNumber.nextInt(180)
+                    1 -> damage = 60 + (0..40).random()
+                    2 -> damage = 30 + (0..100).random()
+                    3 -> damage = 20 + (0..180).random()
                     else -> continue@GolemLoop
                 }
 

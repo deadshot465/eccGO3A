@@ -1,5 +1,4 @@
 import java.util.*
-import kotlin.random.Random
 
 class K08 : IExecutable() {
     override fun question_01() {
@@ -25,7 +24,7 @@ class K08 : IExecutable() {
     override fun question_02() {
         try {
             println("冒険が今始まる！")
-            var playerHp = 200 + Random.nextInt(100)
+            var playerHp = 200 + (0..100).random()
             var continueGame = 1
             val reader = Scanner(System.`in`)
             while (continueGame != 0) {
@@ -35,7 +34,7 @@ class K08 : IExecutable() {
                 print("奥に進みますか？（１：奥に進む　０．帰る）＞")
                 continueGame = reader.nextInt()
                 if (continueGame == 1) {
-                    val golemLv = Random.nextInt(1, 4)
+                    val golemLv = (0..4).random()
                     playerHp = AttackGolem(golemLv, playerHp)
                 }
             }

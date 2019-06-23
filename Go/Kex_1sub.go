@@ -9,10 +9,10 @@ import (
 const AttackHit int = 110
 const SkillHit int = 100
 const MagicHit int = 70
-const GolemHit int = 70
+const GolemHit int = 75
 const GolemFlee int = 20
 
-func checkHitOrMiss(hit int) bool {
+func CheckHitOrMiss(hit int) bool {
 	val := rand.Intn(100)
 	return val <= hit - 1
 }
@@ -38,13 +38,13 @@ func AttackGolemEx(lv int, player *Player) {
 		switch choice {
 		case 1:
 			damage = 60 + rand.Intn(41)
-			is_hit = checkHitOrMiss(AttackHit - golem.Flee)
+			is_hit = CheckHitOrMiss(AttackHit - golem.Flee)
 		case 2:
 			damage = 30 + rand.Intn(101)
-			is_hit = checkHitOrMiss(SkillHit - golem.Flee)
+			is_hit = CheckHitOrMiss(SkillHit - golem.Flee)
 		case 3:
 			damage = 20 + rand.Intn(181)
-			is_hit = checkHitOrMiss(MagicHit - golem.Flee)
+			is_hit = CheckHitOrMiss(MagicHit - golem.Flee)
 		default:
 			damage = 0
 		}
@@ -61,7 +61,7 @@ func AttackGolemEx(lv int, player *Player) {
 		}
 
 		fmt.Println("ゴーレムの攻撃！")
-		is_hit = checkHitOrMiss(golem.Hit)
+		is_hit = CheckHitOrMiss(golem.Hit)
 		if is_hit {
 			injury := golem.Attack - player.Defense
 			fmt.Printf("%dのダメージ！\n", injury)

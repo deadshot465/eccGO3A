@@ -41,10 +41,13 @@ for i in 1...executables.count {
     }
 }
 print("100) Kex")
+print("101) Kex_2")
 
 if let choice = Int(readLine()!) {
     if choice == 100 {
         Kex.Execute()
+    } else if choice == 101 {
+        Kex_2.Execute()
     } else {
         ShowSelections(chapter: choice)
         let choice2 = Int(readLine()!)

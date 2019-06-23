@@ -18,7 +18,7 @@ public class Kex {
             continueGame = reader.nextInt();
             if (continueGame != 0) {
                 int golemLv = rand.nextInt(5);
-                player = Kex_1sub.AttackGolem(golemLv, player);
+                Kex_1sub.AttackGolem(golemLv, player);
                 kills++;
                 if (player.Hp == 0)
                     break;

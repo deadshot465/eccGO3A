@@ -133,7 +133,7 @@ class K04 extends IExecutable_1.IExecutable {
                 return new Promise((resolve, reject) => __awaiter(this, void 0, void 0, function* () {
                     yield q1();
                     if (choice >= 1) {
-                        let oracle = Math.floor(Math.random() * 4);
+                        let oracle = Math.round(Math.random() * 4);
                         switch (oracle) {
                             case 0:
                                 console.log("大吉　とってもいいことがありそう！！");

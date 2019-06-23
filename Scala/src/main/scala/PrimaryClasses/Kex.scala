@@ -20,7 +20,7 @@ object Kex {
         continueGame = scala.io.StdIn.readInt()
         if (continueGame != 0) {
           val golemLv = Random.nextInt(5)
-          player = AttackGolem(golemLv, player)
+          AttackGolem(golemLv, player)
           kills += 1
           if (player.Hp == 0)
             Breaks.break()

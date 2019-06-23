@@ -15,7 +15,7 @@ object Kex_1sub {
     value <= hit - 1
   }
 
-  def AttackGolem(lv: Int, player: Player): Player = {
+  def AttackGolem(lv: Int, player: Player): Unit = {
 
     var golem = new GolemEx(
       lv * 50 + 100,
@@ -64,7 +64,7 @@ object Kex_1sub {
         if (player.Hp <= 0) {
           player.Hp = 0
           println("あなたはゴーレムに負けました！ゲームオーバー！")
-          return player
+          return
         }
       } else {
         println("攻撃を外した！")
@@ -76,6 +76,5 @@ object Kex_1sub {
       if (golem.Hp == 0)
         printf("ゴーレムLv.%dを倒した！\n", lv + 1)
     }
-    player
   }
 }

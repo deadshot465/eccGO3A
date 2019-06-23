@@ -2,16 +2,16 @@
 import { PlayerEx } from "./Player"
 import * as readline from "readline";
 
-const ATTACK_HIT = 110;
-const SKILL_HIT = 100;
-const MAGIC_HIT = 70;
+export const ATTACK_HIT = 110;
+export const SKILL_HIT = 100;
+export const MAGIC_HIT = 70;
 
-function CheckHitOrMiss(hit: number) {
-    let value = Math.floor(Math.random() * 99);
+export function CheckHitOrMiss(hit: number) {
+    let value = Math.round(Math.random() * 99);
     return value <= hit - 1;
 }
 
-export function AttackGolem(lv: number, player: PlayerEx, rl?: readline.ReadLine): Promise<PlayerEx> {
+export function AttackGolem(lv: number, player: PlayerEx, rl?: readline.ReadLine): Promise<any> {
     let golem = new GolemEx(
         lv * 50 + 100,
         lv * 10 + 40,
@@ -39,15 +39,15 @@ export function AttackGolem(lv: number, player: PlayerEx, rl?: readline.ReadLine
 
             switch (choice) {
                 case 1:
-                    damage = 60 + Math.floor(Math.random() * 40);
+                    damage = 60 + Math.round(Math.random() * 40);
                     is_hit = CheckHitOrMiss(ATTACK_HIT - golem.flee);
                     break;
                 case 2:
-                    damage = 30 + Math.floor(Math.random() * 100);
+                    damage = 30 + Math.round(Math.random() * 100);
                     is_hit = CheckHitOrMiss(SKILL_HIT - golem.flee);
                     break;
                 case 3:
-                    damage = 20 + Math.floor(Math.random() * 180);
+                    damage = 20 + Math.round(Math.random() * 180);
                     is_hit = CheckHitOrMiss(MAGIC_HIT - golem.flee);
                     break;
                 default:
@@ -73,7 +73,7 @@ export function AttackGolem(lv: number, player: PlayerEx, rl?: readline.ReadLine
                 if (player.hp <= 0) {
                     player.hp = 0;
                     console.log("あなたはゴーレムに負けました！ゲームオーバー！");
-                    resolve(player);
+                    resolve();
                     return;
                 }
             } else {
@@ -87,6 +87,6 @@ export function AttackGolem(lv: number, player: PlayerEx, rl?: readline.ReadLine
             if (golem.hp === 0)
                 console.log(`ゴーレムLv.${lv + 1}を倒した！`);
         }
-        resolve(player);
+        resolve();
     });
 }

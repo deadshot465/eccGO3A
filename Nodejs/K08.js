@@ -61,7 +61,7 @@ class K08 extends IExecutable_1.IExecutable {
     Question2(rl) {
         try {
             console.log("冒険が今始まる！");
-            let playerHp = 200 + Math.floor(Math.random() * 100);
+            let playerHp = 200 + Math.round(Math.random() * 100);
             let continueGame = true;
             let goForward = () => {
                 return new Promise((resolve, reject) => {
@@ -80,7 +80,7 @@ class K08 extends IExecutable_1.IExecutable {
                     console.log(util_1.format("あなたのHP：%d", playerHp));
                     yield goForward();
                     if (continueGame) {
-                        let golemLv = Math.floor(Math.random() * 4);
+                        let golemLv = Math.round(Math.random() * 4);
                         yield K08_2sub_1.AttackGolem(golemLv, playerHp, rl).then((value) => {
                             playerHp = value;
                         });

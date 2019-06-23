@@ -94,7 +94,7 @@ export class K03 extends IExecutable {
 
     Question3(rl?: readline.ReadLine): Promise<string> {
         try {
-            let randNum = Math.floor(Math.random() * 100);
+            let randNum = Math.round(Math.random() * 100);
 
             console.log("０から９９の範囲の数値が決定されました。");
 
@@ -128,7 +128,7 @@ export class K03 extends IExecutable {
 
     Question4(rl?: readline.ReadLine): Promise<string> {
         try {
-            let randNum = Math.floor(Math.random() * 100);
+            let randNum = Math.round(Math.random() * 100);
 
             console.log("０から９９の範囲の数値が決定されました。");
 

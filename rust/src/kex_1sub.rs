@@ -4,11 +4,11 @@ use crate::read_user_input::read_user_input;
 use rand::Rng;
 use std::io::Write;
 
-const ATTACK_HIT: i32 = 110;
-const SKILL_HIT: i32 = 100;
-const MAGIC_HIT: i32 = 70;
+pub const ATTACK_HIT: i32 = 110;
+pub const SKILL_HIT: i32 = 100;
+pub const MAGIC_HIT: i32 = 70;
 
-fn check_hit_or_miss(hit: i32) -> bool {
+pub fn check_hit_or_miss(hit: i32) -> bool {
     let val = rand::thread_rng().gen_range::<i32>(0, 100);
     val <= hit - 1
 }

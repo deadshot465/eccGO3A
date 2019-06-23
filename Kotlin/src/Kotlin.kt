@@ -48,6 +48,7 @@ fun main()
         }
     }
     println("100) Kex")
+    println("101) Kex_2")
 
     try {
         val reader = Scanner(System.`in`)
@@ -56,6 +57,9 @@ fun main()
         if (choice == 100) {
             val kex = Kex()
             kex.execute()
+            return
+        } else if (choice == 101) {
+            Kex_2.Execute()
             return
         }
 

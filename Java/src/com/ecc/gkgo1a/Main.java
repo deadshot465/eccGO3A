@@ -42,6 +42,7 @@ public class Main {
 
         }
         System.out.println("100) Kex");
+        System.out.println("101) Kex_2");
 
         try {
             Scanner in = new Scanner(System.in);
@@ -49,6 +50,9 @@ public class Main {
 
             if (choice == 100) {
                 Kex.Execute();
+                return;
+            } else if (choice == 101) {
+                Kex_2.Execute();
                 return;
             }
 

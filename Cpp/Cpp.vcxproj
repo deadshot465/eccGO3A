@@ -176,8 +176,12 @@
     <ClCompile Include="K11.cpp" />
     <ClCompile Include="K12.cpp" />
     <ClCompile Include="K13.cpp" />
+    <ClCompile Include="K14.cpp" />
     <ClCompile Include="Kex.cpp" />
     <ClCompile Include="Kex_1sub.cpp" />
+    <ClCompile Include="Kex_2.cpp" />
+    <ClCompile Include="Kex_2_Battle.cpp" />
+    <ClCompile Include="Kex_2_Enemy.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="FileControl.h" />
@@ -199,8 +203,12 @@
     <ClInclude Include="K11.h" />
     <ClInclude Include="K12.h" />
     <ClInclude Include="K13.h" />
+    <ClInclude Include="K14.h" />
     <ClInclude Include="Kex.h" />
     <ClInclude Include="Kex_1sub.h" />
+    <ClInclude Include="Kex_2.h" />
+    <ClInclude Include="Kex_2_Battle.h" />
+    <ClInclude Include="Kex_2_Enemy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

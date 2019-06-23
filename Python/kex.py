@@ -2,6 +2,7 @@ from random import Random
 from kex_1sub import attack_golem
 from player import PlayerEx
 
+
 class kex(object):
     @staticmethod
     def execute():
@@ -17,7 +18,7 @@ class kex(object):
             continue_game = bool(int(input()))
             if continue_game:
                 golem_lv = rand.randint(0, 4)
-                player = attack_golem(golem_lv, player)
+                attack_golem(golem_lv, player)
                 kills += 1
                 if player.hp == 0:
                     break

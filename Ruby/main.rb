@@ -11,6 +11,7 @@ require_relative 'k10'
 require_relative 'k11'
 require_relative 'k12'
 require_relative 'kex'
+require_relative 'kex_2'
 require_relative 'file_control'
 
 def show_selection(chapter)
@@ -42,12 +43,16 @@ puts '実行したいプログラムを選択してください。'
   end
 end
 puts '100) Kex'
+puts '101) Kex_2'
 
 begin
   choice = gets.chomp.to_i
   if choice == 100
     kex = Kex.new
     kex.execute
+  elsif choice == 101
+    kex_2 = Kex_2.new
+    kex_2.execute
   else
     show_selection(choice)
     choice2 = gets.chomp.to_i
