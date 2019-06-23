@@ -1,0 +1,1 @@
+data class Attack(var Damage: Int = 0, var Hit: Int = 0)

@@ -52,7 +52,7 @@ def attack_golem(lv, player):
             if player.hp <= 0:
                 player.hp = 0
                 print('あなたはゴーレムに負けました！ゲームオーバー！')
-                return player
+                return
         else:
             print('攻撃を外した！')
 
@@ -61,4 +61,4 @@ def attack_golem(lv, player):
             golem.hp = 0
         if golem.hp == 0:
             print('ゴーレムLv.%dを倒した！' % (lv + 1))
-    return player
+    return

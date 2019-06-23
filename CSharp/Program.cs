@@ -56,6 +56,7 @@ namespace CSharp
                 }
             }
             Console.WriteLine("100) Kex_1");
+            Console.WriteLine("101) Kex_2");
 
             try
             {
@@ -65,6 +66,11 @@ namespace CSharp
                 {
                     Kex kex = new Kex();
                     kex.Execute();
+                    return;
+                }
+                else if (choice == 101)
+                {
+                    Kex_2.Execute();
                     return;
                 }
 

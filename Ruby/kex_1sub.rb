@@ -48,7 +48,7 @@ def attack_golem_ex(lv, player)
       if player.hp <= 0
         player.hp = 0
         puts 'あなたはゴーレムに負けました！ゲームオーバー！'
-        return player
+        return
       end
     else
       puts '攻撃を外した！'
@@ -58,5 +58,4 @@ def attack_golem_ex(lv, player)
     golem.hp = 0 if golem.hp <= 0
     puts "ゴーレムLv.#{lv + 1}を倒した！" if golem.hp == 0
   end
-  player
 end

@@ -29,10 +29,8 @@ class Kex {
                 console.log(`\n現HP：${player.hp}`);
                 yield question();
                 if (continue_game) {
-                    let golemLv = Math.floor(Math.random() * 4);
-                    player = yield Kex_1sub_1.AttackGolem(golemLv, player, rl).then((x) => {
-                        return x;
-                    });
+                    let golemLv = Math.round(Math.random() * 4);
+                    yield Kex_1sub_1.AttackGolem(golemLv, player, rl);
                     ++kills;
                     if (player.hp === 0) {
                         break;

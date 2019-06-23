@@ -14,7 +14,7 @@ class Kex
       continue_game = gets.chomp.to_i
       if continue_game != 0
         golem_lv = rand(0..4)
-        player = attack_golem_ex(golem_lv, player)
+        attack_golem_ex(golem_lv, player)
         kills += 1
         break if player.hp.zero?
       end

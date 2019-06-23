@@ -1,6 +1,5 @@
 import java.util.*
 import kotlin.math.sqrt
-import kotlin.random.Random
 
 data class Person(var Name: String = "", var BirthYear: Int = 0, var Height: Float = 0.0f, var Weight: Float = 0.0f)
 data class Staff(val Name: String, val Gender: Char, val Age: Int)
@@ -51,7 +50,7 @@ class K12 : IExecutable() {
     }
 
     override fun question_03() {
-        val getRandomNumber: () -> Int = { Random.nextInt(100) - 50 }
+        val getRandomNumber: () -> Int = { (0..100).random() - 50 }
         val playerPos = Position(getRandomNumber(), getRandomNumber())
         val enemyPos = arrayOfNulls<Position>(5)
         for (x in 0..4) {
@@ -72,7 +71,7 @@ class K12 : IExecutable() {
     }
 
     override fun question_04() {
-        val getRandomNumber: () -> Int = { Random.nextInt(100) - 50 }
+        val getRandomNumber: () -> Int = { (0..100).random() - 50 }
         val playerPos = Position(getRandomNumber(), getRandomNumber())
         val enemyPos = arrayOfNulls<Position>(5)
         for (x in 0..4) {

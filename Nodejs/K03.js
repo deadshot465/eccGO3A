@@ -89,7 +89,7 @@ class K03 extends IExecutable_1.IExecutable {
     }
     Question3(rl) {
         try {
-            let randNum = Math.floor(Math.random() * 100);
+            let randNum = Math.round(Math.random() * 100);
             console.log("０から９９の範囲の数値が決定されました。");
             let guess;
             let q1 = () => {
@@ -119,7 +119,7 @@ class K03 extends IExecutable_1.IExecutable {
     }
     Question4(rl) {
         try {
-            let randNum = Math.floor(Math.random() * 100);
+            let randNum = Math.round(Math.random() * 100);
             console.log("０から９９の範囲の数値が決定されました。");
             let guess;
             let q1 = () => {

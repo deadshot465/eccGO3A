@@ -9,13 +9,14 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const Golem_1 = require("./Golem");
-const ATTACK_HIT = 110;
-const SKILL_HIT = 100;
-const MAGIC_HIT = 70;
+exports.ATTACK_HIT = 110;
+exports.SKILL_HIT = 100;
+exports.MAGIC_HIT = 70;
 function CheckHitOrMiss(hit) {
-    let value = Math.floor(Math.random() * 99);
+    let value = Math.round(Math.random() * 99);
     return value <= hit - 1;
 }
+exports.CheckHitOrMiss = CheckHitOrMiss;
 function AttackGolem(lv, player, rl) {
     let golem = new Golem_1.GolemEx(lv * 50 + 100, lv * 10 + 40, lv * 10 + 40);
     console.log(`ゴーレムLv.${lv + 1}が現れた！`);
@@ -36,16 +37,16 @@ function AttackGolem(lv, player, rl) {
             let is_hit = false;
             switch (choice) {
                 case 1:
-                    damage = 60 + Math.floor(Math.random() * 40);
-                    is_hit = CheckHitOrMiss(ATTACK_HIT - golem.flee);
+                    damage = 60 + Math.round(Math.random() * 40);
+                    is_hit = CheckHitOrMiss(exports.ATTACK_HIT - golem.flee);
                     break;
                 case 2:
-                    damage = 30 + Math.floor(Math.random() * 100);
-                    is_hit = CheckHitOrMiss(SKILL_HIT - golem.flee);
+                    damage = 30 + Math.round(Math.random() * 100);
+                    is_hit = CheckHitOrMiss(exports.SKILL_HIT - golem.flee);
                     break;
                 case 3:
-                    damage = 20 + Math.floor(Math.random() * 180);
-                    is_hit = CheckHitOrMiss(MAGIC_HIT - golem.flee);
+                    damage = 20 + Math.round(Math.random() * 180);
+                    is_hit = CheckHitOrMiss(exports.MAGIC_HIT - golem.flee);
                     break;
                 default:
                     break;
@@ -69,7 +70,7 @@ function AttackGolem(lv, player, rl) {
                 if (player.hp <= 0) {
                     player.hp = 0;
                     console.log("あなたはゴーレムに負けました！ゲームオーバー！");
-                    resolve(player);
+                    resolve();
                     return;
                 }
             }
@@ -82,7 +83,7 @@ function AttackGolem(lv, player, rl) {
             if (golem.hp === 0)
                 console.log(`ゴーレムLv.${lv + 1}を倒した！`);
         }
-        resolve(player);
+        resolve();
     }));
 }
 exports.AttackGolem = AttackGolem;

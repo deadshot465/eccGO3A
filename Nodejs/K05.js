@@ -76,8 +76,8 @@ class K05 extends IExecutable_1.IExecutable {
     }
     Question4(rl) {
         try {
-            let golem = new Golem_1.Golem(300 + Math.floor(Math.random() * 200));
-            let playerHp = 200 + Math.floor(Math.random() * 100);
+            let golem = new Golem_1.Golem(300 + Math.round(Math.random() * 200));
+            let playerHp = 200 + Math.round(Math.random() * 100);
             console.log(util_1.format("ゴーレム　（HP：%d　防御力：%d）", golem.hp, golem.defense));
             console.log("HP：" + golem.hp);
             let choice = 0;
@@ -94,13 +94,13 @@ class K05 extends IExecutable_1.IExecutable {
                 return new Promise((resolve, reject) => {
                     switch (choice) {
                         case 1:
-                            damage = 60 + Math.floor(Math.random() * 40);
+                            damage = 60 + Math.round(Math.random() * 40);
                             break;
                         case 2:
-                            damage = 30 + Math.floor(Math.random() * 100);
+                            damage = 30 + Math.round(Math.random() * 100);
                             break;
                         case 3:
-                            damage = 20 + Math.floor(Math.random() * 180);
+                            damage = 20 + Math.round(Math.random() * 180);
                             break;
                         default:
                             break;

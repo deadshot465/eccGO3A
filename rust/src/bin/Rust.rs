@@ -1,5 +1,5 @@
 extern crate Rust;
-use Rust::{Executable, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, K12, Kex, FileControl};
+use Rust::{Executable, K01, K02, K03, K04, K05, K06, K07, K08, K09, K10, K11, K12, Kex, FileControl, Kex_2};
 use std::io;
 
 fn show_selection(chapter: u32)
@@ -44,12 +44,15 @@ fn main() {
         }
     }
     println!("100) Kex");
+    println!("101) Kex_2");
 
     let mut choice = String::new();
     io::stdin().read_line(&mut choice).expect("入力失敗！");
     let choice = choice.trim().parse::<u32>().expect("入力失敗！");
     if choice == 100 {
         Kex::execute();
+    } else if choice == 101 {
+        Kex_2::execute();
     } else {
         show_selection(choice);
         let mut choice2 = String::new();

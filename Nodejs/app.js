@@ -22,6 +22,7 @@ const K10_1 = require("./K10");
 const K11_1 = require("./K11");
 const K12_1 = require("./K12");
 const Kex_1 = require("./Kex");
+const Kex_2_1 = require("./Kex_2");
 const FileControl_1 = require("./FileControl");
 function ShowSelections(chapter) {
     if (chapter < 10) {
@@ -54,6 +55,7 @@ for (let i = 1; i <= executables.length; i++) {
     }
 }
 console.log("100) Kex");
+console.log("101) Kex_2");
 try {
     let rl = readline.createInterface({
         input: process.stdin,
@@ -65,7 +67,7 @@ try {
         return new Promise((resolve, reject) => {
             rl.question("", (value) => {
                 choice = Number.parseInt(value);
-                if (choice !== 100) {
+                if (choice !== 100 && choice !== 101) {
                     ShowSelections(choice);
                 }
                 resolve();
@@ -91,6 +93,9 @@ try {
         if (choice === 100) {
             let kex = new Kex_1.Kex();
             yield kex.Execute(rl);
+        }
+        else if (choice === 101) {
+            yield Kex_2_1.Kex_2.Execute(rl);
         }
         else {
             yield selectQuestions();

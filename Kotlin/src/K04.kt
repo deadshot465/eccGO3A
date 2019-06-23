@@ -66,8 +66,7 @@ class K04 : IExecutable() {
             val choice = reader.nextInt()
 
             if (choice >= 1) {
-                val randomNumber = Random()
-                val oracle = randomNumber.nextInt(4)
+                val oracle = (0..4).random()
                 when (oracle) {
                     0 -> println("大吉　とってもいいことがありそう！！")
                     1 -> println("中吉　きっといいことあるんじゃないかな")

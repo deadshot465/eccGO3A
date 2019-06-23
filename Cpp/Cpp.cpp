@@ -16,7 +16,9 @@
 #include "K11.h"
 #include "K12.h"
 #include "K13.h"
+#include "K14.h"
 #include "Kex.h"
+#include "Kex_2.h"
 #include "FileControl.h"
 
 
@@ -58,6 +60,7 @@ int main()
 	executables.push_back(std::make_unique<K11>());
 	executables.push_back(std::make_unique<K12>());
 	executables.push_back(std::make_unique<K13>());
+	executables.push_back(std::make_unique<K14>());
 	executables.push_back(std::make_unique<FileControl>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";
@@ -77,12 +80,19 @@ int main()
 		}
 	}
 	std::cout << "100) Kex\n";
+	std::cout << "101) Kex_2\n";
 	std::cin >> choice;
 
 	if (choice == 100)
 	{
 		Kex kex;
 		kex.Execute();
+		return 0;
+	}
+	else if (choice == 101)
+	{
+		Kex_2 kex_2;
+		kex_2.Execute();
 		return 0;
 	}
 

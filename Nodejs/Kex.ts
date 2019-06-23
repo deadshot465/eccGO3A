@@ -25,10 +25,8 @@ export class Kex {
                 console.log(`\n現HP：${player.hp}`);
                 await question();
                 if (continue_game) {
-                    let golemLv = Math.floor(Math.random() * 4);
-                    player = await AttackGolem(golemLv, player, rl).then((x) => {
-                        return x;
-                    });
+                    let golemLv = Math.round(Math.random() * 4);
+                    await AttackGolem(golemLv, player, rl);
                     ++kills;
                     if (player.hp === 0) {
                         break;

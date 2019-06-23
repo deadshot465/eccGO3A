@@ -13,7 +13,7 @@ bool CheckHitOrMiss(int hit) {
   return val <= hit - 1;
 }
 
-Player AttackGolemEx(int lv, Player player) {
+void AttackGolemEx(int lv, Player player) {
 
   GolemEx golem = GolemEx(lv * 50 + 100, lv * 10 + 40, lv * 10 + 40);
   print('ゴーレムLv.${lv + 1}が現れた！');
@@ -61,7 +61,7 @@ Player AttackGolemEx(int lv, Player player) {
       if (player.Hp <= 0) {
         player.Hp = 0;
         print('あなたはゴーレムに負けました！ゲームオーバー！');
-        return player;
+        return;
       }
     } else {
       print('攻撃を外した！');
@@ -75,5 +75,5 @@ Player AttackGolemEx(int lv, Player player) {
       print('ゴーレムLv.${lv + 1}を倒した！');
     }
   }
-  return player;
+  return;
 }

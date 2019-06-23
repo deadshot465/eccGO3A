@@ -1,18 +1,16 @@
 ﻿import java.util.*
-import kotlin.random.Random
 
 object Kex_1sub {
-    private const val ATTACK_HIT = 110
-    private const val SKILL_HIT = 100
-    private const val MAGIC_HIT = 70
+    const val ATTACK_HIT = 110
+    const val SKILL_HIT = 100
+    const val MAGIC_HIT = 70
 
-    private fun checkHitOrMiss(hit: Int): Boolean {
-        val rand = Random
-        val value = rand.nextInt(0, 99)
+    fun checkHitOrMiss(hit: Int): Boolean {
+        val value = (0..99).random()
         return value <= hit - 1
     }
 
-    fun attackGolem(lv: Int, player: Player): Player {
+    fun attackGolem(lv: Int, player: Player) {
         var golem = GolemEx(
             lv * 50 + 100,
             lv * 10 + 40,
@@ -24,20 +22,19 @@ object Kex_1sub {
             println("ゴーレム 残りHP：${golem.Hp}")
             print("武器を選択してください（１．攻撃　２．特技　３．魔法）＞")
             val reader = Scanner(System.`in`)
-            var damage = 0
+            var damage: Int
             var is_hit = false
-            val rand = Random
             when (reader.nextInt()) {
                 1 -> {
-                    damage = 60 + rand.nextInt(0, 40)
+                    damage = 60 + (0..40).random()
                     is_hit = checkHitOrMiss(ATTACK_HIT - golem.Flee)
                 }
                 2 -> {
-                    damage = 30 + rand.nextInt(0, 100)
+                    damage = 30 + (0..100).random()
                     is_hit = checkHitOrMiss(SKILL_HIT - golem.Flee)
                 }
                 3 -> {
-                    damage = 20 + rand.nextInt(0, 180)
+                    damage = 20 + (0..180).random()
                     is_hit = checkHitOrMiss(MAGIC_HIT - golem.Flee)
                 }
                 else -> damage = 0
@@ -62,7 +59,7 @@ object Kex_1sub {
                 if (player.Hp <= 0) {
                     player.Hp = 0
                     println("あなたはゴーレムに負けました！ゲームオーバー！")
-                    return player
+                    return
                 }
             } else {
                 println("攻撃を外した！")
@@ -74,6 +71,5 @@ object Kex_1sub {
             if (golem.Hp == 0)
                 println("ゴーレムLv.${lv + 1}を倒した！")
         }
-        return player
     }
 }
