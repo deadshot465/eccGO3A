@@ -20,6 +20,7 @@
 #include "Kex.h"
 #include "Kex_2.h"
 #include "FileControl.h"
+#include "Sort.h"
 
 
 void showSelections(int chapter)
@@ -71,16 +72,21 @@ int main()
 	{
 		if (i < 10)
 		{
-			std::cout << i << ") K0" << i << "\n";
+			std::cout << i << ") K0" << i << "\t\t";
 		}
 		else
 		{
-			int addedChapterNum = i >= 12 ? i + 3 : i;
-			std::cout << i << ") K" << addedChapterNum << "\n";
+			int addedChapterNum = 0;
+			if (i >= 12)
+			{
+				addedChapterNum = i >= 17 ? i + 4 : i + 3;
+			}
+			std::cout << i << ") K" << addedChapterNum << "\t\t";
 		}
 	}
-	std::cout << "100) Kex\n";
+	std::cout << "100) Kex\t";
 	std::cout << "101) Kex_2\n";
+	std::cout << "102) Sort\n";
 	std::cin >> choice;
 
 	if (choice == 100)
@@ -93,6 +99,12 @@ int main()
 	{
 		Kex_2 kex_2;
 		kex_2.Execute();
+		return 0;
+	}
+	else if (choice == 102)
+	{
+		Sort sort;
+		sort.Execute();
 		return 0;
 	}
 

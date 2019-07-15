@@ -13,6 +13,8 @@ from k12 import k12
 from kex import kex
 from kex_2 import Kex_2
 from file_control import FileControl
+from sort import Sort
+
 
 def show_selections(chapter):
     if chapter < 10:
@@ -25,9 +27,9 @@ def show_selections(chapter):
             print('\t{}) K{}_{}'.format(i, chapter, i))
 
 
-executables = [ k01(), k02(), k03(), k04(), k05(),
-                k06(), k07(), k08(), k09(), k10(),
-                k11(), k12(), FileControl() ]
+executables = [k01(), k02(), k03(), k04(), k05(),
+               k06(), k07(), k08(), k09(), k10(),
+               k11(), k12(), FileControl()]
 
 print("実行したいプログラムを選択してください。")
 
@@ -39,6 +41,7 @@ for x in range(1, len(executables) + 1):
         print('{}) K{}'.format(x, added_num))
 print('100) Kex')
 print('101) Kex_2')
+print('102) Sort')
 
 try:
     choice = int(input())
@@ -47,6 +50,9 @@ try:
         _kex.execute()
     elif choice == 101:
         Kex_2.execute()
+    elif choice == 102:
+        sort = Sort()
+        sort.execute()
     else:
         show_selections(choice)
         choice2 = int(input())

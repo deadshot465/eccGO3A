@@ -76,7 +76,7 @@ function AttackEnemy(player, enemy, rl) {
             else {
                 console.log('攻撃を外した！');
             }
-            console.log(`プレーヤー残りHP：${player.hp}`);
+            console.log(`プレイヤー残りHP：${player.hp}`);
             enemy.Hp = enemy.Hp <= 0 ? 0 : enemy.Hp;
             if (enemy.Hp === 0) {
                 console.log(`${enemy.Name}Lv.${enemy.Lv + 1}を倒した！`);

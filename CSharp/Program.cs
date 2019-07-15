@@ -57,6 +57,7 @@ namespace CSharp
             }
             Console.WriteLine("100) Kex_1");
             Console.WriteLine("101) Kex_2");
+            Console.WriteLine("102) Sort");
 
             try
             {
@@ -71,6 +72,12 @@ namespace CSharp
                 else if (choice == 101)
                 {
                     Kex_2.Execute();
+                    return;
+                }
+                else if (choice == 102)
+                {
+                    Sort sort = new Sort();
+                    sort.Execute();
                     return;
                 }
 
