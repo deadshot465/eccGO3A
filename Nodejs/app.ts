@@ -14,6 +14,7 @@ import { K12 } from "./K12";
 import { Kex } from "./Kex";
 import { Kex_2 } from "./Kex_2";
 import { FileControl } from './FileControl';
+import { Sort } from './Sort';
 import { IExecutable } from './IExecutable';
 
 function ShowSelections(chapter: number) {
@@ -49,6 +50,7 @@ for (let i = 1; i <= executables.length; i++) {
 }
 console.log("100) Kex");
 console.log("101) Kex_2");
+console.log("102) Sort");
 
 try {
     let rl = readline.createInterface({
@@ -63,7 +65,7 @@ try {
         return new Promise<string>((resolve, reject) => {
             rl.question("", (value) => {
                 choice = Number.parseInt(value);
-                if (choice !== 100 && choice !== 101) {
+                if (choice < 100) {
                     ShowSelections(choice);
                 }
                 resolve();
@@ -94,6 +96,9 @@ try {
             await kex.Execute(rl);
         } else if (choice === 101) {
             await Kex_2.Execute(rl);
+        } else if (choice === 102) {
+            let sort = new Sort();
+            await sort.execute(rl);
         } else {
             await selectQuestions();
             await executeQuestion();

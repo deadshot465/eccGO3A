@@ -43,6 +43,7 @@ public class Main {
         }
         System.out.println("100) Kex");
         System.out.println("101) Kex_2");
+        System.out.println("102) Sort");
 
         try {
             Scanner in = new Scanner(System.in);
@@ -53,6 +54,10 @@ public class Main {
                 return;
             } else if (choice == 101) {
                 Kex_2.Execute();
+                return;
+            } else if (choice == 102) {
+                Sort sort = new Sort();
+                sort.Execute();
                 return;
             }
 

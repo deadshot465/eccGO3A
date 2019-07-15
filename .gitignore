@@ -10,8 +10,14 @@ clojure_project/
 Cpp/Debug/
 Cpp/include
 Cpp/test.db
+Cpp/Sort.h
+Cpp/Sort.cpp
+Cpp/save1.dat
+Cpp/save2.dat
+
 CSharp/bin/
 CSharp/obj/
+CSharp/Sort.cs
 
 Dart/.dart_tool/
 Dart/.idea/
@@ -24,12 +30,15 @@ DirectX_Tutorial/
 elixir_project/
 
 Go/.idea/
+Go/Sort.go
 
 Java/.idea/
 Java/out/
+Java/src/com/ecc/gkgo1a/Sort.java
 
 Kotlin/.idea/
 Kotlin/out/
+Kotlin/src/Sort.kt
 
 Nim/*.exe
 Nim/tempCodeRunnerFile.nim
@@ -40,6 +49,8 @@ Nodejs/obj/
 Nodejs/*.json
 Nodejs/*.map
 Nodejs/README.md
+Nodejs/Sort.js
+Nodejs/Sort.ts
 
 OpenGL/
 OpenTK/
@@ -49,16 +60,19 @@ prism.css
 prism.js
 Python/.idea/
 Python/__pycache__
+Python/sort.py
 
 Ruby/.idea/
 
 rust/.idea/
 rust/target/
+rust/src/sort.rs
 
 Scala/.idea/
 Scala/project/
 Scala/target/
 Scala/src/test/
+Scala/src/main/scala/PrimaryClasses/Sort.scala
 
 SharpDXProject/
 

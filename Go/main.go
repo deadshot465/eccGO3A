@@ -51,6 +51,7 @@ func main() {
 	}
 	fmt.Println("100) Kex")
 	fmt.Println("101) Kex_2")
+	fmt.Println("102) Sort")
 
 
 	_, _ = fmt.Scanln(&inputText)
@@ -64,6 +65,10 @@ func main() {
 		kex_2 := Kex_2{}
 		kex_2.Execute()
 		return
+	} else if choice == 102 {
+		sort := Sort{}
+		sort.new()
+		sort.execute()
 	} else {
 		if choice < 1 || choice > len(executable) {
 			fmt.Println("無効の選択です。")
