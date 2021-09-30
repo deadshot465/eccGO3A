@@ -82,3 +82,5 @@ SwiftProject/XCode_Build
 SwiftProjectWindows/
 
 vue_project/
+.DS_Store
+**/*/.DS_Store
