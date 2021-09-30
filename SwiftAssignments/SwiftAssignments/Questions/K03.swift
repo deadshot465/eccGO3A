@@ -48,15 +48,16 @@ class K03 : Question {
         let guess = readLine().flatMap { s in Int(s) } ?? 0
         print("決められた数値は\(num)です。")
 
-        if guess < 0 || guess > 99 {
+        switch guess {
+        case let x where x < 0 || x > 99:
             print("反則です！")
-        } else if guess > num && guess - num <= 10 {
+        case let x where x > num && x - num <= 10:
             print("大正解です！")
-        } else if guess < num && num - guess <= 10 {
+        case let x where x < num && num - x <= 10:
             print("惜しい！")
-        } else if guess == num {
+        case let x where x == num:
             print("お見事！")
-        } else {
+        default:
             if guess > num {
                 print("正解です。")
             } else {
@@ -64,21 +65,4 @@ class K03 : Question {
             }
         }
     }
-
-    func execute(number: Int) {
-        switch number {
-        case 1:
-            question1()
-        case 2:
-            question2()
-        case 3:
-            question3()
-        case 4:
-            question4()
-        default:
-            break
-        }
-    }
-
-
 }

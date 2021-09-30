@@ -65,21 +65,6 @@ class K05 : Question {
         print("ゴーレムを倒しました！")
     }
 
-    func execute(number: Int) {
-        switch number {
-        case 1:
-            question1()
-        case 2:
-            question2()
-        case 3:
-            question3()
-        case 4:
-            question4()
-        default:
-            break
-        }
-    }
-
     private func damagePlayer(golemAttack: Int, playerHp: Int) -> Int {
         print("ゴーレム：「ハハハハハ、情けないな！貴様は弱すぎる！」")
         print("ゴーレムがあなたを攻撃しました！攻撃値：\(golemAttack)")

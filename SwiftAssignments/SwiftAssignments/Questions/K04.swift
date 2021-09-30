@@ -27,15 +27,16 @@ class K04 : Question {
     func question3() {
         print("年齢を入力してください。＞")
         let age = readLine().flatMap { s in Int(s) } ?? 0
-        if age < 0 {
+        switch age {
+        case let x where x < 0:
             print("反則です！")
-        } else if age < 3 || age >= 70 {
+        case let x where x < 3 || age >= 70:
             print("入場料金無料です。")
-        } else if age >= 3 && age <= 15 {
+        case let x where x >= 3 && x <= 15:
             print("子供料金で半額です。")
-        } else if age >= 60 && age < 70 {
+        case let x where x >= 60 && age < 70:
             print("シニア割引で一割引です。")
-        } else {
+        default:
             print("通常料金です。")
         }
     }
@@ -64,21 +65,4 @@ class K04 : Question {
             break
         }
     }
-
-    func execute(number: Int) {
-        switch number {
-        case 1:
-            question1()
-        case 2:
-            question2()
-        case 3:
-            question3()
-        case 4:
-            question4()
-        default:
-            break
-        }
-    }
-
-
 }

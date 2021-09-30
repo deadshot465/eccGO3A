@@ -10,6 +10,9 @@
 		C76950364D0B45ADEC0838BC /* K01.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695E0884657BC7EED5E67D /* K01.swift */; };
 		C76950BEF8A98316DD4C2D08 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695D0FDEACF632C14A9641 /* main.swift */; };
 		C76954BC1DEE722D84C81CDD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695CAB5CE3023A37598BD1 /* Question.swift */; };
+		C769565A30D7C863394A5A42 /* K07.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695D538F84DF27C507FD55 /* K07.swift */; };
+		C76957619AB7A7E174154A5B /* K08Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695443A6E1513A74F97957 /* K08Adventure.swift */; };
+		C76957D433CAEB3A190B7181 /* K08.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695E53102F4ABEFF11EC76 /* K08.swift */; };
 		C76959B877C5699766AAC8BD /* K05.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76950DD3A01BF8B5A00C23E /* K05.swift */; };
 		C76959D1646A8BF89256D161 /* K04.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695CA317880DAC8B1FEE48 /* K04.swift */; };
 		C7695CA01FFF81F0AA3F4DBB /* K03.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695EBF561D7AE136AE031F /* K03.swift */; };
@@ -33,13 +36,16 @@
 /* Begin PBXFileReference section */
 		C76950B5891DD159612C4FC9 /* K02.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K02.swift; sourceTree = "<group>"; };
 		C76950DD3A01BF8B5A00C23E /* K05.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K05.swift; sourceTree = "<group>"; };
+		C7695443A6E1513A74F97957 /* K08Adventure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K08Adventure.swift; sourceTree = "<group>"; };
 		C769585C17F78F90BE495C5D /* SwiftAssignments */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAssignments; sourceTree = BUILT_PRODUCTS_DIR; };
 		C76959DA3041A18779100F5F /* K06.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K06.swift; sourceTree = "<group>"; };
 		C7695CA317880DAC8B1FEE48 /* K04.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K04.swift; sourceTree = "<group>"; };
 		C7695CAB5CE3023A37598BD1 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		C7695D0FDEACF632C14A9641 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		C7695D538F84DF27C507FD55 /* K07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K07.swift; sourceTree = "<group>"; };
 		C7695DCBB088C63C16D73A60 /* Golem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Golem.swift; sourceTree = "<group>"; };
 		C7695E0884657BC7EED5E67D /* K01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K01.swift; sourceTree = "<group>"; };
+		C7695E53102F4ABEFF11EC76 /* K08.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K08.swift; sourceTree = "<group>"; };
 		C7695EBF561D7AE136AE031F /* K03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K03.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,6 +70,15 @@
 			path = SwiftAssignments;
 			sourceTree = "<group>";
 		};
+		C769510D011685B7A06899B3 /* K08 */ = {
+			isa = PBXGroup;
+			children = (
+				C7695443A6E1513A74F97957 /* K08Adventure.swift */,
+				C7695E53102F4ABEFF11EC76 /* K08.swift */,
+			);
+			path = K08;
+			sourceTree = "<group>";
+		};
 		C7695855F3C2954AD5DE7B70 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +96,8 @@
 				C7695CA317880DAC8B1FEE48 /* K04.swift */,
 				C76950DD3A01BF8B5A00C23E /* K05.swift */,
 				C76959DA3041A18779100F5F /* K06.swift */,
+				C7695D538F84DF27C507FD55 /* K07.swift */,
+				C769510D011685B7A06899B3 /* K08 */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -158,6 +175,9 @@
 				C76959D1646A8BF89256D161 /* K04.swift in Sources */,
 				C76959B877C5699766AAC8BD /* K05.swift in Sources */,
 				C7695E1CC4DD0F3972CC9267 /* K06.swift in Sources */,
+				C769565A30D7C863394A5A42 /* K07.swift in Sources */,
+				C76957619AB7A7E174154A5B /* K08Adventure.swift in Sources */,
+				C76957D433CAEB3A190B7181 /* K08.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
