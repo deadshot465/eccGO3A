@@ -1,7 +1,9 @@
 package questions
 
 import (
+	"RecursiveGo/shared/utility"
 	"fmt"
+	"strconv"
 	"strings"
 )
 
@@ -10,7 +12,7 @@ type K06 struct {}
 func (k K06) question1() {
 	ages := getAges()
 	count := len(ages)
-	totalAges := reduceInt(ages, 0)
+	totalAges := utility.ReduceInt(ages)
 	fmt.Printf("%d人の平均年齢は%fです。", count, float32(totalAges) / float32(count))
 }
 
@@ -21,8 +23,7 @@ func (k K06) question2() {
 	fmt.Println("")
 
 	acc = []string {}
-	var newAcc []string
-	fmt.Println(strings.Join(reverseString(buildPyramid(0, 8, acc), newAcc), "\n"))
+	fmt.Println(strings.Join(utility.ReverseString(buildPyramid(0, 8, acc)), "\n"))
 
 	fmt.Println("")
 	acc = []string {}
@@ -38,7 +39,16 @@ func (k K06) question3() {
 }
 
 func (k K06) question4() {
+	fmt.Print("\t|\t")
+	var acc []string
+	fmt.Println(strings.Join(utility.ReverseString(printOneToTen(9, acc)), "\t"))
+	fmt.Println(strings.Repeat("-", 90))
 
+	var sliceAcc [][]int
+	calculations := utility.ReverseIntSlice(calculate(9, sliceAcc))
+	acc = []string {}
+	resultArray := mapCalculations(calculations, 1, acc)
+	fmt.Println(strings.Join(resultArray, "\n"))
 }
 
 func (k K06) Execute(number int) {
@@ -68,20 +78,6 @@ func inputAge(no int, amount int, acc []int) []int {
 func getAges() []int {
 	var ages []int
 	return inputAge(0, 5, ages)
-}
-
-func reduceInt(arr []int, acc int) int {
-	if len(arr) == 0 {
-		return acc
-	}
-	return reduceInt(arr[1:], acc + arr[0])
-}
-
-func reverseString(arr []string, acc []string) []string {
-	if len(arr) == 0 {
-		return acc
-	}
-	return reverseString(arr[:len(arr) - 1], append(acc, arr[len(arr) - 1]))
 }
 
 func buildPyramid(current int, levels int, acc []string) []string {
@@ -148,4 +144,38 @@ func mapCombinations(result [][]int, acc []string) []string {
 	item := result[0]
 	text := fmt.Sprintf("10円の硬貨%d枚 50円の硬貨%d枚 100円の硬貨%d枚\n", item[2], item[1], item[0])
 	return mapCombinations(result[1:], append(acc, text))
+}
+
+func printOneToTen(num int, arr []string) []string {
+	if num == 0 {
+		return arr
+	}
+
+	return printOneToTen(num - 1, append(arr, strconv.Itoa(num)))
+}
+
+func calculate(i int, acc [][]int) [][]int {
+	if i == 0 {
+		return acc
+	}
+	var innerAcc []int
+	result := utility.ReverseInt(multiply(i, 9, innerAcc))
+	return calculate(i - 1, append(acc, result))
+}
+
+func multiply(i int, j int, acc []int) []int {
+	if j == 0 {
+		return acc
+	}
+	return multiply(i, j - 1, append(acc, i * j))
+}
+
+func mapCalculations(calculation [][]int, index int, acc []string) []string {
+	if len(calculation) == 0 {
+		return acc
+	}
+	result := utility.MapIntToString(calculation[0])
+	resultText := strings.Join(result, "\t")
+	resultText = fmt.Sprintf("%d\t|\t%s", index, resultText)
+	return mapCalculations(calculation[1:], index + 1, append(acc, resultText))
 }
