@@ -50,6 +50,7 @@ class K07 : Question {
         for i in 1...count {
             print("\(i)つ目の値を入力してください。＞")
             numbers.append(readLine().flatMap { s in Int(s) } ?? 0)
+
         }
         return numbers
     }
