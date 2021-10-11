@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23310AAF2714A75100359990 /* road.txt in CopyFiles */ = {isa = PBXBuildFile; fileRef = C7695DACC99D77A2BBD6EC68 /* road.txt */; };
 		236645442710296C00EB7F2A /* SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236645432710296C00EB7F2A /* SwiftTests.swift */; };
 		2366454A27103B4500EB7F2A /* Rpn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769542308BE1AF6CC90DF9A /* Rpn.swift */; };
 		C76950364D0B45ADEC0838BC /* K01.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695E0884657BC7EED5E67D /* K01.swift */; };
 		C76950BEF8A98316DD4C2D08 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695D0FDEACF632C14A9641 /* main.swift */; };
+		C769532CB024AC0354267720 /* Road.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695F37A50C752188201871 /* Road.swift */; };
 		C76954BC1DEE722D84C81CDD /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695CAB5CE3023A37598BD1 /* Question.swift */; };
 		C769565A30D7C863394A5A42 /* K07.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695D538F84DF27C507FD55 /* K07.swift */; };
 		C76957619AB7A7E174154A5B /* K08Adventure.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695443A6E1513A74F97957 /* K08Adventure.swift */; };
@@ -18,9 +20,11 @@
 		C769597E77E020E634DDE067 /* Rpn.swift in Sources */ = {isa = PBXBuildFile; fileRef = C769542308BE1AF6CC90DF9A /* Rpn.swift */; };
 		C76959B877C5699766AAC8BD /* K05.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76950DD3A01BF8B5A00C23E /* K05.swift */; };
 		C76959D1646A8BF89256D161 /* K04.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695CA317880DAC8B1FEE48 /* K04.swift */; };
+		C7695BA88C4C75DD4BD28678 /* road.txt in Resources */ = {isa = PBXBuildFile; fileRef = C7695DACC99D77A2BBD6EC68 /* road.txt */; };
 		C7695CA01FFF81F0AA3F4DBB /* K03.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695EBF561D7AE136AE031F /* K03.swift */; };
 		C7695DB5126F087F4B106A0E /* K02.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76950B5891DD159612C4FC9 /* K02.swift */; };
 		C7695E1CC4DD0F3972CC9267 /* K06.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76959DA3041A18779100F5F /* K06.swift */; };
+		C7695ED9837BC962A8A1F9CF /* Road.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695F37A50C752188201871 /* Road.swift */; };
 		C7695F752CE10E0E64FFA2DF /* Golem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7695DCBB088C63C16D73A60 /* Golem.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,12 +41,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		C76959AB87696FBBCE0E407D /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = resources;
+			dstSubfolderSpec = 7;
 			files = (
+				23310AAF2714A75100359990 /* road.txt in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -59,10 +64,12 @@
 		C7695CAB5CE3023A37598BD1 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		C7695D0FDEACF632C14A9641 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		C7695D538F84DF27C507FD55 /* K07.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K07.swift; sourceTree = "<group>"; };
+		C7695DACC99D77A2BBD6EC68 /* road.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = road.txt; sourceTree = "<group>"; };
 		C7695DCBB088C63C16D73A60 /* Golem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Golem.swift; sourceTree = "<group>"; };
 		C7695E0884657BC7EED5E67D /* K01.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K01.swift; sourceTree = "<group>"; };
 		C7695E53102F4ABEFF11EC76 /* K08.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K08.swift; sourceTree = "<group>"; };
 		C7695EBF561D7AE136AE031F /* K03.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = K03.swift; sourceTree = "<group>"; };
+		C7695F37A50C752188201871 /* Road.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Road.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +101,7 @@
 		C7695041BDA84EA2FBD332FC /* SwiftAssignments */ = {
 			isa = PBXGroup;
 			children = (
+				C7695DACC99D77A2BBD6EC68 /* road.txt */,
 				C7695D0FDEACF632C14A9641 /* main.swift */,
 				C7695B17FA916017A4EF8547 /* Questions */,
 				C7695E42BD38DBE2B2207036 /* Shared */,
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				C769542308BE1AF6CC90DF9A /* Rpn.swift */,
+				C7695F37A50C752188201871 /* Road.swift */,
 			);
 			path = Extra;
 			sourceTree = "<group>";
@@ -238,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7695BA88C4C75DD4BD28678 /* road.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +260,7 @@
 			files = (
 				2366454A27103B4500EB7F2A /* Rpn.swift in Sources */,
 				236645442710296C00EB7F2A /* SwiftTests.swift in Sources */,
+				C7695ED9837BC962A8A1F9CF /* Road.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +281,7 @@
 				C76957619AB7A7E174154A5B /* K08Adventure.swift in Sources */,
 				C76957D433CAEB3A190B7181 /* K08.swift in Sources */,
 				C769597E77E020E634DDE067 /* Rpn.swift in Sources */,
+				C769532CB024AC0354267720 /* Road.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

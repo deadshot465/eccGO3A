@@ -2,6 +2,14 @@ import XCTest
 @testable import SwiftAssignments
 
 class SwiftTests: XCTestCase {
+    let expectedRoad: [Pair] = [
+        Pair(x: "b", y: 10),
+        Pair(x: "x", y: 30),
+        Pair(x: "a", y: 5),
+        Pair(x: "x", y: 20),
+        Pair(x: "b", y: 2),
+        Pair(x: "b", y: 8)
+    ]
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -68,6 +76,10 @@ class SwiftTests: XCTestCase {
         measure {
             // Put the code you want to measure the time of here.
         }
+    }
+
+    func testHeathrowToLondon() throws {
+        XCTAssertTrue(expectedRoad.elementsEqual(runHeathrowToLondon()))
     }
 
 }
