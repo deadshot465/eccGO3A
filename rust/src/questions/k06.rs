@@ -1,34 +1,29 @@
-use crate::executable::Executable;
+use crate::shared::traits::executable::Executable;
+use crate::shared::utility::read_user_input;
 use std::io::Write;
 
 pub struct K06 {}
-impl K06 {
-    pub fn new() -> K06 {
-        K06 {}
-    }
-}
 
 impl Executable for K06 {
-    fn question_1(&self) {
-        let mut ages: Vec<f32> = vec!{};
+    fn question_1(&self) -> anyhow::Result<()> {
+        let mut ages: Vec<f32> = vec![];
 
         for i in 0..5 {
             print!("{}人目の年齢を入力して下さい：", i + 1);
-            std::io::stdout().flush().unwrap();
-            let mut reader = String::new();
-            std::io::stdin().read_line(&mut reader).expect("入力失敗！");
-            ages.push(reader.trim().parse::<f32>().expect("入力失敗！"));
+            std::io::stdout().flush()?;
+            ages.push(read_user_input::<f32>()?);
         }
 
         let average: f32 = ages.iter().sum::<f32>() / ages.len() as f32;
         println!("{}人の平均年齢は{}です。", ages.len(), average);
+        Ok(())
     }
 
-    fn question_2(&self) {
+    fn question_2(&self) -> anyhow::Result<()> {
         for i in 0..9 {
             for _ in 0..i + 1 {
                 print!("*");
-                std::io::stdout().flush().unwrap();
+                std::io::stdout().flush()?;
             }
             println!();
         }
@@ -37,7 +32,7 @@ impl Executable for K06 {
         for i in (0..9).rev() {
             for _ in 0..i + 1 {
                 print!("*");
-                std::io::stdout().flush().unwrap();
+                std::io::stdout().flush()?;
             }
             println!();
         }
@@ -46,18 +41,19 @@ impl Executable for K06 {
         for i in (0..9).rev() {
             for _ in 0..i {
                 print!(" ");
-                std::io::stdout().flush().unwrap();
+                std::io::stdout().flush()?;
             }
 
             for _ in i..9 {
                 print!("*");
-                std::io::stdout().flush().unwrap();
+                std::io::stdout().flush()?;
             }
             println!();
         }
+        Ok(())
     }
 
-    fn question_3(&self) {
+    fn question_3(&self) -> anyhow::Result<()> {
         let total = 370;
         let mut count = 0;
         for i in 0..total / 100 + 1 {
@@ -71,31 +67,34 @@ impl Executable for K06 {
             }
         }
         println!("以上{}通りを発見しました。", count);
+        Ok(())
     }
 
-    fn question_4(&self) {
+    fn question_4(&self) -> anyhow::Result<()> {
         print!("\t|\t");
-        std::io::stdout().flush().unwrap();
+        std::io::stdout().flush()?;
         for i in 1..10 {
             print!("{}\t", i);
-            std::io::stdout().flush().unwrap();
+            std::io::stdout().flush()?;
         }
         println!();
 
         for _ in 0..75 {
             print!("-");
-            std::io::stdout().flush().unwrap();
+            std::io::stdout().flush()?;
         }
         println!();
 
         for i in 1..10 {
             print!("{}\t|\t", i);
-            std::io::stdout().flush().unwrap();
+            std::io::stdout().flush()?;
             for j in 1..10 {
                 print!("{}\t", i * j);
-                std::io::stdout().flush().unwrap();
+                std::io::stdout().flush()?;
             }
             println!();
         }
+
+        Ok(())
     }
 }

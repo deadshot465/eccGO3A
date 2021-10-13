@@ -1,8 +1,9 @@
 [package]
-name = "Rust"
+name = "rust_assignments"
 version = "0.1.0"
 authors = ["Chehui Chou <deadshot465@users.noreply.github.com>"]
 edition = "2018"
 
 [dependencies]
-rand = "0.3.14"
+anyhow = ">=1.0.44"
+rand = ">=0.8.4"
