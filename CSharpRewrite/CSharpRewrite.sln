@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpRewrite", "CSharpRewrite\CSharpRewrite.csproj", "{EA0F2E82-FC3D-45CE-884B-AF62476C0764}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{03DE932F-30D5-4CFD-8BF4-FC61603E1DBE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA0F2E82-FC3D-45CE-884B-AF62476C0764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA0F2E82-FC3D-45CE-884B-AF62476C0764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA0F2E82-FC3D-45CE-884B-AF62476C0764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA0F2E82-FC3D-45CE-884B-AF62476C0764}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03DE932F-30D5-4CFD-8BF4-FC61603E1DBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03DE932F-30D5-4CFD-8BF4-FC61603E1DBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03DE932F-30D5-4CFD-8BF4-FC61603E1DBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03DE932F-30D5-4CFD-8BF4-FC61603E1DBE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
