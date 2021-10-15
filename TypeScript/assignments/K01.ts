@@ -1,31 +1,24 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const IExecutable_1 = require("./IExecutable");
-class K01 extends IExecutable_1.IExecutable {
-    Question1() {
+import Executable from "../shared/Executable.ts";
+
+export default class K01 extends Executable {
+    question1(): void {
         console.log("Hello World! ようこそTypeScript言語の世界へ！");
-        return new Promise((resolve, reject) => {
-            resolve();
-        });
     }
-    Question2() {
+
+    question2(): void {
         console.log("Hello World!");
         console.log("ようこそ");
         console.log("TypeScript言語の世界へ！");
-        return new Promise((resolve, reject) => {
-            resolve();
-        });
     }
-    Question3() {
+
+    question3(): void {
         console.log("整数：" + 12345);
         console.log("実数：" + 123.456789);
         console.log("文字：" + 'A');
         console.log("文字列：" + "ABCdef");
-        return new Promise((resolve, reject) => {
-            resolve();
-        });
     }
-    Question4() {
+
+    question4(): void {
         console.log("              ##");
         console.log("             #  #");
         console.log("             #  #");
@@ -41,10 +34,5 @@ class K01 extends IExecutable_1.IExecutable {
         console.log("  ###     ##########     ###");
         console.log("     ###              ###");
         console.log("        ##############");
-        return new Promise((resolve, reject) => {
-            resolve();
-        });
     }
 }
-exports.K01 = K01;
-//# sourceMappingURL=K01.js.map
