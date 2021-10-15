@@ -5,7 +5,7 @@ export default class K07 extends Executable {
         let choice = 0;
         do {
             choice = Number.parseInt(prompt("メッセージを表示しますか？（０：終了する　１：表示する）＞") ?? "0");
-            if (choice == 1)
+            if (choice === 1)
                 this.showTexts();
         } while (choice != 0);
         console.log("終了します。");

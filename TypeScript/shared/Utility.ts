@@ -12,3 +12,14 @@ export function writeToStdout(message = "") {
 export function getRandomNumber(max: number): number {
     return Math.floor(Math.random() * Math.floor(max));
 }
+
+export interface Tuple<T, U> {
+    first: T,
+    second: U
+}
+
+export interface Triple<T, U, V> {
+    a: T,
+    b: U,
+    x: V,
+}

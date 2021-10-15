@@ -59,7 +59,7 @@ export default class K06 extends Executable {
         for (let i = 0; i <= Math.trunc(total / 100); i++) {
             for (let j = 0; j <= Math.trunc(total / 50); j++) {
                 for (let k = 0; k <= Math.trunc(total / 10); k++) {
-                    if (100 * i + 50 * j + 10 * k == total) {
+                    if (100 * i + 50 * j + 10 * k === total) {
                         console.log(`10円の硬貨${k}枚 50円の硬貨${j}枚 100円の硬貨${i}枚`);
                         count++;
                     }

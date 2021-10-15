@@ -44,7 +44,7 @@ export default class K03 extends Executable {
             console.log("大正解です！");
         } else if (guess < randomNumber && randomNumber - guess <= 10) {
             console.log("惜しい！");
-        } else if (guess == randomNumber) {
+        } else if (guess === randomNumber) {
             console.log("お見事！");
         } else {
             console.log(guess > randomNumber ? "正解です。" : "不正解です。");

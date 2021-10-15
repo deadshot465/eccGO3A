@@ -44,7 +44,7 @@ export default class K04 extends Executable {
         console.log("＊＊＊おみくじプログラム＊＊＊");
         const choice = Number.parseInt(prompt("おみくじを引きますか　（はい：１　いいえ：０）　＞") ?? "0");
 
-        if (choice == 0) return;
+        if (choice === 0) return;
 
         const oracle = getRandomNumber(5);
         switch (oracle) {

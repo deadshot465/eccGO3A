@@ -28,7 +28,7 @@ export default class K05 extends Executable {
         do {
             console.log("起きろ～");
             const choice = Number.parseInt(prompt("1．起きた　2．あと5分…　3．Zzzz…  入力：") ?? "0");
-            if (choice == 1) {
+            if (choice === 1) {
                 console.log("よし、学校へ行こう！");
             }
         } while (true);
@@ -66,7 +66,7 @@ export default class K05 extends Executable {
             console.log(`基礎攻撃力は${damage}です。`);
             damage = damage - golem.defense < 0 ? 0 : damage - golem.defense;
 
-            if (damage == 0) {
+            if (damage === 0) {
                 console.log("ゴーレム：「ハハハハハ、情けないな！貴様は弱すぎる！」");
                 console.log("ゴーレムがあなたを攻撃しました！攻撃値：" + golem.attack);
                 playerHp -= golem.attack;
@@ -82,7 +82,7 @@ export default class K05 extends Executable {
             golem.hp = golem.hp - damage < 0 ? 0 : golem.hp - damage;
             console.log(`残りのHPは${golem.hp}です`);
 
-            if (golem.hp == 0) {
+            if (golem.hp === 0) {
                 console.log("ゴーレムを倒しました！");
             }
         }

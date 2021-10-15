@@ -1,4 +1,7 @@
 import { questions } from "./assignments/index.ts";
+import Road from "./assignments/Extra/Road.ts";
+
+console.log(Road());
 
 function showSelection(chapter: number) {
     if (chapter < 10) {
@@ -6,7 +9,7 @@ function showSelection(chapter: number) {
             console.log(`\t${i + 1}) K0${chapter}_${i + 1}`);
         }
 
-        if (chapter == 9) {
+        if (chapter === 9) {
             console.log(`\t5) K0${chapter}_5`);
         }
     } else {
