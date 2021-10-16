@@ -1,7 +1,4 @@
 import { questions } from "./assignments/index.ts";
-import Road from "./assignments/Extra/Road.ts";
-
-console.log(Road());
 
 function showSelection(chapter: number) {
     if (chapter < 10) {

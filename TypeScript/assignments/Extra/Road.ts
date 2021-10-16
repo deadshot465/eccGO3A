@@ -65,8 +65,8 @@ function shortestSteps(acc: RoutingResult, elem: Triple<number, number, number>)
     };
 
     return {
-        a: optA1 < optA2 ? optA1 : optA2,
-        b: optB1 < optB2 ? optB1 : optB2,
+        a: minRoute(optA1, optA2),
+        b: minRoute(optB1, optB2),
     };
 }
 
@@ -82,16 +82,34 @@ function optimalPath(values: Triple<number, number, number>[]): Tuple<string, nu
         }
     });
 
-    if (a.path[a.path.length - 1] !== { first: 'x', second: 0 }) {
+    if (a.path[a.path.length - 1].first !== 'x' && a.path[a.path.length - 1].second !== 0) {
         return a.path;
-    } else if (b.path[b.path.length - 1] !== { first: 'x', second: 0 }) {
+    } else if (b.path[b.path.length - 1].first !== 'x' && b.path[b.path.length - 1].second !== 0) {
         return b.path;
     } else {
         return [];
     }
 }
 
-export default function Road(): Tuple<string, number>[] {
+function minRoute(routeA: Route, routeB: Route): Route {
+    if (routeA.destination !== routeB.destination) {
+        return routeA.destination < routeB.destination ? routeA : routeB;
+    }
+
+    const shorterPath = routeA.path.length < routeB.path.length ? routeA.path : routeB.path;
+    const longerPath = routeA.path.length > routeB.path.length ? routeA.path : routeB.path;
+
+    for (let i = 0; i < shorterPath.length; i++) {
+        if (shorterPath[i].first !== longerPath[i].first) {
+            return shorterPath[i].first < longerPath[i].first ? routeA : routeB;
+        } else if (shorterPath[i].second !== longerPath[i].second) {
+            return shorterPath[i].second < longerPath[i].second ? routeA : routeB;
+        }
+    }
+    return routeA.path.length < routeB.path.length ? routeA : routeB;
+}
+
+export default function road(): Tuple<string, number>[] {
     const content = Deno.readTextFileSync("road.txt");
     const map = parseMap(content);
     const values = groupValues(map);
