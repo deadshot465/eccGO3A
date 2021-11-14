@@ -1,4 +1,5 @@
 import assignments.k08.K08
+import assignments.kex2.Kex2
 import assignments.{K01, K02, K03, K04, K05, K06, K07, K09, K10}
 import shared.Question
 
@@ -20,7 +21,10 @@ def main(args: String*) =
 
   val choice = StdIn.readInt()
   choice match
-    case 100 | 101 | 102 => ()
+    case 100 | 101 | 102 =>
+      choice match
+        case 101 => Kex2.run()
+        case _ => ()
     case _ =>
       showSelections(choice)
       val choice2 = StdIn.readInt()
