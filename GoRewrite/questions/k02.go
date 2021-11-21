@@ -1,7 +1,7 @@
 package questions
 
 import (
-	"RecursiveGo/shared"
+	"GoRewrite/shared"
 	"fmt"
 )
 

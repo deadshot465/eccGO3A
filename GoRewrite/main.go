@@ -1,9 +1,9 @@
 package main
 
 import (
-	"RecursiveGo/questions"
-	"RecursiveGo/shared"
-	"RecursiveGo/shared/utility"
+	"GoRewrite/questions"
+	"GoRewrite/shared"
+	"GoRewrite/shared/utility"
 	"fmt"
 	"strings"
 )
@@ -46,6 +46,7 @@ func main() {
 	executables := []shared.Executable {
 		questions.K01{}, questions.K02{}, questions.K03{},
 		questions.K04{}, questions.K05{}, questions.K06{},
+		questions.K07{},
 	}
 
 	fmt.Println("実行したいプログラムを選択してください。")

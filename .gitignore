@@ -1,11 +1,7 @@
 .vs/
 .git/
 
-actix-project/
-angular-project/
-
 C/
-clojure_project/
 
 Cpp/Debug/
 Cpp/include
@@ -22,12 +18,6 @@ CSharp/Sort.cs
 Dart/.dart_tool/
 Dart/.idea/
 Dart/test/
-
-Debug/
-DirectX/
-DirectX_Tutorial/
-
-elixir_project/
 
 Go/.idea/
 Go/Sort.go
@@ -52,12 +42,8 @@ Nodejs/README.md
 Nodejs/Sort.js
 Nodejs/Sort.ts
 
-OpenGL/
-OpenTK/
 packages/
 
-prism.css
-prism.js
 Python/.idea/
 Python/__pycache__
 Python/sort.py
@@ -74,13 +60,12 @@ Scala/target/
 Scala/src/test/
 Scala/src/main/scala/PrimaryClasses/Sort.scala
 
-SharpDXProject/
-
 SwiftProject/Index
 SwiftProject/SwiftProject.xcodeproj/
 SwiftProject/XCode_Build
 SwiftProjectWindows/
 
-vue_project/
 .DS_Store
 **/*/.DS_Store
+
+/RecursiveGo
