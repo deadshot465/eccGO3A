@@ -2,7 +2,7 @@
 name = "rust_assignments"
 version = "0.1.0"
 authors = ["Chehui Chou <deadshot465@users.noreply.github.com>"]
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 anyhow = ">=1.0.44"

@@ -46,10 +46,15 @@ fn main() -> anyhow::Result<()> {
     println!("100) Kex");
     println!("101) Kex_2");
     println!("102) Sort");
+    println!("103) Band Supervisor");
 
     let choice = read_user_input::<u32>()?;
     match choice {
-        100 | 101 | 102 => Ok(()),
+        100..=102 => Ok(()),
+        103 => {
+            questions::musicians::start_band(5);
+            Ok(())
+        }
         _ => {
             show_selection(choice);
             let choice2 = read_user_input::<u32>()?;
