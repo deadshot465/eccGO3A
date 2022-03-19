@@ -2,6 +2,7 @@
 
 using CSharpRewrite.Assignments;
 using CSharpRewrite.Assignments.K08;
+using CSharpRewrite.Assignments.Musicians;
 using CSharpRewrite.Shared;
 
 void ShowSelection(int chapter)
@@ -50,6 +51,7 @@ for (var i = 1; i <= questions.Count; i++)
 Console.WriteLine("100) Kex_1");
 Console.WriteLine("101) Kex_2");
 Console.WriteLine("102) Sort");
+Console.WriteLine("103) Band Supervisor");
 
 var choice = int.Parse(Console.ReadLine() ?? "0");
 
@@ -58,6 +60,9 @@ switch (choice)
     case 100:
     case 101:
     case 102:
+        break;
+    case 103:
+        BandSupervisor.StartBand(5).GetAwaiter().GetResult();
         break;
     default:
         ShowSelection(choice);
