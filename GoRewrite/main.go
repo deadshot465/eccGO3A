@@ -2,6 +2,7 @@ package main
 
 import (
 	"GoRewrite/questions"
+	"GoRewrite/questions/musicians"
 	"GoRewrite/shared"
 	"GoRewrite/shared/utility"
 	"fmt"
@@ -22,7 +23,7 @@ func innerShowExecutables(executables []shared.Executable, index int, acc []stri
 		prefix = "K"
 	}
 	text := fmt.Sprintf("%d) %s%d\t\t", index, prefix, index)
-	return innerShowExecutables(executables[1:], index - 1, append(acc, text))
+	return innerShowExecutables(executables[1:], index-1, append(acc, text))
 }
 
 func showSelections(chapter int, index int) []string {
@@ -39,11 +40,11 @@ func innerShowSelection(chapter int, index int, acc []string) []string {
 		prefix = "K"
 	}
 	text := fmt.Sprintf("\t%d) %s%d_%d", index, prefix, chapter, index)
-	return innerShowSelection(chapter, index - 1, append(acc, text))
+	return innerShowSelection(chapter, index-1, append(acc, text))
 }
 
 func main() {
-	executables := []shared.Executable {
+	executables := []shared.Executable{
 		questions.K01{}, questions.K02{}, questions.K03{},
 		questions.K04{}, questions.K05{}, questions.K06{},
 		questions.K07{},
@@ -51,11 +52,18 @@ func main() {
 
 	fmt.Println("実行したいプログラムを選択してください。")
 	fmt.Println(strings.Join(showExecutables(executables, len(executables)), ""))
+	fmt.Println("103) Band Supervisor")
 	fmt.Println("")
 	var choice int
 	_, _ = fmt.Scanf("%d", &choice)
+
+	if choice == 103 {
+		musicians.StartBand(5)
+		return
+	}
+
 	fmt.Println(strings.Join(showSelections(choice, 4), "\n"))
 	var choice2 int
 	_, _ = fmt.Scanf("%d", &choice2)
-	executables[choice - 1].Execute(choice2)
+	executables[choice-1].Execute(choice2)
 }
