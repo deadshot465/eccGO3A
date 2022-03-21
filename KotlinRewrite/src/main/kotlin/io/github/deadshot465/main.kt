@@ -5,10 +5,7 @@ import io.github.deadshot465.assignments.K02
 import io.github.deadshot465.assignments.K03
 import io.github.deadshot465.assignments.K04
 import io.github.deadshot465.assignments.musicians.startBand
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import java.util.Scanner
+import java.util.*
 
 suspend fun main() {
     val questions = listOf(K01(), K02(), K03(), K04())
