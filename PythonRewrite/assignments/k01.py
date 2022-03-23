@@ -1,8 +1,7 @@
-class k01(object):
-    
-    def execute(self, num):
-        getattr(self, 'question%d' % num)()
+from shared.question import Question
 
+
+class K01(Question):
     def question1(self):
         print('Hello World! ようこそPython言語の世界へ！')
 
@@ -33,4 +32,3 @@ class k01(object):
         print("  ###     ##########     ###")
         print("     ###              ###")
         print("        ##############")
-
