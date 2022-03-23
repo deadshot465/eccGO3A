@@ -2,7 +2,6 @@ package assignments.musicians
 
 import java.util.concurrent.LinkedTransferQueue
 import scala.annotation.tailrec
-import scala.util.control.Breaks
 
 object BandSupervisor:
   def startBand(maxRetries: Int): Unit =

@@ -1,4 +1,5 @@
 import { questions } from "./assignments/index.ts";
+import { startBand } from "./assignments/Musicians/BandSupervisor.ts";
 
 function showSelection(chapter: number) {
     if (chapter < 10) {
@@ -30,12 +31,16 @@ for (let i = 0; i < questions.length; i++) {
 console.log("100) Kex_1");
 console.log("101) Kex_2");
 console.log("102) Sort");
+console.log("103) Band Supervisor");
 
 const choice = Number.parseInt(prompt("") ?? "0");
 switch (choice) {
     case 100:
     case 101:
     case 102:
+        break;
+    case 103:
+        startBand(3);
         break;
     default:
         {
