@@ -1,7 +1,8 @@
 package assignments.kex2
 
-import shared.{ATTACK_HIT, EnemyType, MAGIC_HIT, Player, SKILL_HIT, mkEnemy, Enemy}
+import shared.{ATTACK_HIT, Enemy, EnemyType, MAGIC_HIT, Player, SKILL_HIT, mkEnemy}
 
+import scala.annotation.tailrec
 import scala.io.StdIn
 import scala.util.Random
 import scala.util.control.Breaks
@@ -38,6 +39,7 @@ def gameLoop(player: Player): String =
   }
   s"リ〇ミト！\n戦闘回数：${kills}回　残りHP：${player.hp}"
 
+@tailrec
 private def selectAttack(choice: Int): AttackMethod =
   choice match
     case 1 => AttackMethod.Attack()

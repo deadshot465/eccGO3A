@@ -2,6 +2,7 @@ package assignments.k08
 
 import shared.Golem
 
+import scala.annotation.tailrec
 import scala.io.StdIn
 import scala.util.Random
 import scala.util.control.Breaks
@@ -33,6 +34,7 @@ def gameLoop(playerHp: Int): String =
   }
   "ゲームオーバー！"
 
+@tailrec
 private def selectAttack(choice: Int): AttackMethod =
   choice match
     case 1 => AttackMethod.Attack()
