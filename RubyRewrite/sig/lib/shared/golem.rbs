@@ -1,0 +1,9 @@
+class Golem
+  attr_accessor hp: Integer
+
+  attr_reader defense: Integer
+
+  attr_reader attack: Integer
+
+  def initialize: (?::Integer hp, ?::Integer defense, ?::Integer attack) -> void
+end

@@ -1,0 +1,9 @@
+module BandSupervisor
+  DELAY: ::Float
+
+  def self.start_band: (Integer max_retries) -> void
+
+  private
+
+  def self.add_band_member: (String role, Symbol skill_level, Thread::Queue queue) -> Thread::Queue
+end

@@ -1,0 +1,11 @@
+class Question
+  def question1: () -> void
+
+  def question2: () -> void
+
+  def question3: () -> void
+
+  def question4: () -> void
+
+  def execute: (Integer number) -> void
+end

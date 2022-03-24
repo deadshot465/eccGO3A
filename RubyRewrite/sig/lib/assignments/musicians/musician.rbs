@@ -1,0 +1,11 @@
+class Musician
+  attr_reader name: String
+
+  attr_reader role: String
+
+  def initialize: (String role, Symbol skill_level, Thread::Queue queue) -> void
+
+  def play_sound: () -> bool
+
+  def self.pick_name: () -> ::String
+end
