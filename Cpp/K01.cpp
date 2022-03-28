@@ -2,50 +2,42 @@
 
 #include "K01.h"
 
-K01::K01()
-{
+K01::K01() = default;
+
+
+K01::~K01() = default;
+
+void K01::question1() {
+    std::cout << "Hello World!ã€€ã‚ˆã†ã“ãC++è¨€èªžã®ä¸–ç•Œã¸ï¼\n";
 }
 
-
-K01::~K01()
-{
+void K01::question2() {
+    std::cout << "Hello World!\n";
+    std::cout << "ã‚ˆã†ã“ã\n";
+    std::cout << "C++è¨€èªžã®ä¸–ç•Œã¸ï¼";
 }
 
-void K01::question1()
-{
-	std::cout << "Hello World!@‚æ‚¤‚±‚»C++Œ¾Œê‚Ì¢ŠE‚ÖI\n";
+void K01::question3() {
+    std::cout << "æ•´æ•°ï¼š" << 12345 << "\n";
+    std::cout << "å®Ÿæ•°ï¼š" << 123.456789f << "\n";
+    std::cout << "æ–‡å­—ï¼š" << 'A' << "\n";
+    std::cout << "æ–‡å­—åˆ—ï¼š" << "ABCdef" << "\n";
 }
 
-void K01::question2()
-{
-	std::cout << "Hello World!\n";
-	std::cout << "‚æ‚¤‚±‚»\n";
-	std::cout << "C++Œ¾Œê‚Ì¢ŠE‚ÖI";
-}
-
-void K01::question3()
-{
-	std::cout << "®”F" << 12345 << "\n";
-	std::cout << "ŽÀ”F" << 123.456789f << "\n";
-	std::cout << "•¶ŽšF" << 'A' << "\n";
-	std::cout << "•¶Žš—ñF" << "ABCdef" << "\n";
-}
-
-void K01::question4()
-{
-	std::cout << "              ##\n";
-	std::cout << "             #  #\n";
-	std::cout << "             #  #\n";
-	std::cout << "            #    #\n";
-	std::cout << "           #      #\n";
-	std::cout << "         ##        ##\n";
-	std::cout << "       ##            ##\n";
-	std::cout << "    ###                ###\n";
-	std::cout << " ###       ##    ##       ###\n";
-	std::cout << "##        #  #  #  #        ##\n";
-	std::cout << "##         ##    ##         ##\n";
-	std::cout << " ##     #            #     ##\n";
-	std::cout << "  ###     ##########     ###\n";
-	std::cout << "     ###              ###\n";
-	std::cout << "        ##############\n";
+void K01::question4() {
+    std::cout << "              ##\n";
+    std::cout << "             #  #\n";
+    std::cout << "             #  #\n";
+    std::cout << "            #    #\n";
+    std::cout << "           #      #\n";
+    std::cout << "         ##        ##\n";
+    std::cout << "       ##            ##\n";
+    std::cout << "    ###                ###\n";
+    std::cout << " ###       ##    ##       ###\n";
+    std::cout << "##        #  #  #  #        ##\n";
+    std::cout << "##         ##    ##         ##\n";
+    std::cout << " ##     #            #     ##\n";
+    std::cout << "  ###     ##########     ###\n";
+    std::cout << "     ###              ###\n";
+    std::cout << "        ##############\n";
 }

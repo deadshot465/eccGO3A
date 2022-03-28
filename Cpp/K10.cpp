@@ -1,6 +1,5 @@
 #include <array>
 #include <iostream>
-#include <string>
 #include "K10.h"
 
 using namespace std;
@@ -10,77 +9,68 @@ K10::K10() = default;
 
 K10::~K10() = default;
 
-void K10::question1()
-{
-	string inputString;
-	cout << "•¶Žš—ñ‚Ì“ü—Í„";
-	cin >> inputString;
+void K10::question1() {
+    string inputString;
+    cout << "æ–‡å­—åˆ—ã®å…¥åŠ›ï¼ž";
+    cin >> inputString;
 
-	cout << "“ü—Í‚³‚ê‚½•¶Žš—ñ‚Ì•¶Žš”F" << inputString.length();
+    cout << "å…¥åŠ›ã•ã‚ŒãŸæ–‡å­—åˆ—ã®æ–‡å­—æ•°ï¼š" << inputString.length();
 }
 
-void K10::question2()
-{
-	string str = "STRINGcopy";
+void K10::question2() {
+    string str = "STRINGcopy";
 
-	cout << "ƒRƒs[‚µ‚½‚¢•¶Žš—ñF" << str << "\n";
+    cout << "ã‚³ãƒ”ãƒ¼ã—ãŸã„æ–‡å­—åˆ—ï¼š" << str << "\n";
 
-	string copyStr{ str };
+    string copyStr{str};
 
-	cout << "ƒRƒs[Œã‚Ì•¶Žš—ñF" << copyStr << "\n";
+    cout << "ã‚³ãƒ”ãƒ¼å¾Œã®æ–‡å­—åˆ—ï¼š" << copyStr << "\n";
 
 }
 
-void K10::question3()
-{
+void K10::question3() {
 
-	array<string, 3> str = {
-		"abcdef", "GHIJKL", "13579"
-	};
+    array<string, 3> str = {
+            "abcdef", "GHIJKL", "13579"
+    };
 
-	string str_combined;
+    string str_combined;
 
-	cout << "˜AŒ‹‚µ‚½‚¢‚R‚Â‚Ì•¶Žš—ñF\n";
-	for (const auto& _str : str)
-	{
-		str_combined += _str;
-	}
+    cout << "é€£çµã—ãŸã„ï¼“ã¤ã®æ–‡å­—åˆ—ï¼š\n";
+    for (const auto &_str: str) {
+        str_combined += _str;
+    }
 
-	cout << "˜AŒ‹‚µ‚½•¶Žš—ñF\n" << str_combined;
+    cout << "é€£çµã—ãŸæ–‡å­—åˆ—ï¼š\n" << str_combined;
 }
 
-void K10::question4()
-{
-	string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+void K10::question4() {
+    string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	string inputString = "I AM A STUDENT. I AM GOOD AT GAME PROGRAMMING.";
+    string inputString = "I AM A STUDENT. I AM GOOD AT GAME PROGRAMMING.";
 
-	cout << "•¶Žš—ñF" << inputString << "\n\n";
+    cout << "æ–‡å­—åˆ—ï¼š" << inputString << "\n\n";
 
-	cout << "•¶Žš•p“x\n";
+    cout << "æ–‡å­—é »åº¦\n";
 
-	int count = 0;
-	int _count = 0;
+    auto count = 0;
+    auto _count = 0;
 
-	int i = 0;
+    auto i = 0;
 
-	for (char alphabet : alphabets)
-	{
-		for (char j : inputString)
-		{
-			if (alphabet == j)
-			{
-				++_count;
-			}
-		}
+    for (char alphabet: alphabets) {
+        for (char j: inputString) {
+            if (alphabet == j) {
+                ++_count;
+            }
+        }
 
-		cout << alphabet << ": " << _count << "\t";
-		_count = 0;
-		++count;
+        cout << alphabet << ": " << _count << "\t";
+        _count = 0;
+        ++count;
 
-		if (count % 4 == 0)
-		{
-			printf("\n");
-		}
-	}
+        if (count % 4 == 0) {
+            printf("\n");
+        }
+    }
 }

@@ -3,73 +3,65 @@
 #include "Golem.h"
 #include "K08_2sub.h"
 
-K08_2sub::K08_2sub()
-{
-}
+K08_2sub::K08_2sub() = default;
 
-K08_2sub::~K08_2sub()
-{
-}
+K08_2sub::~K08_2sub() = default;
 
 enum AttackMethod {
-	Attack = 65,
-	Skill = 99,
-	Magic = 133
+    Attack = 65,
+    Skill = 99,
+    Magic = 133
 };
 
-void K08_2sub::AttackGolem(int lv, int& playerHp)
-{
-	try {
-		Golem golem = Golem(lv * 50 + 100, lv * 10 + 40, lv * 10 + 30);
+void K08_2sub::AttackGolem(int lv, int &playerHp) {
+    try {
+        Golem golem = Golem(lv * 50 + 100, lv * 10 + 40, lv * 10 + 30);
 
-		std::cout << "ƒS[ƒŒƒ€Lv." << lv + 1 << "‚ªŒ»‚ê‚½I\n";
-		while (golem.hp > 0)
-		{
-			std::cout << "\nŽc‚èHPF" << golem.hp << "\n";
-			std::cout << "•Ší‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢i‚PDUŒ‚@‚QD“Á‹Z@‚RD–‚–@j„";
-			int choice = 0;
-			std::cin >> choice;
-			int damage = 0;
+        std::cout << "ã‚´ãƒ¼ãƒ¬ãƒ Lv." << lv + 1 << "ãŒç¾ã‚ŒãŸï¼\n";
+        while (golem.hp > 0) {
+            std::cout << "\næ®‹ã‚ŠHPï¼š" << golem.hp << "\n";
+            std::cout << "æ­¦å™¨ã‚’é¸æŠžã—ã¦ãã ã•ã„ï¼ˆï¼‘ï¼Žæ”»æ’ƒã€€ï¼’ï¼Žç‰¹æŠ€ã€€ï¼“ï¼Žé­”æ³•ï¼‰ï¼ž";
+            auto choice = 0;
+            std::cin >> choice;
+            auto damage = 0;
 
-			switch (choice)
-			{
-			case 1:
-				damage = static_cast<int>(Attack);
-				break;
-			case 2:
-				damage = static_cast<int>(Skill);
-				break;
-			case 3:
-				damage = static_cast<int>(Magic);
-				break;
-			default:
-				break;
-			}
-			damage -= golem.defense;
+            switch (choice) {
+                case 1:
+                    damage = static_cast<int>(Attack);
+                    break;
+                case 2:
+                    damage = static_cast<int>(Skill);
+                    break;
+                case 3:
+                    damage = static_cast<int>(Magic);
+                    break;
+                default:
+                    break;
+            }
+            damage -= golem.defense;
 
-			if (damage <= 0) {
-				damage = 0;
-				std::cout << "ƒS[ƒŒƒ€FuƒnƒnƒnƒnƒnAî‚¯‚È‚¢‚ÈI‹M—l‚ÍŽã‚·‚¬‚éIv\n";
-				std::cout << "ƒS[ƒŒƒ€‚ª‚ ‚È‚½‚ðUŒ‚‚µ‚Ü‚µ‚½IUŒ‚’lF" << golem.attack << "\n";
-				playerHp -= golem.attack;
-				if (playerHp <= 0)
-				{
-					playerHp = 0;
-					std::cout << "‚ ‚È‚½‚ÍƒS[ƒŒƒ€‚É•‰‚¯‚Ü‚µ‚½IƒQ[ƒ€ƒI[ƒo[I\n";
-					return;
-				}
-				std::cout << "‚ ‚È‚½‚ÌŽc‚èHP‚ÍF" << playerHp << "\n";
-			}
-			std::cout << "ƒ_ƒ[ƒW‚Í" << damage << "‚Å‚·B\n";
-			golem.hp -= damage;
+            if (damage <= 0) {
+                damage = 0;
+                std::cout << "ã‚´ãƒ¼ãƒ¬ãƒ ï¼šã€Œãƒãƒãƒãƒãƒã€æƒ…ã‘ãªã„ãªï¼è²´æ§˜ã¯å¼±ã™ãŽã‚‹ï¼ã€\n";
+                std::cout << "ã‚´ãƒ¼ãƒ¬ãƒ ãŒã‚ãªãŸã‚’æ”»æ’ƒã—ã¾ã—ãŸï¼æ”»æ’ƒå€¤ï¼š" << golem.attack << "\n";
+                playerHp -= golem.attack;
+                if (playerHp <= 0) {
+                    playerHp = 0;
+                    std::cout << "ã‚ãªãŸã¯ã‚´ãƒ¼ãƒ¬ãƒ ã«è² ã‘ã¾ã—ãŸï¼ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ï¼\n";
+                    return;
+                }
+                std::cout << "ã‚ãªãŸã®æ®‹ã‚ŠHPã¯ï¼š" << playerHp << "\n";
+            }
+            std::cout << "ãƒ€ãƒ¡ãƒ¼ã‚¸ã¯" << damage << "ã§ã™ã€‚\n";
+            golem.hp -= damage;
 
-			if (golem.hp <= 0)
-				golem.hp = 0;
-			if (golem.hp == 0)
-				std::cout << "ƒS[ƒŒƒ€Lv." << lv + 1 << "‚ð“|‚µ‚½I\n";
-		}
-	}
-	catch (const std::exception& ex) {
-		std::cerr << ex.what();
-	}
+            if (golem.hp <= 0)
+                golem.hp = 0;
+            if (golem.hp == 0)
+                std::cout << "ã‚´ãƒ¼ãƒ¬ãƒ Lv." << lv + 1 << "ã‚’å€’ã—ãŸï¼\n";
+        }
+    }
+    catch (const std::exception &ex) {
+        std::cerr << ex.what();
+    }
 }

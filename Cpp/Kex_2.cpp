@@ -5,36 +5,32 @@
 
 using std::cout;
 
-void Kex_2::Execute()
-{
-	auto engine = Kex_2::GetEngine<>();
-	std::uniform_int_distribution<> generator(0, 2);
-	cout << "–`Œ¯‚ª¡Žn‚Ü‚éI\n";
-	PlayerEx player;
-	player.Hp = PLAYER_INITIAL_HP;
-	player.Defense = PLAYER_DEFENSE;
-	int continue_game = 1;
-	int kills = 0;
+void Kex_2::Execute() {
+    auto engine = Kex_2::GetEngine<>();
+    std::uniform_int_distribution<> generator(0, 2);
+    cout << "å†’é™ºãŒä»Šå§‹ã¾ã‚‹ï¼\n";
+    PlayerEx player;
+    player.Hp = PLAYER_INITIAL_HP;
+    player.Defense = PLAYER_DEFENSE;
+    auto continue_game = 1;
+    auto kills = 0;
 
-	do
-	{
-		cout << "\nŒ»HPF" << player.Hp << "\n";
-		cout << "‰œ‚Éi‚Ý‚Ü‚·‚©Hi‚PF‰œ‚Éi‚Þ@‚OD‹A‚éj„";
-		std::cin >> continue_game;
-		if (continue_game == 1)
-		{
-			int lv = generator(engine);
-			Enemy enemy = Kex_2_Enemy::CreateEnemy(static_cast<EnemyType>(lv));
-			bool result = Kex_2_Battle::AttackEnemy(player, enemy);
-			++kills;
-			if (!result)
-			{
-				break;
-			}
-		}
+    do {
+        cout << "\nç¾HPï¼š" << player.Hp << "\n";
+        cout << "å¥¥ã«é€²ã¿ã¾ã™ã‹ï¼Ÿï¼ˆï¼‘ï¼šå¥¥ã«é€²ã‚€ã€€ï¼ï¼Žå¸°ã‚‹ï¼‰ï¼ž";
+        std::cin >> continue_game;
+        if (continue_game == 1) {
+            int lv = generator(engine);
+            Enemy enemy = Kex_2_Enemy::CreateEnemy(static_cast<EnemyType>(lv));
+            bool result = Kex_2_Battle::AttackEnemy(player, enemy);
+            ++kills;
+            if (!result) {
+                break;
+            }
+        }
 
-	} while (continue_game);
+    } while (continue_game);
 
-	cout << "ƒŠZƒ~ƒgI\n\n";
-	cout << "í“¬‰ñ”F" << kills << "‰ñ@Žc‚èHPF" << player.Hp << "\n";
+    cout << "ãƒªã€‡ãƒŸãƒˆï¼\n\n";
+    cout << "æˆ¦é—˜å›žæ•°ï¼š" << kills << "å›žã€€æ®‹ã‚ŠHPï¼š" << player.Hp << "\n";
 }

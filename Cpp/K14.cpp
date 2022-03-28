@@ -1,79 +1,70 @@
 #include "K14.h"
 #include <iostream>
 #include <string>
+#include <cmath>
 
-void K14::question1()
-{
-	std::string str = "ABCDEFGH!!";
-	std::cout << "ŒŸõ‘ÎÛ‚Ì•¶Žš—ñ„" << str << "\n";
-	std::cout << "ŒŸõ‚·‚é‚P•¶Žš‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢„";
-	std::cin.ignore();
-	std::cin.clear();
-	char searchChar;
-	std::cin >> searchChar;
-	auto index = str.find(searchChar);
-	if (index != std::string::npos)
-	{
-		auto subStr = str.substr(index);
-		std::cout << "ŒŸõ•¶ŽšˆÈ~‚Ì•¶Žš—ñF" << subStr << "\n";
-	}
-	else
-	{
-		std::cout << "•¶Žš—ñ‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½B\n";
-	}
+void K14::question1() {
+    std::string str = "ABCDEFGH!!";
+    std::cout << "æ¤œç´¢å¯¾è±¡ã®æ–‡å­—åˆ—ï¼ž" << str << "\n";
+    std::cout << "æ¤œç´¢ã™ã‚‹ï¼‘æ–‡å­—ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼ž";
+    std::cin.ignore();
+    std::cin.clear();
+    char searchChar;
+    std::cin >> searchChar;
+    auto index = str.find(searchChar);
+    if (index != std::string::npos) {
+        auto subStr = str.substr(index);
+        std::cout << "æ¤œç´¢æ–‡å­—ä»¥é™ã®æ–‡å­—åˆ—ï¼š" << subStr << "\n";
+    } else {
+        std::cout << "æ–‡å­—åˆ—ãŒè¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã§ã—ãŸã€‚\n";
+    }
 }
 
-void swapLargerValue(int& a, int& b)
-{
-	if (a >= b)
-	{
-		int temp = a;
-		a = b;
-		b = temp;
-	}
+void swapLargerValue(int &a, int &b) {
+    if (a >= b) {
+        int temp = a;
+        a = b;
+        b = temp;
+    }
 }
 
-void K14::question2()
-{
-	std::cout << "ˆê‚Â–Ú‚Ì’l‚ð“ü—Í„";
-	int a = 0;
-	std::cin >> a;
-	std::cout << "“ñ‚Â–Ú‚Ì’l‚ð“ü—Í„";
-	int b = 0;
-	std::cin >> b;
-	swapLargerValue(a, b);
-	std::cout << "•À‚Ñ‘Ö‚¦Œ‹‰ÊF" << a << ", " << b << "\n";
+void K14::question2() {
+    std::cout << "ä¸€ã¤ç›®ã®å€¤ã‚’å…¥åŠ›ï¼ž";
+    auto a = 0;
+    std::cin >> a;
+    std::cout << "äºŒã¤ç›®ã®å€¤ã‚’å…¥åŠ›ï¼ž";
+    auto b = 0;
+    std::cin >> b;
+    swapLargerValue(a, b);
+    std::cout << "ä¸¦ã³æ›¿ãˆçµæžœï¼š" << a << ", " << b << "\n";
 }
 
-bool checkRange(float a, float b, float& distance)
-{
-	distance = sqrtf(a * a + b * b);
-	return distance < 10;
+bool checkRange(float a, float b, float &distance) {
+    distance = sqrtf(a * a + b * b);
+    return distance < 10;
 }
 
-void K14::question3()
-{
-	std::cout << "À•W‚ðƒJƒ“ƒ}‹æØ‚è‚Å“ü—Í‚µ‚Ä‚­‚¾‚³‚¢„";
-	float a = 0;
-	float b = 0;
-	scanf_s("%f, %f", &a, &b);
-	float distance = 0.0f;
-	bool result = checkRange(a, b, distance);
-	std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
-	std::cout.precision(2);
-	std::cout << "‹——£‚Í" << distance << "‚È‚Ì‚ÅA”ÍˆÍ" << (result ? "“à" : "ŠO") << "‚Å‚·B\n";
+void K14::question3() {
+    std::cout << "åº§æ¨™ã‚’ã‚«ãƒ³ãƒžåŒºåˆ‡ã‚Šã§å…¥åŠ›ã—ã¦ãã ã•ã„ï¼ž";
+    auto a = 0.0f;
+    auto b = 0.0f;
+    scanf("%f, %f", &a, &b);
+    auto distance = 0.0f;
+    auto result = checkRange(a, b, distance);
+    std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
+    std::cout.precision(2);
+    std::cout << "è·é›¢ã¯" << distance << "ãªã®ã§ã€ç¯„å›²" << (result ? "å†…" : "å¤–") << "ã§ã™ã€‚\n";
 }
 
-void K14::question4()
-{
-	std::cout << "‚P‚Â–Ú‚Ì•¶Žš—ñ‚ð“ü—Í„";
-	std::cin.clear();
-	std::cin.ignore();
-	std::string strA;
-	std::getline(std::cin, strA, '\n');
-	std::cout << "‚Q‚Â–Ú‚Ì•¶Žš—ñ‚ð“ü—Í„";
-	std::cin.clear();
-	std::string strB;
-	std::getline(std::cin, strB, '\n');
-	std::cout << (strA == strB ? "“¯‚¶•¶Žš—ñ‚Å‚·B" : "ˆá‚¤•¶Žš—ñ‚Å‚·B");
+void K14::question4() {
+    std::cout << "ï¼‘ã¤ç›®ã®æ–‡å­—åˆ—ã‚’å…¥åŠ›ï¼ž";
+    std::cin.clear();
+    std::cin.ignore();
+    std::string strA;
+    std::getline(std::cin, strA, '\n');
+    std::cout << "ï¼’ã¤ç›®ã®æ–‡å­—åˆ—ã‚’å…¥åŠ›ï¼ž";
+    std::cin.clear();
+    std::string strB;
+    std::getline(std::cin, strB, '\n');
+    std::cout << (strA == strB ? "åŒã˜æ–‡å­—åˆ—ã§ã™ã€‚" : "é•ã†æ–‡å­—åˆ—ã§ã™ã€‚");
 }

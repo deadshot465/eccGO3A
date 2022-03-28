@@ -8,161 +8,133 @@
 
 using namespace std;
 
-K05::K05()
-{
+K05::K05() = default;
+
+
+K05::~K05() = default;
+
+void K05::question1() {
+    auto salary = 19.0f;
+    auto age = 22;
+
+    while (salary < 50.0f) {
+        salary *= 1.035f;
+        ++age;
+    }
+
+    cout << age << "æ­³ã§æœˆçµ¦" << salary << "ä¸‡å††\n";
 }
 
+void K05::question2() {
+    try {
+        auto choice = 0;
 
-K05::~K05()
-{
-
+        while (choice != 1) {
+            cout << "èµ·ãã‚ï½ž\n";
+            cout << "1ï¼Žèµ·ããŸã€€2ï¼Žã‚ã¨5åˆ†â€¦ã€€3ï¼ŽZzzzâ€¦\tå…¥åŠ›ï¼š";
+            std::cin >> choice;
+        }
+        cout << "ã‚ˆã—ã€å­¦æ ¡ã¸è¡Œã“ã†ï¼\n";
+    }
+    catch (const std::exception &ex) {
+        cout << ex.what();
+    }
 }
 
-void K05::question1()
-{
-	float salary = 19.0f;
-	int age = 22;
+void K05::question3() {
+    try {
+        auto choice = 0;
 
-	while (salary < 50.0f)
-	{
-		salary *= 1.035f;
-		++age;
-	}
-
-	cout << age << "Î‚ÅŒŽ‹‹" << salary << "–œ‰~\n";
+        while (true) {
+            cout << "èµ·ãã‚ï½ž\n";
+            cout << "1ï¼Žèµ·ããŸã€€2ï¼Žã‚ã¨5åˆ†â€¦ã€€3ï¼ŽZzzzâ€¦\tå…¥åŠ›ï¼š";
+            std::cin >> choice;
+            if (choice == 1) {
+                cout << "ã‚ˆã—ã€å­¦æ ¡ã¸è¡Œã“ã†ï¼\n";
+            }
+        }
+    }
+    catch (const std::exception &ex) {
+        cout << ex.what();
+    }
 }
 
-void K05::question2()
-{
-	try
-	{
-		int choice = 0;
+void K05::question4() {
+    try {
+        mt19937 generator(static_cast<mt19937::result_type>(time(nullptr)));
+        uniform_int_distribution<> randNumGen(0, 200);
 
-		while (choice != 1)
-		{
-			cout << "‹N‚«‚ë`\n";
-			cout << "1D‹N‚«‚½@2D‚ ‚Æ5•ªc@3DZzzzc\t“ü—ÍF";
-			std::cin >> choice;
-		}
-		cout << "‚æ‚µAŠwZ‚Ös‚±‚¤I\n";
-	}
-	catch (const std::exception& ex)
-	{
-		cout << ex.what();
-	}
-}
+        Golem golem{};
+        golem.hp = 300 + randNumGen(generator);
 
-void K05::question3()
-{
-	try
-	{
-		int choice = 0;
+        uniform_int_distribution<>::param_type newRange(0, 100);
+        randNumGen.param(newRange);
+        auto player_hp = 200 + randNumGen(generator);
 
-		while (true)
-		{
-			cout << "‹N‚«‚ë`\n";
-			cout << "1D‹N‚«‚½@2D‚ ‚Æ5•ªc@3DZzzzc\t“ü—ÍF";
-			std::cin >> choice;
-			if (choice == 1)
-			{
-				cout << "‚æ‚µAŠwZ‚Ös‚±‚¤I\n";
-			}
-		}
-	}
-	catch (const std::exception & ex)
-	{
-		cout << ex.what();
-	}
-}
+        std::cout << "ã‚´ãƒ¼ãƒ¬ãƒ ã€€ï¼ˆHPï¼š" << golem.hp << "ã€€é˜²å¾¡åŠ›ï¼š" << golem.defense << "ï¼‰\n";
 
-void K05::question4()
-{
-	try
-	{
-		mt19937 generator(static_cast<mt19937::result_type>(time(nullptr)));
-		uniform_int_distribution<> randNumGen(0, 200);
-		
-		Golem golem{};
-		golem.hp = 300 + randNumGen(generator);
-		
-		uniform_int_distribution<>::param_type newRange(0, 100);
-		randNumGen.param(newRange);
-		int player_hp = 200 + randNumGen(generator);
-		
-		std::cout << "ƒS[ƒŒƒ€@iHPF" << golem.hp << "@–hŒä—ÍF" << golem.defense << "j\n";
+        while (golem.hp > 0) {
+            std::cout << "æ®‹ã‚ŠHPï¼š" << golem.hp << "\n";
+            std::cout << "æ”»æ’ƒæ‰‹æ®µã‚’é¸æŠžã—ã¦ãã ã•ã„ï¼ˆ1ï¼Žæ”»æ’ƒã€€2ï¼Žç‰¹æŠ€ã€€3ï¼Žé­”æ³•ï¼‰ã€€ï¼ž";
+            auto choice = 0;
+            std::cin >> choice;
 
-		while (golem.hp > 0)
-		{
-			std::cout << "Žc‚èHPF" << golem.hp << "\n";
-			std::cout << "UŒ‚Žè’i‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢i1DUŒ‚@2D“Á‹Z@3D–‚–@j@„";
-			int choice = 0;
-			std::cin >> choice;
+            auto damage = 0;
 
-			int damage = 0;
-			
-			switch (choice)
-			{
-			case 1:
-			{
-				uniform_int_distribution<>::param_type atkRange(0, 40);
-				randNumGen.param(atkRange);
-				damage = 60 + randNumGen(generator);
-				break;
-			}
-			case 2:
-			{
-				uniform_int_distribution<>::param_type skillRange(0, 100);
-				randNumGen.param(skillRange);
-				damage = 30 + randNumGen(generator);
-				break;
-			}
-			case 3:
-			{
-				uniform_int_distribution<>::param_type magicRange(0, 180);
-				randNumGen.param(magicRange);
-				damage = 20 + randNumGen(generator);
-				break;
-			}
-			default:
-				continue;
-			}
+            switch (choice) {
+                case 1: {
+                    uniform_int_distribution<>::param_type atkRange(0, 40);
+                    randNumGen.param(atkRange);
+                    damage = 60 + randNumGen(generator);
+                    break;
+                }
+                case 2: {
+                    uniform_int_distribution<>::param_type skillRange(0, 100);
+                    randNumGen.param(skillRange);
+                    damage = 30 + randNumGen(generator);
+                    break;
+                }
+                case 3: {
+                    uniform_int_distribution<>::param_type magicRange(0, 180);
+                    randNumGen.param(magicRange);
+                    damage = 20 + randNumGen(generator);
+                    break;
+                }
+                default:
+                    continue;
+            }
 
-			cout << "Šî‘bUŒ‚—Í‚Í" << damage << "‚Å‚·B\n";
-			damage -= golem.defense;
+            cout << "åŸºç¤Žæ”»æ’ƒåŠ›ã¯" << damage << "ã§ã™ã€‚\n";
+            damage -= golem.defense;
 
-			if (damage <= 0)
-			{
-				damage = 0;
-				cout << "ƒS[ƒŒƒ€FuƒnƒnƒnƒnƒnAî‚¯‚È‚¢‚ÈI‹M—l‚ÍŽã‚·‚¬‚éIv\n";
-				cout << "ƒS[ƒŒƒ€‚ª‚ ‚È‚½‚ðUŒ‚‚µ‚Ü‚µ‚½IUŒ‚’lF" << golem.attack << "\n";
-				player_hp -= golem.attack;
+            if (damage <= 0) {
+                damage = 0;
+                cout << "ã‚´ãƒ¼ãƒ¬ãƒ ï¼šã€Œãƒãƒãƒãƒãƒã€æƒ…ã‘ãªã„ãªï¼è²´æ§˜ã¯å¼±ã™ãŽã‚‹ï¼ã€\n";
+                cout << "ã‚´ãƒ¼ãƒ¬ãƒ ãŒã‚ãªãŸã‚’æ”»æ’ƒã—ã¾ã—ãŸï¼æ”»æ’ƒå€¤ï¼š" << golem.attack << "\n";
+                player_hp -= golem.attack;
 
-				if (player_hp <= 0)
-				{
-					cout << "‚ ‚È‚½‚ÍƒS[ƒŒƒ€‚É•‰‚¯‚Ü‚µ‚½IƒQ[ƒ€ƒI[ƒo[I\n";
-					return;
-				}
-				cout << "‚ ‚È‚½‚ÌŽc‚èHP‚ÍF" << player_hp << "\n";
-			}
+                if (player_hp <= 0) {
+                    cout << "ã‚ãªãŸã¯ã‚´ãƒ¼ãƒ¬ãƒ ã«è² ã‘ã¾ã—ãŸï¼ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ï¼\n";
+                    return;
+                }
+                cout << "ã‚ãªãŸã®æ®‹ã‚ŠHPã¯ï¼š" << player_hp << "\n";
+            }
 
-			std::cout << "ƒ_ƒ[ƒW‚Í" << damage << "‚Å‚·B\n";
-			golem.hp -= damage;
-			if (golem.hp < 0)
-			{
-				golem.hp = 0;
-			}
+            std::cout << "ãƒ€ãƒ¡ãƒ¼ã‚¸ã¯" << damage << "ã§ã™ã€‚\n";
+            golem.hp -= damage;
+            if (golem.hp < 0) {
+                golem.hp = 0;
+            }
 
-			std::cout << "Žc‚è‚ÌHP‚Í" << golem.hp << "‚Å‚·B\n";
+            std::cout << "æ®‹ã‚Šã®HPã¯" << golem.hp << "ã§ã™ã€‚\n";
 
-			if (golem.hp == 0)
-			{
-				cout << "ƒS[ƒŒƒ€‚ð“|‚µ‚Ü‚µ‚½I\n";
-			}
+            if (golem.hp == 0) {
+                cout << "ã‚´ãƒ¼ãƒ¬ãƒ ã‚’å€’ã—ã¾ã—ãŸï¼\n";
+            }
 
-		}
-	}
-	catch (const std::exception & ex)
-	{
-		std::cout << ex.what();
-	}
+        }
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 }

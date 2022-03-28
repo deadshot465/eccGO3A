@@ -19,8 +19,8 @@
 #include "K14.h"
 #include "Kex.h"
 #include "Kex_2.h"
-#include "FileControl.h"
-#include "Sort.h"
+//#include "FileControl.h"
+//#include "Sort.h"
 
 
 void showSelections(int chapter)
@@ -62,7 +62,7 @@ int main()
 	executables.push_back(std::make_unique<K12>());
 	executables.push_back(std::make_unique<K13>());
 	executables.push_back(std::make_unique<K14>());
-	executables.push_back(std::make_unique<FileControl>());
+	//executables.push_back(std::make_unique<FileControl>());
 	
 	std::cout << "実行したいプログラムを選択してください。\n";
 
@@ -103,8 +103,8 @@ int main()
 	}
 	else if (choice == 102)
 	{
-		Sort sort;
-		sort.Execute();
+		//Sort sort;
+		//sort.Execute();
 		return 0;
 	}
 

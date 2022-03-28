@@ -10,37 +10,32 @@ using std::cout;
 using std::mt19937;
 using std::uniform_int_distribution;
 
-void Kex::Execute()
-{
-	auto engine = Kex_1sub::GetSeededEngine<>();
-	uniform_int_distribution<> generator(0, 4);
-	cout << "–`Œ¯‚ª¡Žn‚Ü‚éI\n";
+void Kex::Execute() {
+    auto engine = Kex_1sub::GetSeededEngine<>();
+    uniform_int_distribution<> generator(0, 4);
+    cout << "å†’é™ºãŒä»Šå§‹ã¾ã‚‹ï¼\n";
 
-	PlayerEx player;
-	bool continue_game = true;
-	int kills = 0;
+    PlayerEx player;
+    auto continue_game = true;
+    auto kills = 0;
 
-	do
-	{
-		cout << "\nŒ»HPF" << player.Hp << "\n";
-		cout << "‰œ‚Éi‚Ý‚Ü‚·‚©Hi‚PF‰œ‚Éi‚Þ@‚OD‹A‚éj„";
-		int choice = 0;
-		cin >> choice;
-		continue_game = static_cast<bool>(choice);
+    do {
+        cout << "\nç¾HPï¼š" << player.Hp << "\n";
+        cout << "å¥¥ã«é€²ã¿ã¾ã™ã‹ï¼Ÿï¼ˆï¼‘ï¼šå¥¥ã«é€²ã‚€ã€€ï¼ï¼Žå¸°ã‚‹ï¼‰ï¼ž";
+        auto choice = 0;
+        cin >> choice;
+        continue_game = static_cast<bool>(choice);
 
-		if (continue_game)
-		{
-			int golemLv = generator(engine);
-			Kex_1sub::AttackGolem(golemLv, player);
-			++kills;
-			if (player.Hp == 0)
-			{
-				break;
-			}
-		}
-	}
-	while (continue_game);
+        if (continue_game) {
+            auto golemLv = generator(engine);
+            Kex_1sub::AttackGolem(golemLv, player);
+            ++kills;
+            if (player.Hp == 0) {
+                break;
+            }
+        }
+    } while (continue_game);
 
-	cout << "ƒŠZƒ~ƒgI\n\n";
-	cout << "í“¬‰ñ”F" << kills << "@Žc‚èHPF" << player.Hp;
+    cout << "ãƒªã€‡ãƒŸãƒˆï¼\n\n";
+    cout << "æˆ¦é—˜å›žæ•°ï¼š" << kills << "ã€€æ®‹ã‚ŠHPï¼š" << player.Hp;
 }

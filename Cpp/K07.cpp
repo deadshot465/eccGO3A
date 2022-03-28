@@ -3,120 +3,102 @@
 #include "K07.h"
 
 
-K07::K07()
-{
+K07::K07() = default;
+
+
+K07::~K07() = default;
+
+void showTexts() {
+    std::cout << "Hello World!\n";
+    std::cout << "ã‚ˆã†ã“ã\n";
+    std::cout << "C++è¨€èªã®ä¸–ç•Œã¸ï¼\n";
 }
 
-
-K07::~K07()
-{
+void K07::question1() {
+    auto choice = 0;
+    do {
+        try {
+            std::cout << "ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã—ã¾ã™ã‹ï¼Ÿï¼ˆï¼ï¼šçµ‚äº†ã™ã‚‹ã€€ï¼‘ï¼šè¡¨ç¤ºã™ã‚‹ï¼‰ï¼";
+            std::cin >> choice;
+            if (choice == 1) {
+                showTexts();
+            }
+        }
+        catch (const std::exception &ex) {
+            std::cerr << ex.what();
+        }
+    } while (choice != 0);
+    std::cout << "çµ‚äº†ã—ã¾ã™ã€‚";
 }
 
-void showTexts()
-{
-	std::cout << "Hello World!\n";
-	std::cout << "‚æ‚¤‚±‚»\n";
-	std::cout << "C++Œ¾Œê‚Ì¢ŠE‚ÖI\n";
+int max(int value1, int value2, int value3) {
+    auto temp = value1 >= value2 ? value1 : value2;
+    temp = temp >= value3 ? temp : value3;
+    return temp;
 }
 
-void K07::question1()
-{
-	int choice = 0;
-	do
-	{
-		try {
-			std::cout << "ƒƒbƒZ[ƒW‚ğ•\¦‚µ‚Ü‚·‚©Hi‚OFI—¹‚·‚é@‚PF•\¦‚·‚éj„";
-			std::cin >> choice;
-			if (choice == 1)
-			{
-				showTexts();
-			}
-		}
-		catch (const std::exception& ex)
-		{
-			std::cerr << ex.what();
-		}
-	} while (choice != 0);
-	std::cout << "I—¹‚µ‚Ü‚·B";
+void K07::question2() {
+    try {
+        int numbers[3] = {0};
+        int count = 0;
+
+        for (int i = 0; i < 3; ++i) {
+            std::cout << i + 1 << "ã¤ç›®ã®å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼";
+            std::cin >> numbers[i];
+            ++count;
+        }
+
+        auto maxValue = max(numbers[0], numbers[1], numbers[2]);
+        std::cout << count << "ã¤ã®ä¸­ã§æœ€å¤§å€¤ã¯" << maxValue << "ã§ã™ã€‚";
+    }
+    catch (const std::exception &ex) {
+        std::cerr << ex.what();
+    }
 }
 
-int max(int value1, int value2, int value3)
-{
-	int temp = value1 >= value2 ? value1 : value2;
-	temp = temp >= value3 ? temp : value3;
-	return temp;
+int GetType(int age) {
+    if (age <= 0)
+        return 0;
+    else if (age < 3 || age >= 70)
+        return 1;
+    else if (age >= 3 && age <= 15)
+        return 2;
+    else if (age >= 60 && age < 70)
+        return 3;
+    else
+        return 4;
 }
 
-void K07::question2()
-{
-	try {
-		int numbers[3] = { 0 };
-		int count = 0;
+void K07::question3() {
+    try {
+        auto age = 0;
+        auto no = 0;
+        std::cout << "å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚ï¼";
+        std::cin >> age;
 
-		for (int i = 0; i < 3; ++i)
-		{
-			std::cout << i + 1 << "‚Â–Ú‚Ì’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-			std::cin >> numbers[i];
-			++count;
-		}
-
-		int maxValue = max(numbers[0], numbers[1], numbers[2]);
-		std::cout << count << "‚Â‚Ì’†‚ÅÅ‘å’l‚Í" << maxValue << "‚Å‚·B";
-	}
-	catch (const std::exception & ex)
-	{
-		std::cerr << ex.what();
-	}
+        no = GetType(age);
+        switch (no) {
+            case 0:
+                printf("ä¸é©åˆ‡ãªå€¤ãŒå…¥åŠ›ã•ã‚Œã¾ã—ãŸã€‚\n");
+                break;
+            case 1:
+                printf("å…¥å ´æ–™é‡‘ç„¡æ–™ã§ã™ã€‚\n");
+                break;
+            case 2:
+                printf("å­ä¾›æ–™é‡‘ã§åŠé¡ã§ã™ã€‚\n");
+                break;
+            case 3:
+                printf("ã‚·ãƒ‹ã‚¢å‰²å¼•ã§ï¼‘å‰²å¼•ãã§ã™ã€‚\n");
+                break;
+            default:
+                printf("é€šå¸¸æ–™é‡‘ã§ã™ã€‚\n");
+                break;
+        }
+    }
+    catch (const std::exception &ex) {
+        std::cerr << ex.what();
+    }
 }
 
-int GetType(int age)
-{
-	if (age <= 0)
-		return 0;
-	else if (age < 3 || age >= 70)
-		return 1;
-	else if (age >= 3 && age <= 15)
-		return 2;
-	else if (age >= 60 && age < 70)
-		return 3;
-	else
-		return 4;
-}
-
-void K07::question3()
-{
-	try {
-		int age = 0;
-		int no = 0;
-		std::cout << "”N—î‚ğ“ü—Í‚µ‚Ä‰º‚³‚¢B„";
-		std::cin >> age;
-
-		no = GetType(age);
-		switch (no)
-		{
-		case 0:
-			printf("•s“KØ‚È’l‚ª“ü—Í‚³‚ê‚Ü‚µ‚½B\n");
-			break;
-		case 1:
-			printf("“üê—¿‹à–³—¿‚Å‚·B\n");
-			break;
-		case 2:
-			printf("q‹Ÿ—¿‹à‚Å”¼Šz‚Å‚·B\n");
-			break;
-		case 3:
-			printf("ƒVƒjƒAŠ„ˆø‚Å‚PŠ„ˆø‚«‚Å‚·B\n");
-			break;
-		default:
-			printf("’Êí—¿‹à‚Å‚·B\n");
-			break;
-		}
-	}
-	catch (const std::exception & ex)
-	{
-		std::cerr << ex.what();
-	}
-}
-
-void K07::question4()
-{
+void K07::question4() {
 }

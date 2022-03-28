@@ -8,165 +8,145 @@
 #include <cstdio>
 #include <ctime>
 
-struct Person
-{
-	std::string name;
-	int birthYear;
-	float height;
-	float weight;
+struct Person {
+    std::string name;
+    int birthYear = 0;
+    float height = 0.0f;
+    float weight = 0.0f;
 };
 
-struct Staff
-{
-	std::string name;
-	char gender;
-	int age;
+struct Staff {
+    std::string name;
+    char gender = ' ';
+    int age = 0;
 };
 
-struct Position
-{
-	int x;
-	int y;
-	double distance;
+struct Position {
+    int x = 0;
+    int y = 0;
+    double distance = 0.0;
 };
 
-void K12::question1()
-{
-	Person person;
-	std::cout << "ñºëOÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅÑ";
-	std::cin.clear();
-	std::cin.ignore();
-	std::getline(std::cin, person.name, '\n');
-	std::cout << "ê∂îNÅiêºóÔÅjÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅÑ";
-	std::cin >> person.birthYear;
-	std::cout << "êgí∑Çì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅÑ";
-	std::cin >> person.height;
-	std::cout << "ëÃèdÇì¸óÕÇµÇƒÇ≠ÇæÇ≥Ç¢ÅÑ";
-	std::cin >> person.weight;
+void K12::question1() {
+    Person person;
+    std::cout << "ÂêçÂâç„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑÔºû";
+    std::cin.clear();
+    std::cin.ignore();
+    std::getline(std::cin, person.name, '\n');
+    std::cout << "ÁîüÂπ¥ÔºàË•øÊö¶Ôºâ„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑÔºû";
+    std::cin >> person.birthYear;
+    std::cout << "Ë∫´Èï∑„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑÔºû";
+    std::cin >> person.height;
+    std::cout << "‰ΩìÈáç„ÇíÂÖ•Âäõ„Åó„Å¶„Åè„Å†„Åï„ÅÑÔºû";
+    std::cin >> person.weight;
 
-	std::cout << "ÉvÉçÉtÉ@ÉCÉãÅF\n";
-	std::cout << "ñºëOÅF" << person.name << "\n";
-	std::cout << "ê∂îNÅF" << person.birthYear << "\n";
-	std::cout << "êgí∑ÅF" << person.height << "\n";
-	std::cout << "ëÃèdÅF" << person.weight << "\n";
+    std::cout << "„Éó„É≠„Éï„Ç°„Ç§„É´Ôºö\n";
+    std::cout << "ÂêçÂâçÔºö" << person.name << "\n";
+    std::cout << "ÁîüÂπ¥Ôºö" << person.birthYear << "\n";
+    std::cout << "Ë∫´Èï∑Ôºö" << person.height << "\n";
+    std::cout << "‰ΩìÈáçÔºö" << person.weight << "\n";
 }
 
-void K12::question2()
-{
-	Staff staffs[3] = {
-		{"ê_ñÿó≤îVâÓ", 'M', 23},
-		{"è„îíêŒñGâπ", 'F', 18},
-		{"í∑‡VÇ‹Ç≥Ç›", 'F', 28}
-	};
+void K12::question2() {
+    Staff staffs[3] = {
+            {"Á•ûÊú®ÈöÜ‰πã‰ªã", 'M', 23},
+            {"‰∏äÁôΩÁü≥ËêåÈü≥", 'F', 18},
+            {"Èï∑Êæ§„Åæ„Åï„Åø", 'F', 28}
+    };
 
-	std::cout << "ñºëO\t\tê´ï \tîNóÓ\n";
-	for (int i = 0; i <= 35; ++i)
-	{
-		std::cout << '-';
-	}
-	std::cout << "\n";
+    std::cout << "ÂêçÂâç\t\tÊÄßÂà•\tÂπ¥ÈΩ¢\n";
+    for (int i = 0; i <= 35; ++i) {
+        std::cout << '-';
+    }
+    std::cout << "\n";
 
-	for (const auto& staff : staffs)
-	{
-		std::cout << staff.name << "\t" << staff.gender << "\t" << staff.age << "çŒ\n";
-	}
+    for (const auto &staff: staffs) {
+        std::cout << staff.name << "\t" << staff.gender << "\t" << staff.age << "ÔøΩÔøΩ\n";
+    }
 }
 
-double getDistance(const Position& playerPos, const Position& enemyPos)
-{
-	int diffX = playerPos.x - enemyPos.x;
-	int diffY = playerPos.y - enemyPos.y;
-	return sqrt(diffX * diffX + diffY * diffY);
+double getDistance(const Position &playerPos, const Position &enemyPos) {
+    auto diffX = playerPos.x - enemyPos.x;
+    auto diffY = playerPos.y - enemyPos.y;
+    return sqrt(diffX * diffX + diffY * diffY);
 }
 
-void K12::question3()
-{
-	std::mt19937 engine(static_cast<std::mt19937::result_type>(time(nullptr)));
-	std::uniform_int_distribution<> rand(0, 101);
-	auto getRandomNumber = [&]() { return rand(engine) - 50; };
+void K12::question3() {
+    std::mt19937 engine(static_cast<std::mt19937::result_type>(time(nullptr)));
+    std::uniform_int_distribution<> rand(0, 101);
+    auto getRandomNumber = [&]() { return rand(engine) - 50; };
 
-	Position playerPos = {
-		getRandomNumber(), getRandomNumber(), 0.0
-	};
-	Position enemyPos[5] = {};
+    Position playerPos = {
+            getRandomNumber(), getRandomNumber(), 0.0
+    };
+    Position enemyPos[5] = {};
 
-	for (auto& enemyPo : enemyPos)
-	{
-		enemyPo.x = getRandomNumber();
-		enemyPo.y = getRandomNumber();
-		enemyPo.distance = getDistance(playerPos, enemyPo);
-	}
+    for (auto &enemyPo: enemyPos) {
+        enemyPo.x = getRandomNumber();
+        enemyPo.y = getRandomNumber();
+        enemyPo.distance = getDistance(playerPos, enemyPo);
+    }
 
-	std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
-	std::cout.precision(2);
-	printf("ÉvÉåÅ[ÉÑÅ[ÇÃç¿ïWÅFx= %.2f\t\ty= %.2f\n\n",
-		static_cast<float>(playerPos.x), static_cast<float>(playerPos.y));
-	for (int i = 0; i < 5; ++i)
-	{
-		printf("ìGÉLÉÉÉâÇÃç¿ïW0%dÅFx= %5.2f\t\ty= %5.2f\t\tãóó£=%5.2f\n",
-			i, static_cast<float>(enemyPos[i].x),
-			static_cast<float>(enemyPos[i].y), static_cast<float>(enemyPos[i].distance));
-	}
-	
+    std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
+    std::cout.precision(2);
+    printf("„Éó„É¨„Éº„É§„Éº„ÅÆÂ∫ßÊ®ôÔºöx= %.2f\t\ty= %.2f\n\n",
+           static_cast<float>(playerPos.x), static_cast<float>(playerPos.y));
+    for (int i = 0; i < 5; ++i) {
+        printf("Êïµ„Ç≠„É£„É©„ÅÆÂ∫ßÊ®ô0%dÔºöx= %5.2f\t\ty= %5.2f\t\tË∑ùÈõ¢=%5.2f\n",
+               i, static_cast<float>(enemyPos[i].x),
+               static_cast<float>(enemyPos[i].y), static_cast<float>(enemyPos[i].distance));
+    }
+
 }
 
-void swapPos(Position& a, Position& b)
-{
-	Position temp = a;
-	a = b;
-	b = temp;
+void swapPos(Position &a, Position &b) {
+    Position temp = a;
+    a = b;
+    b = temp;
 }
 
-void sortPos(Position* positions, int total)
-{
-	for (int i = 0; i < total; ++i)
-	{
-		for (int j = 0; j < total; ++j)
-		{
-			if (positions[j].distance > positions[i].distance)
-			{
-				swapPos(positions[i], positions[j]);
-			}
-		}
-	}
+void sortPos(Position *positions, int total) {
+    for (int i = 0; i < total; ++i) {
+        for (int j = 0; j < total; ++j) {
+            if (positions[j].distance > positions[i].distance) {
+                swapPos(positions[i], positions[j]);
+            }
+        }
+    }
 }
 
-void K12::question4()
-{
-	std::mt19937 engine(static_cast<std::mt19937::result_type>(time(nullptr)));
-	std::uniform_int_distribution<> rand(0, 101);
-	auto getRandomNumber = [&]() { return rand(engine) - 50; };
+void K12::question4() {
+    std::mt19937 engine(static_cast<std::mt19937::result_type>(time(nullptr)));
+    std::uniform_int_distribution<> rand(0, 101);
+    auto getRandomNumber = [&]() { return rand(engine) - 50; };
 
-	Position playerPos = {
-		getRandomNumber(), getRandomNumber(), 0.0
-	};
-	Position enemyPos[5] = {};
+    Position playerPos = {
+            getRandomNumber(), getRandomNumber(), 0.0
+    };
+    Position enemyPos[5] = {};
 
-	for (auto& enemyPo : enemyPos)
-	{
-		enemyPo.x = getRandomNumber();
-		enemyPo.y = getRandomNumber();
-		enemyPo.distance = getDistance(playerPos, enemyPo);
-	}
+    for (auto &enemyPo: enemyPos) {
+        enemyPo.x = getRandomNumber();
+        enemyPo.y = getRandomNumber();
+        enemyPo.distance = getDistance(playerPos, enemyPo);
+    }
 
-	std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
-	std::cout.precision(2);
-	printf("ÉvÉåÅ[ÉÑÅ[ÇÃç¿ïWÅFx= %.2f\t\ty= %.2f\n\n",
-		static_cast<float>(playerPos.x), static_cast<float>(playerPos.y));
-	for (int i = 0; i < 5; ++i)
-	{
-		printf("ìGÉLÉÉÉâÇÃç¿ïW0%dÅFx= %5.2f\t\ty= %5.2f\t\tãóó£=%5.2f\n",
-			i, static_cast<float>(enemyPos[i].x),
-			static_cast<float>(enemyPos[i].y), static_cast<float>(enemyPos[i].distance));
-	}
+    std::cout.setf(std::ios_base::fixed, std::ios_base::floatfield);
+    std::cout.precision(2);
+    printf("„Éó„É¨„Éº„É§„Éº„ÅÆÂ∫ßÊ®ôÔºöx= %.2f\t\ty= %.2f\n\n",
+           static_cast<float>(playerPos.x), static_cast<float>(playerPos.y));
+    for (int i = 0; i < 5; ++i) {
+        printf("Êïµ„Ç≠„É£„É©„ÅÆÂ∫ßÊ®ô0%dÔºöx= %5.2f\t\ty= %5.2f\t\tË∑ùÈõ¢=%5.2f\n",
+               i, static_cast<float>(enemyPos[i].x),
+               static_cast<float>(enemyPos[i].y), static_cast<float>(enemyPos[i].distance));
+    }
 
-	std::cout << "\nï¿Ç—ë÷Ç¶å„\n";
-	sortPos(enemyPos, 5);
-	for (int i = 0; i < 5; ++i)
-	{
-		printf("ìGÉLÉÉÉâÇÃç¿ïW0%dÅFx= %5.2f\t\ty= %5.2f\t\tãóó£=%5.2f\n",
-			i, static_cast<float>(enemyPos[i].x),
-			static_cast<float>(enemyPos[i].y), static_cast<float>(enemyPos[i].distance));
-	}
+    std::cout << "\n‰∏¶„Å≥Êõø„ÅàÂæå\n";
+    sortPos(enemyPos, 5);
+    for (int i = 0; i < 5; ++i) {
+        printf("Êïµ„Ç≠„É£„É©„ÅÆÂ∫ßÊ®ô0%dÔºöx= %5.2f\t\ty= %5.2f\t\tË∑ùÈõ¢=%5.2f\n",
+               i, static_cast<float>(enemyPos[i].x),
+               static_cast<float>(enemyPos[i].y), static_cast<float>(enemyPos[i].distance));
+    }
 
 }

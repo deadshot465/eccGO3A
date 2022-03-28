@@ -6,116 +6,92 @@
 
 using namespace std;
 
-K06::K06()
-{
+K06::K06() = default;
+
+
+K06::~K06() = default;
+
+void K06::question1() {
+    std::vector<int> ages;
+    for (int i = 0; i < 5; ++i) {
+        cout << i + 1 << "äººç›®ã®å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ï¼š";
+        auto _age = 0;
+        std::cin >> _age;
+        ages.push_back(_age);
+    }
+
+    double result = std::reduce(ages.begin(), ages.end());
+    result /= static_cast<double>(ages.size());
+    cout << ages.size() << "äººã®å¹³å‡å¹´é½¢ã¯" << result << "ã§ã™ã€‚";
 }
 
+void K06::question2() {
+    for (int i = 0; i < 9; ++i) {
+        for (int j = 0; j < i + 1; ++j) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
 
-K06::~K06()
-{
+    for (int i = 9; i > 0; --i) {
+        for (int j = 0; j < i; ++j) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
+    cout << "\n";
+
+    for (int i = 9; i > 0; --i) {
+        for (int j = 0; j < i - 1; ++j) {
+            cout << " ";
+        }
+
+        for (int k = 9; k > i - 1; --k) {
+            cout << "*";
+        }
+        cout << "\n";
+    }
 }
 
-void K06::question1()
-{
-	std::vector<int> ages;
-	for (int i = 0; i < 5; ++i)
-	{
-		cout << i + 1 << "l–Ú‚Ì”N—î‚ð“ü—Í‚µ‚Ä‰º‚³‚¢F";
-		int _age = 0;
-		std::cin >> _age;
-		ages.push_back(_age);
-	}
+void K06::question3() {
+    int total = 370;
+    int count = 0;
 
-	double result = std::reduce(ages.begin(), ages.end());
-	result /= ages.size();
-	cout << ages.size() << "l‚Ì•½‹Ï”N—î‚Í" << result << "‚Å‚·B";
+    for (int i = 0; i <= total / 100; ++i) {
+        for (int j = 0; j <= total / 50; ++j) {
+            for (int k = 0; k <= total / 10; ++k) {
+                if (100 * i + 50 * j + 10 * k == total) {
+                    cout << "10å††ã®ç¡¬è²¨" << k
+                         << "æžš 50å††ã®ç¡¬è²¨" << j
+                         << "æžš 100å††ã®ç¡¬è²¨" << i << "ï¿½ï¿½\n";
+
+                    ++count;
+                }
+            }
+        }
+    }
+
+    cout << "\nï¿½Èï¿½" << count << "ï¿½Ê‚ï¿½ð”­Œï¿½ï¿½ï¿½ï¿½Ü‚ï¿½ï¿½ï¿½ï¿½B\n";
 }
 
-void K06::question2()
-{
-	for (int i = 0; i < 9; ++i)
-	{
-		for (int j = 0; j < i + 1; ++j)
-		{
-			cout << "*";
-		}
-		cout << "\n";
-	}
-	cout << "\n";
+void K06::question4() {
+    cout << "\t|\t";
+    for (int i = 1; i < 10; ++i) {
+        cout << i << "\t";
+    }
+    cout << "\n";
 
-	for (int i = 9; i > 0; --i)
-	{
-		for (int j = 0; j < i; ++j)
-		{
-			cout << "*";
-		}
-		cout << "\n";
-	}
-	cout << "\n";
+    for (int i = 0; i < 76; ++i) {
+        cout << "-";
+    }
+    cout << "\n";
 
-	for (int i = 9; i > 0; --i)
-	{
-		for (int j = 0; j < i - 1; ++j)
-		{
-			cout << " ";
-		}
-
-		for (int k = 9; k > i - 1; --k)
-		{
-			cout << "*";
-		}
-		cout << "\n";
-	}
-}
-
-void K06::question3()
-{
-	int total = 370;
-	int count = 0;
-
-	for (int i = 0; i <= total / 100; ++i)
-	{
-		for (int j = 0; j <= total / 50; ++j)
-		{
-			for (int k = 0; k <= total / 10; ++k)
-			{
-				if (100 * i + 50 * j + 10 * k == total)
-				{
-					cout << "10‰~‚Ìd‰Ý" << k
-						<< "–‡ 50‰~‚Ìd‰Ý" << j
-						<< "–‡ 100‰~‚Ìd‰Ý" << i << "–‡\n";
-
-					++count;
-				}
-			}
-		}
-	}
-
-	cout << "\nˆÈã" << count << "’Ê‚è‚ð”­Œ©‚µ‚Ü‚µ‚½B\n";
-}
-
-void K06::question4()
-{
-	cout << "\t|\t";
-	for (int i = 1; i < 10; ++i)
-	{
-		cout << i << "\t";
-	}
-	cout << "\n";
-
-	for (int i = 0; i < 76; ++i)
-	{
-		cout << "-";
-	}
-	cout << "\n";
-
-	for (int i = 1; i < 10; ++i)
-	{
-		cout << i << "\t|\t";
-		for (int j = 1; j < 10; ++j)
-		{
-			cout << i * j << "\t";
-		}
-		cout << "\n";
-	}
+    for (int i = 1; i < 10; ++i) {
+        cout << i << "\t|\t";
+        for (int j = 1; j < 10; ++j) {
+            cout << i * j << "\t";
+        }
+        cout << "\n";
+    }
 }

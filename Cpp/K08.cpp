@@ -9,89 +9,75 @@
 
 using namespace std;
 
-K08::K08()
-{
+K08::K08() = default;
+
+K08::~K08() = default;
+
+void K08::question1() {
+    try {
+        auto numbers = vector<int>();
+        for (int i = 0; i < 3; ++i) {
+            cout << i + 1 << "ã¤ç›®ã®å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼ž";
+            auto num = 0;
+            cin >> num;
+            numbers.push_back(num);
+        }
+
+        cout << "ã©ã¡ã‚‰ã‚’èª¿ã¹ã¾ã™ã‹ï¼Ÿ\n";
+        cout << "ï¼ˆï¼ï¼šæœ€å¤§å€¤ã€€ï¼‘ï¼šæœ€å°å€¤ï¼‰ï¼ž";
+        auto choice = 0;
+        cin >> choice;
+        switch (choice) {
+            case 0:
+                cout << numbers.size() << "ã®ä¸­ã§æœ€å¤§å€¤ã¯"
+                     << K08_1sub::GetMaxValue(numbers[0], numbers[1], numbers[2]) << "ã§ã™ã€‚";
+                break;
+            case 1:
+                cout << numbers.size() << "ã®ä¸­ã§æœ€å°å€¤ã¯"
+                     << K08_1sub::GetMinValue(numbers[0], numbers[1], numbers[2]) << "ã§ã™ã€‚";
+                break;
+            default:
+                break;
+        }
+    }
+    catch (const exception &ex) {
+        cerr << ex.what();
+    }
 }
 
-K08::~K08()
-{
+void K08::question2() {
+    try {
+        cout << "å†’é™ºãŒä»Šå§‹ã¾ã‚‹ï¼\n";
+        mt19937 gen(static_cast<mt19937::result_type>(time(nullptr)));
+        uniform_int_distribution<> rand(0, 101);
+        auto playerHp = 200 + rand(gen);
+        auto continueGame = true;
+
+        while (continueGame) {
+            if (playerHp == 0)
+                return;
+
+            cout << "ã‚ãªãŸã®HPï¼š" << playerHp << "\n";
+            cout << "å¥¥ã«é€²ã¿ã¾ã™ã‹ï¼Ÿï¼ˆï¼‘ï¼šå¥¥ã«é€²ã‚€ã€€ï¼ï¼Žå¸°ã‚‹ï¼‰ï¼ž";
+            auto choice = 0;
+            cin >> choice;
+            continueGame = static_cast<bool>(choice);
+            if (continueGame) {
+                uniform_int_distribution<>::param_type golemParam(0, 5);
+                rand.param(golemParam);
+                auto golemLv = rand(gen);
+                K08_2sub::AttackGolem(golemLv, playerHp);
+            }
+        }
+        cout << "ãƒªãƒ¬ã€‡ãƒˆï¼\n";
+    }
+    catch (const exception &ex) {
+        cerr << ex.what();
+    }
 }
 
-void K08::question1()
-{
-	try {
-		auto numbers = vector<int>();
-		for (int i = 0; i < 3; ++i)
-		{
-			cout << i + 1 << "‚Â–Ú‚Ì’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-			int num = 0;
-			cin >> num;
-			numbers.push_back(num);
-		}
-
-		cout << "‚Ç‚¿‚ç‚ð’²‚×‚Ü‚·‚©H\n";
-		cout << "i‚OFÅ‘å’l@‚PFÅ¬’lj„";
-		int choice = 0;
-		cin >> choice;
-		switch (choice)
-		{
-		case 0:
-			cout << numbers.size() << "‚Ì’†‚ÅÅ‘å’l‚Í"
-				<< K08_1sub::GetMaxValue(numbers[0], numbers[1], numbers[2]) << "‚Å‚·B";
-			break;
-		case 1:
-			cout << numbers.size() << "‚Ì’†‚ÅÅ¬’l‚Í"
-				<< K08_1sub::GetMinValue(numbers[0], numbers[1], numbers[2]) << "‚Å‚·B";
-			break;
-		default:
-			break;
-		}
-	}
-	catch (const exception& ex) {
-		cerr << ex.what();
-	}
+void K08::question3() {
 }
 
-void K08::question2()
-{
-	try
-	{
-		cout << "–`Œ¯‚ª¡Žn‚Ü‚éI\n";
-		mt19937 gen(static_cast<mt19937::result_type>(time(nullptr)));
-		uniform_int_distribution<> rand(0, 101);
-		int playerHp = 200 + rand(gen);
-		bool continueGame = true;
-
-		while (continueGame)
-		{
-			if (playerHp == 0)
-				return;
-
-			cout << "‚ ‚È‚½‚ÌHPF" << playerHp << "\n";
-			cout << "‰œ‚Éi‚Ý‚Ü‚·‚©Hi‚PF‰œ‚Éi‚Þ@‚OD‹A‚éj„";
-			int choice = 0;
-			cin >> choice;
-			continueGame = static_cast<bool>(choice);
-			if (continueGame)
-			{
-				uniform_int_distribution<>::param_type golemParam(0, 5);
-				rand.param(golemParam);
-				int golemLv = rand(gen);
-				K08_2sub::AttackGolem(golemLv, playerHp);
-			}
-		}
-		cout << "ƒŠƒŒZƒgI\n";
-	}
-	catch (const exception& ex)
-	{
-		cerr << ex.what();
-	}
-}
-
-void K08::question3()
-{
-}
-
-void K08::question4()
-{
+void K08::question4() {
 }

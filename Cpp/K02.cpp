@@ -2,95 +2,81 @@
 #include "K02.h"
 
 
-
-K02::K02()
-{
-}
+K02::K02() = default;
 
 
-K02::~K02()
-{
-}
+K02::~K02() = default;
+
 #include <iostream>
 
 
-void K02::question1()
-{
-	int seisuu = 3;
-	float jissuu = 2.6f;
-	char moji = 'A';
+void K02::question1() {
+    constexpr auto seisuu = 3;
+    constexpr auto jissuu = 2.6f;
+    constexpr auto moji = 'A';
 
-	std::cout << "•Ï”seisuu‚Ì’l‚Í" << seisuu << "\n";
-	std::cout << "•Ï”jissuu‚Ì’l‚Í" << jissuu << "\n";
-	std::cout << "•Ï”moji‚Ì’l‚Í" << moji << "\n";
+    std::cout << "å¤‰æ•°seisuuã®å€¤ã¯" << seisuu << "\n";
+    std::cout << "å¤‰æ•°jissuuã®å€¤ã¯" << jissuu << "\n";
+    std::cout << "å¤‰æ•°mojiã®å€¤ã¯" << moji << "\n";
 }
 
-void K02::question2()
-{
-	try
-	{
-		std::cout << "ˆê‚Â–Ú‚Ì®”‚ÍH";
-		int number1 = 0;
-		std::cin >> number1;
-		std::cout << "“ñ‚Â–Ú‚Ì®”‚ÍH";
-		int number2 = 0;
-		std::cin >> number2;
+void K02::question2() {
+    try {
+        std::cout << "ä¸€ã¤ç›®ã®æ•´æ•°ã¯ï¼Ÿ";
+        auto number1 = 0;
+        std::cin >> number1;
+        std::cout << "äºŒã¤ç›®ã®æ•´æ•°ã¯ï¼Ÿ";
+        auto number2 = 0;
+        std::cin >> number2;
 
-		std::cout << number1 << "€" << number2 << "="
-			<< number1 / number2 << "..." << number1 % number2;
-	}
-	catch (const std::exception& ex)
-	{
-		std::cout << ex.what();
-	}
+        std::cout << number1 << "Ã·" << number2 << "="
+                  << number1 / number2 << "..." << number1 % number2;
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 
 }
 
-void K02::question3()
-{
-	try
-	{
-		std::cout << "ˆê‚Â–Ú‚Ì¤•i‚Ì’l’i‚ÍH";
-		int priceA = 0;
-		std::cin >> priceA;
-		std::cout << "ŒÂ”‚ÍH";
-		int amountA = 0;
-		std::cin >> amountA;
-		std::cout << "“ñ‚Â–Ú‚Ì¤•i‚Ì’l’i‚ÍH";
-		int priceB = 0;
-		std::cin >> priceB;
-		std::cout << "ŒÂ”‚ÍH";
-		int amountB = 0;
-		std::cin >> amountB;
+void K02::question3() {
+    try {
+        std::cout << "ä¸€ã¤ç›®ã®å•†å“ã®å€¤æ®µã¯ï¼Ÿ";
+        auto priceA = 0;
+        std::cin >> priceA;
+        std::cout << "å€‹æ•°ã¯ï¼Ÿ";
+        auto amountA = 0;
+        std::cin >> amountA;
+        std::cout << "äºŒã¤ç›®ã®å•†å“ã®å€¤æ®µã¯ï¼Ÿ";
+        auto priceB = 0;
+        std::cin >> priceB;
+        std::cout << "å€‹æ•°ã¯ï¼Ÿ";
+        auto amountB = 0;
+        std::cin >> amountB;
 
-		float total = (priceA * amountA + priceB * amountB) * 1.08f;
-		std::cout << "‚¨Žx•¥‚¢‚ÍÅž‚Ý" << total << "‚Å‚·B";
-	}
-	catch (const std::exception& ex)
-	{
-		std::cout << ex.what();
-	}
+        const auto total = static_cast<float>(priceA * amountA + priceB * amountB) * 1.1f;
+        std::cout << "ãŠæ”¯æ‰•ã„ã¯ç¨Žè¾¼ã¿ï¿¥" << total << "ã§ã™ã€‚";
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 }
 
-void K02::question4()
-{
-	try
-	{
-		Golem golem{};
-		std::cout << "ƒS[ƒŒƒ€@iHPF" << golem.hp << "@–hŒä—ÍF" << golem.defense << "j\n";
-		std::cout << "HPF" << golem.hp << "\n";
-		std::cout << "¡‰ñ‚ÌUŒ‚‚Ì’l‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢„";
-		int damage = 0;
-		std::cin >> damage;
+void K02::question4() {
+    try {
+        Golem golem{};
+        std::cout << "ã‚´ãƒ¼ãƒ¬ãƒ ã€€ï¼ˆHPï¼š" << golem.hp << "ã€€é˜²å¾¡åŠ›ï¼š" << golem.defense << "ï¼‰\n";
+        std::cout << "HPï¼š" << golem.hp << "\n";
+        std::cout << "ä»Šå›žã®æ”»æ’ƒã®å€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼ž";
+        auto damage = 0;
+        std::cin >> damage;
 
-		damage = damage - golem.defense > 0 ? damage - golem.defense : 0;
+        damage = damage - golem.defense > 0 ? damage - golem.defense : 0;
 
-		std::cout << "ƒ_ƒ[ƒW‚Í" << damage << "‚Å‚·B\n";
-		golem.hp -= damage;
-		std::cout << "Žc‚è‚ÌHP‚Í" << golem.hp << "‚Å‚·B\n";
-	}
-	catch (const std::exception& ex)
-	{
-		std::cout << ex.what();
-	}
+        std::cout << "ãƒ€ãƒ¡ãƒ¼ã‚¸ã¯" << damage << "ã§ã™ã€‚\n";
+        golem.hp -= damage;
+        std::cout << "æ®‹ã‚Šã®HPã¯" << golem.hp << "ã§ã™ã€‚\n";
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 }

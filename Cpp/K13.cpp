@@ -4,74 +4,65 @@
 #include <random>
 
 
-void K13::question1()
-{
-	int a = 10;
-	int* p = &a;
-	std::cout << "a‚Ì’lF" << a << "\n";
-	std::cout << "a‚ÌƒAƒhƒŒƒXF" << &a << "\n";
-	std::cout << "p‚Ì’lF" << p << "\n";
-	std::cout << "p‚ªQÆ‚·‚é•Ï”‚Ì’lF" << *p << "\n";
-	std::cout << "p‚ÌƒAƒhƒŒƒXF" << &p << "\n";
+void K13::question1() {
+    auto a = 10;
+    auto p = &a;
+    std::cout << "aã®å€¤ï¼š" << a << "\n";
+    std::cout << "aã®ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼š" << &a << "\n";
+    std::cout << "pã®å€¤ï¼š" << p << "\n";
+    std::cout << "pãŒå‚ç…§ã™ã‚‹å¤‰æ•°ã®å€¤ï¼š" << *p << "\n";
+    std::cout << "pã®ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼š" << &p << "\n";
 }
 
-void K13::question2()
-{
-	int arr[10] = { 0 };
-	int* ptr = arr;
-	for (int i = 0; i < 10; ++i)
-	{
-		*ptr = i;
-		std::cout << "”z—ñ[" << i << "] = " << *ptr << "\n";
-		++ptr;
-	}
+void K13::question2() {
+    int arr[10] = {0};
+    auto ptr = arr;
+    for (auto i = 0; i < 10; ++i) {
+        *ptr = i;
+        std::cout << "é…åˆ—[" << i << "] = " << *ptr << "\n";
+        ++ptr;
+    }
 }
 
-void K13::question3()
-{
-	int data[] = { 2, 8, 10, 3, 1, 9, 4, 3, 6, -1 };
-	int total = 0;
-	int* ptr = data;
-	std::cout << "ƒf[ƒ^F";
-	while (*ptr >= 0)
-	{
-		std::cout << *ptr << "\t";
-		total += *ptr;
-		++ptr;
-	}
-	std::cout << "\n‡Œv‚Í" << total << "‚Å‚·B";
+void K13::question3() {
+    int data[] = {2, 8, 10, 3, 1, 9, 4, 3, 6, -1};
+    auto total = 0;
+    auto ptr = data;
+    std::cout << "ãƒ‡ãƒ¼ã‚¿ï¼š";
+    while (*ptr >= 0) {
+        std::cout << *ptr << "\t";
+        total += *ptr;
+        ++ptr;
+    }
+    std::cout << "\nåˆè¨ˆã¯" << total << "ã§ã™ã€‚";
 }
 
-template <typename T = std::mt19937, std::size_t U = T::state_size>
-auto GetEngine() -> typename std::enable_if<!!U, T>::type
-{
-	typename T::result_type data[U];
-	std::random_device rd;
-	std::generate(std::begin(data), std::end(data), std::ref(rd));
-	std::seed_seq seeds(std::begin(data), std::end(data));
-	T engine(seeds);
-	return engine;
+template<typename T = std::mt19937, std::size_t U = T::state_size>
+auto GetEngine() -> typename std::enable_if<!!U, T>::type {
+    typename T::result_type data[U];
+    std::random_device rd;
+    std::generate(std::begin(data), std::end(data), std::ref(rd));
+    std::seed_seq seeds(std::begin(data), std::end(data));
+    T engine(seeds);
+    return engine;
 }
 
-void K13::question4()
-{
-	auto engine = GetEngine();
-	std::uniform_int_distribution<> generator(0, 100);
-	auto data = std::array<int, 10>();
-	std::generate(std::begin(data), std::end(data), [&]()
-		{
-			return generator(engine);
-		});
+void K13::question4() {
+    auto engine = GetEngine();
+    std::uniform_int_distribution<> generator(0, 100);
+    auto data = std::array<int, 10>();
+    std::generate(std::begin(data), std::end(data), [&]() {
+        return generator(engine);
+    });
 
-	auto iter = data.begin();
-	int sum = 0;
-	std::cout << "ƒf[ƒ^F";
-	while (iter != data.end())
-	{
-		std::cout << *iter << "\t";
-		sum += *iter;
-		++iter;
-	}
+    auto iter = data.begin();
+    auto sum = 0;
+    std::cout << "ãƒ‡ãƒ¼ã‚¿ï¼š";
+    while (iter != data.end()) {
+        std::cout << *iter << "\t";
+        sum += *iter;
+        ++iter;
+    }
 
-	std::cout << "\n‡Œv‚Í" << sum << "‚Å‚·B";
+    std::cout << "\nåˆè¨ˆã¯" << sum << "ã§ã™ã€‚";
 }

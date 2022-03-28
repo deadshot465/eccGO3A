@@ -7,119 +7,104 @@ using namespace std;
 
 constexpr int MAX_PEOPLE = 3;
 
-void K11::question1()
-{
-	int age = 0;
-	float average = 0;
+void K11::question1() {
+    auto age = 0;
+    auto average = 0.0f;
 
-	for (int i = 0; i < MAX_PEOPLE; ++i)
-	{
-		cout << i + 1 << "l–Ú‚Ì”N—î‚ð“ü—Í‚µ‚Ä‰º‚³‚¢F";
-		cin >> age;
-		average += static_cast<float>(age);
-	}
+    for (int i = 0; i < MAX_PEOPLE; ++i) {
+        cout << i + 1 << "äººç›®ã®å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ï¼š";
+        cin >> age;
+        average += static_cast<float>(age);
+    }
 
-	cout.setf(ios_base::fixed, ios_base::floatfield);
-	cout.precision(1);
-	cout << MAX_PEOPLE << "l‚Ì•½‹Ï”N—î‚Í" << average / static_cast<float>(MAX_PEOPLE) << "‚Å‚·B";
+    cout.setf(ios_base::fixed, ios_base::floatfield);
+    cout.precision(1);
+    cout << MAX_PEOPLE << "äººã®å¹³å‡å¹´é½¢ã¯" << average / static_cast<float>(MAX_PEOPLE) << "ã§ã™ã€‚";
 }
 
-void K11::question2()
-{
-	cout << "1‚Â–Ú‚Ì•¶Žš—ñ‚ð“ü—Í‚µ‚Ä‰º‚³‚¢B„";
-	string str1;
-	cin.clear();
-	cin.ignore();
-	getline(cin, str1, '\n');
-	
+void K11::question2() {
+    cout << "1ã¤ç›®ã®æ–‡å­—åˆ—ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚ï¼ž";
+    string str1;
+    cin.clear();
+    cin.ignore();
+    getline(cin, str1, '\n');
 
-	cout << "2‚Â–Ú‚Ì•¶Žš—ñ‚ð“ü—Í‚µ‚Ä‰º‚³‚¢B„";
-	string str2;
-	cin.clear();
-	getline(cin, str2, '\n');
-	
-	
-	str1 += str2;
-	cout << str1 << "‚Ì•¶Žš”‚Í" << str1.length() << "‚Å‚·B";
+
+    cout << "2ã¤ç›®ã®æ–‡å­—åˆ—ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚ï¼ž";
+    string str2;
+    cin.clear();
+    getline(cin, str2, '\n');
+
+
+    str1 += str2;
+    cout << str1 << "ã®æ–‡å­—æ•°ã¯" << str1.length() << "ã§ã™ã€‚";
 }
 
-void K11::question3()
-{
-	char chr;
-	cout << "•¶Žš‚ð“ü—Í‚µ‚Ä‰º‚³‚¢B„";
-	cin >> chr;
-	bool applied = false;
+void K11::question3() {
+    char chr;
+    cout << "æ–‡å­—ã‚’å…¥åŠ›ã—ã¦ä¸‹ã•ã„ã€‚ï¼ž";
+    cin >> chr;
+    auto applied = false;
 
-	if (isdigit(chr))
-	{
-		cout << "‚±‚Ì•¶Žš‚Í”Žš‚Å‚·B\n";
-		applied = true;
-	}
+    if (isdigit(chr)) {
+        cout << "ã“ã®æ–‡å­—ã¯æ•°å­—ã§ã™ã€‚\n";
+        applied = true;
+    }
 
-	if (isupper(chr))
-	{
-		cout << "‚±‚Ì•¶Žš‚Í‰p‘å•¶Žš‚Å‚·B\n";
-		applied = true;
-	}
+    if (isupper(chr)) {
+        cout << "ã“ã®æ–‡å­—ã¯è‹±å¤§æ–‡å­—ã§ã™ã€‚\n";
+        applied = true;
+    }
 
-	if (islower(chr))
-	{
-		cout << "‚±‚Ì•¶Žš‚Í‰p¬•¶Žš‚Å‚·B\n";
-		applied = true;
-	}
+    if (islower(chr)) {
+        cout << "ã“ã®æ–‡å­—ã¯è‹±å°æ–‡å­—ã§ã™ã€‚\n";
+        applied = true;
+    }
 
 
-	if (isxdigit(chr))
-	{
-		cout << "‚±‚Ì•¶Žš‚Í16i”‚Æ‚µ‚ÄŽg‚¦‚é•¶Žš‚Å‚·B\n";
-		applied = true;
-	}
+    if (isxdigit(chr)) {
+        cout << "ã“ã®æ–‡å­—ã¯16é€²æ•°ã¨ã—ã¦ä½¿ãˆã‚‹æ–‡å­—ã§ã™ã€‚\n";
+        applied = true;
+    }
 
 
-	if (ispunct(chr))
-	{
-		cout << "‚±‚Ì•¶Žš‚Í‹æØ‚è•¶Žš‚Å‚·B\n";
-		applied = true;
-	}
+    if (ispunct(chr)) {
+        cout << "ã“ã®æ–‡å­—ã¯åŒºåˆ‡ã‚Šæ–‡å­—ã§ã™ã€‚\n";
+        applied = true;
+    }
 
-	if (!applied)
-	{
-		cout << "‚±‚Ì•¶Žš‚Í‚æ‚­‚í‚©‚ç‚È‚¢•¶Žš‚Å‚·B";
-	}
+    if (!applied) {
+        cout << "ã“ã®æ–‡å­—ã¯ã‚ˆãã‚ã‹ã‚‰ãªã„æ–‡å­—ã§ã™ã€‚";
+    }
 }
 
-void K11::question4()
-{
-	string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+void K11::question4() {
+    string alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-	string inputString = "I am a STUDENT. I am good at GAME PROGRAMMING.";
+    string inputString = "I am a STUDENT. I am good at GAME PROGRAMMING.";
 
-	cout << "•¶Žš—ñF" << inputString << "\n\n";
+    cout << "æ–‡å­—åˆ—ï¼š" << inputString << "\n\n";
 
-	cout << "•¶Žš•p“x\n";
+    cout << "æ–‡å­—é »åº¦\n";
 
-	int count = 0;
-	int _count = 0;
+    auto count = 0;
+    auto _count = 0;
 
-	int i = 0;
+    auto i = 0;
 
-	for (char alphabet : alphabets)
-	{
-		for (char j : inputString)
-		{
-			if (alphabet == std::toupper(j))
-			{
-				++_count;
-			}
-		}
+    for (char alphabet: alphabets) {
+        for (char j: inputString) {
+            if (alphabet == std::toupper(j)) {
+                ++_count;
+            }
+        }
 
-		cout << alphabet << ": " << _count << "\t";
-		_count = 0;
-		++count;
+        cout << alphabet << ": " << _count << "\t";
+        _count = 0;
+        ++count;
 
-		if (count % 4 == 0)
-		{
-			printf("\n");
-		}
-	}
+        if (count % 4 == 0) {
+            printf("\n");
+        }
+    }
 }

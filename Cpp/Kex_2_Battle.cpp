@@ -4,116 +4,101 @@
 
 using std::cout;
 
-bool Kex_2_Battle::CheckHitOrMiss(int hit)
-{
-	auto engine = Kex_2::GetEngine<>();
-	std::uniform_int_distribution<> generator(0, 100);
-	int value = generator(engine);
-	return value <= hit - 1;
+bool Kex_2_Battle::CheckHitOrMiss(int hit) {
+    auto engine = Kex_2::GetEngine<>();
+    std::uniform_int_distribution<> generator(0, 100);
+    int value = generator(engine);
+    return value <= hit - 1;
 }
 
-int Kex_2_Battle::GetAttackPower()
-{
-	auto engine = Kex_2::GetEngine<>();
-	std::uniform_int_distribution<> generator(0, 40);
-	
-	return generator(engine) + 60;
+int Kex_2_Battle::GetAttackPower() {
+    auto engine = Kex_2::GetEngine<>();
+    std::uniform_int_distribution<> generator(0, 40);
+
+    return generator(engine) + 60;
 }
 
-int Kex_2_Battle::GetSkillPower()
-{
-	auto engine = Kex_2::GetEngine<>();
-	std::uniform_int_distribution<> generator(0, 100);
+int Kex_2_Battle::GetSkillPower() {
+    auto engine = Kex_2::GetEngine<>();
+    std::uniform_int_distribution<> generator(0, 100);
 
-	return generator(engine) + 30;
+    return generator(engine) + 30;
 }
 
-int Kex_2_Battle::GetMagicPower()
-{
-	auto engine = Kex_2::GetEngine<>();
-	std::uniform_int_distribution<> generator(0, 180);
+int Kex_2_Battle::GetMagicPower() {
+    auto engine = Kex_2::GetEngine<>();
+    std::uniform_int_distribution<> generator(0, 180);
 
-	return generator(engine) + 20;
+    return generator(engine) + 20;
 }
 
-bool Kex_2_Battle::AttackEnemy(PlayerEx& player, Enemy& enemy)
-{
-	cout << enemy.Name << "Lv." << enemy.Lv + 1 << "‚ªŒ»‚ê‚½I\n";
+bool Kex_2_Battle::AttackEnemy(PlayerEx &player, Enemy &enemy) {
+    cout << enemy.Name << "Lv." << enemy.Lv + 1 << "ï¿½ï¿½ï¿½ï¿½ï¿½ê‚½ï¿½I\n";
 
-	while (enemy.Hp > 0)
-	{
-		cout << enemy.Name << " Žc‚èHPF" << enemy.Hp << "\n";
-		cout << "•Ší‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢i‚PDUŒ‚@‚QD“Á‹Z@‚RD–‚–@j„";
-		int choice = 0;
-		std::cin >> choice;
-		int damage = 0;
-		bool is_hit = false;
-		int (*get_powers[])() = { GetAttackPower, GetSkillPower, GetMagicPower };
-		int get_hits[] = { ATTACK_HIT, SKILL_HIT, MAGIC_HIT };
-		Attack attacks[3] = {};
-		for (int i = 0; i < 3; ++i)
-		{
-			attacks[i].Damage = get_powers[i]();
-			attacks[i].Hit = get_hits[i];
-		}
+    while (enemy.Hp > 0) {
+        cout << enemy.Name << " æ®‹ã‚ŠHPï¼š" << enemy.Hp << "\n";
+        cout << "æ­¦å™¨ã‚’é¸æŠžã—ã¦ãã ã•ã„ï¼ˆï¼‘ï¼Žæ”»æ’ƒã€€ï¼’ï¼Žç‰¹æŠ€ã€€ï¼“ï¼Žé­”æ³•ï¼‰ï¼ž";
+        auto choice = 0;
+        std::cin >> choice;
+        auto damage = 0;
+        auto is_hit = false;
+        int (*get_powers[])() = {GetAttackPower, GetSkillPower, GetMagicPower};
+        int get_hits[] = {ATTACK_HIT, SKILL_HIT, MAGIC_HIT};
+        Attack attacks[3] = {};
+        for (int i = 0; i < 3; ++i) {
+            attacks[i].Damage = get_powers[i]();
+            attacks[i].Hit = get_hits[i];
+        }
 
-		switch (choice)
-		{
-		case 1:
-			damage = attacks[0].Damage;
-			is_hit = CheckHitOrMiss(attacks[0].Hit - enemy.Flee);
-			break;
-		case 2:
-			damage = attacks[1].Damage;
-			is_hit = CheckHitOrMiss(attacks[1].Hit - enemy.Flee);
-			break;
-		case 3:
-			damage = attacks[2].Damage;
-			is_hit = CheckHitOrMiss(attacks[2].Hit - enemy.Flee);
-			break;
-		}
+        switch (choice) {
+            case 1:
+                damage = attacks[0].Damage;
+                is_hit = CheckHitOrMiss(attacks[0].Hit - enemy.Flee);
+                break;
+            case 2:
+                damage = attacks[1].Damage;
+                is_hit = CheckHitOrMiss(attacks[1].Hit - enemy.Flee);
+                break;
+            case 3:
+                damage = attacks[2].Damage;
+                is_hit = CheckHitOrMiss(attacks[2].Hit - enemy.Flee);
+                break;
+        }
 
-		if (is_hit)
-		{
-			damage -= enemy.Defense;
-			if (damage <= 0)
-				damage = 0;
-			cout << damage << "‚Ìƒ_ƒ[ƒWI\n";
-			enemy.Hp -= damage;
-		}
-		else
-		{
-			cout << "UŒ‚‚ðŠO‚µ‚½I\n";
-		}
+        if (is_hit) {
+            damage -= enemy.Defense;
+            if (damage <= 0)
+                damage = 0;
+            cout << damage << "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼\n";
+            enemy.Hp -= damage;
+        } else {
+            cout << "æ”»æ’ƒã‚’å¤–ã—ãŸï¼\n";
+        }
 
-		cout << enemy.Name << "‚ÌUŒ‚I\n";
-		is_hit = CheckHitOrMiss(enemy.Hit);
-		if (is_hit)
-		{
-			int injury = enemy.Attack - player.Defense;
-			if (injury <= 0)
-				injury = 0;
-			cout << injury << "‚Ìƒ_ƒ[ƒWI\n";
-			player.Hp -= injury;
-			if (player.Hp <= 0)
-			{
-				player.Hp = 0;
-				cout << "‚ ‚È‚½‚Í" << enemy.Name << "‚É•‰‚¯‚Ü‚µ‚½IƒQ[ƒ€ƒI[ƒo[I\n";
-				return false;
-			}
-		}
-		else
-		{
-			cout << "UŒ‚‚ðŠO‚µ‚½I\n";
-		}
+        cout << enemy.Name << "ã®æ”»æ’ƒï¼\n";
+        is_hit = CheckHitOrMiss(enemy.Hit);
+        if (is_hit) {
+            int injury = enemy.Attack - player.Defense;
+            if (injury <= 0)
+                injury = 0;
+            cout << injury << "ã®ãƒ€ãƒ¡ãƒ¼ã‚¸ï¼\n";
+            player.Hp -= injury;
+            if (player.Hp <= 0) {
+                player.Hp = 0;
+                cout << "ã‚ãªãŸã¯" << enemy.Name << "ã«è² ã‘ã¾ã—ãŸï¼ã‚²ãƒ¼ãƒ ã‚ªãƒ¼ãƒãƒ¼ï¼\n";
+                return false;
+            }
+        } else {
+            cout << "æ”»æ’ƒã‚’å¤–ã—ãŸï¼\n";
+        }
 
-		cout << "ƒvƒŒƒCƒ„[Žc‚èHPF" << player.Hp << "\n";
+        cout << "ãƒ—ãƒ¬ã‚¤ãƒ¤ãƒ¼æ®‹ã‚ŠHPï¼š" << player.Hp << "\n";
 
-		if (enemy.Hp <= 0)
-			enemy.Hp = 0;
-		if (enemy.Hp == 0)
-			cout << enemy.Name << "Lv." << enemy.Lv + 1 << "‚ð“|‚µ‚½I\n";
-	}
+        if (enemy.Hp <= 0)
+            enemy.Hp = 0;
+        if (enemy.Hp == 0)
+            cout << enemy.Name << "Lv." << enemy.Lv + 1 << "ã‚’å€’ã—ãŸï¼\n";
+    }
 
-	return true;
+    return true;
 }

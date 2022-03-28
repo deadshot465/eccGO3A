@@ -1,4 +1,5 @@
 #include "Kex_2_Enemy.h"
+#include <random>
 
 Enemy Kex_2_Enemy::CreateEnemy(EnemyType type)
 {
@@ -16,11 +17,11 @@ Enemy Kex_2_Enemy::CreateEnemy(EnemyType type)
 		enemy.Attack = GOLEM_ATTACK(enemy.Lv);
 		enemy.Hit = GOLEM_HIT;
 		enemy.Flee = GOLEM_FLEE;
-		enemy.Name = "ゴーレム";
+		enemy.Name = "繧ｴ繝ｼ繝ｬ繝";
 		break;
 	case EnemyType::GOBLIN:
 	{
-		auto param = std::uniform_int<int>::param_type(0, MAX_GOBLIN_LEVEL - 1);
+		auto param = std::uniform_int_distribution<int>::param_type(0, MAX_GOBLIN_LEVEL - 1);
 		generator.param(param);
 		enemy.Lv = generator(engine);
 		enemy.Hp = enemy.Lv * 30 + 75;
@@ -28,12 +29,12 @@ Enemy Kex_2_Enemy::CreateEnemy(EnemyType type)
 		enemy.Attack = enemy.Lv * 5 + 20;
 		enemy.Hit = GOBLIN_HIT;
 		enemy.Flee = GOBLIN_FLEE;
-		enemy.Name = "ゴブリン";
+		enemy.Name = "繧ｴ繝悶Μ繝ｳ";
 		break;
 	}
 	case EnemyType::SLIME:
 	{
-		auto param = std::uniform_int<int>::param_type(0, MAX_SLIME_LEVEL - 1);
+		auto param = std::uniform_int_distribution<int>::param_type(0, MAX_SLIME_LEVEL - 1);
 		generator.param(param);
 		enemy.Lv = generator(engine);
 		enemy.Hp = enemy.Lv * 10 + 50;
@@ -41,7 +42,7 @@ Enemy Kex_2_Enemy::CreateEnemy(EnemyType type)
 		enemy.Attack = enemy.Lv * 2 + 10;
 		enemy.Hit = SLIME_HIT;
 		enemy.Flee = SLIME_FLEE;
-		enemy.Name = "スライム";
+		enemy.Name = "繧ｹ繝ｩ繧､繝";
 		break;
 	}
 	default:

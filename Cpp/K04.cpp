@@ -7,139 +7,110 @@
 
 using namespace std;
 
-K04::K04()
-{
+K04::K04() = default;
+
+
+K04::~K04() = default;
+
+void K04::question1() {
+    try {
+        cout << "å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼ž";
+        auto age = 0;
+        cin >> age;
+
+        if (age < 3 || age >= 70) {
+            cout << "å…¥å ´æ–™é‡‘ç„¡æ–™ã§ã™ã€‚\n";
+        } else {
+            cout << "é€šå¸¸æ–™é‡‘ã§ã™ã€‚\n";
+        }
+
+    }
+    catch (const std::exception &ex) {
+        cout << ex.what();
+    }
 }
 
+void K04::question2() {
+    try {
+        cout << "æ€§åˆ¥ã‚’é¸æŠžã—ã¦ãã ã•ã„ã€‚ï¼ˆï¼ï¼šç”·æ€§ã€€ï¼‘ï¼šå¥³æ€§ï¼‰ï¼ž";
+        auto gender = 0;
+        cin >> gender;
 
-K04::~K04()
-{
+        switch (gender) {
+            case 0:
+                cout << "ã‚ã‚‰ã€æ ¼å¥½è‰¯ã„ã§ã™ã­ã€‚\n";
+                break;
+            case 1:
+                cout << "ã‚ã‚‰ã€ãƒ¢ãƒ‡ãƒ«ã•ã‚“ã¿ãŸã„ã§ã™ã­ã€‚\n";
+                break;
+            default:
+                cout << "ãã‚“ãªé¸æŠžè‚¢ã¯ã‚ã‚Šã¾ã›ã‚“ã€‚\n";
+                break;
+        }
+
+    }
+    catch (const std::exception &ex) {
+        cout << ex.what();
+    }
 }
 
-void K04::question1()
-{
-	try
-	{
-		cout << "”N—î‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-		int age = 0;
-		cin >> age;
+void K04::question3() {
+    try {
+        cout << "å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼ž";
+        auto age = 0;
+        cin >> age;
 
-		if (age < 3 || age >= 70)
-		{
-			cout << "“üê—¿‹à–³—¿‚Å‚·B\n";
-		}
-		else
-		{
-			cout << "’Êí—¿‹à‚Å‚·B\n";
-		}
+        if (age < 3 || age >= 70) {
+            cout << "å…¥å ´æ–™é‡‘ç„¡æ–™ã§ã™ã€‚\n";
+        } else if (age >= 3 && age <= 15) {
+            cout << "å­ä¾›æ–™é‡‘ã§åŠé¡ã§ã™ã€‚\n";
+        } else if (age >= 60 && age < 70) {
+            cout << "ã‚·ãƒ‹ã‚¢å‰²å¼•ã§ä¸€å‰²å¼•ãã§ã™ã€‚\n";
+        } else {
+            cout << "é€šå¸¸æ–™é‡‘ã§ã™ã€‚\n";
+        }
 
-	}
-	catch (const std::exception& ex)
-	{
-		cout << ex.what();
-	}
+    }
+    catch (const std::exception &ex) {
+        cout << ex.what();
+    }
 }
 
-void K04::question2()
-{
-	try
-	{
-		cout << "«•Ê‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢Bi‚OF’j«@‚PF—«j„";
-		int gender = 0;
-		cin >> gender;
+void K04::question4() {
+    try {
+        cout << "ï¼Šï¼Šï¼ŠãŠã¿ãã˜ãƒ—ãƒ­ã‚°ãƒ©ãƒ ï¼Šï¼Šï¼Š\n";
+        cout << "ãŠã¿ãã˜ã‚’å¼•ãã¾ã™ã‹ã€€ï¼ˆã¯ã„ï¼šï¼‘ã€€ã„ã„ãˆï¼šï¼ï¼‰ï¼ž";
+        auto choice = 0;
+        cin >> choice;
 
-		switch (gender)
-		{
-		case 0:
-			cout << "‚ ‚çAŠiD—Ç‚¢‚Å‚·‚ËB\n";
-			break;
-		case 1:
-			cout << "‚ ‚çAƒ‚ƒfƒ‹‚³‚ñ‚Ý‚½‚¢‚Å‚·‚ËB\n";
-			break;
-		default:
-			cout << "‚»‚ñ‚È‘I‘ðŽˆ‚Í‚ ‚è‚Ü‚¹‚ñB\n";
-			break;
-		}
+        if (choice >= 1) {
+            mt19937 generator(static_cast<mt19937::result_type>(time(nullptr)));
+            uniform_int_distribution<> randNumGen(0, 4);
+            const auto oracle = randNumGen(generator);
 
-	}
-	catch (const std::exception & ex)
-	{
-		cout << ex.what();
-	}
-}
+            switch (oracle) {
+                case 0:
+                    cout << "å¤§å‰ã€€ã¨ã£ã¦ã‚‚ã„ã„ã“ã¨ãŒã‚ã‚Šãã†ï¼ï¼\n";
+                    break;
+                case 1:
+                    cout << "ä¸­å‰ã€€ãã£ã¨ã„ã„ã“ã¨ã‚ã‚‹ã‚“ã˜ã‚ƒãªã„ã‹ãª\n";
+                    break;
+                case 2:
+                    cout << "å°å‰ã€€å°‘ã—ãã‚‰ã„ã¯ã„ã„ã“ã¨ã‚ã‚‹ã‹ã‚‚ã­\n";
+                    break;
+                case 3:
+                    cout << "å‡¶ã€€ä»Šæ—¥ã¯ãŠã¨ãªã—ãã¦ãŠã„ãŸæ–¹ãŒã„ã„ã‹ã‚‚\n";
+                    break;
+                case 4:
+                    cout << "å¤§å‡¶ã€€ã“ã‚Œã˜ã‚ƒã‚„ã°ããªã„ï¼Ÿæ—©ãå®¶ã«å¸°ã£ãŸæ–¹ãŒã„ã„ã‹ã‚‚\n";
+                    break;
+                default:
+                    break;
+            }
+        }
 
-void K04::question3()
-{
-	try
-	{
-		cout << "”N—î‚ð“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-		int age = 0;
-		cin >> age;
-
-		if (age < 3 || age >= 70)
-		{
-			cout << "“üê—¿‹à–³—¿‚Å‚·B\n";
-		}
-		else if (age >= 3 && age <= 15)
-		{
-			cout << "Žq‹Ÿ—¿‹à‚Å”¼Šz‚Å‚·B\n";
-		}
-		else if (age >= 60 && age < 70)
-		{
-			cout << "ƒVƒjƒAŠ„ˆø‚ÅˆêŠ„ˆø‚«‚Å‚·B\n";
-		}
-		else
-		{
-			cout << "’Êí—¿‹à‚Å‚·B\n";
-		}
-
-	}
-	catch (const std::exception & ex)
-	{
-		cout << ex.what();
-	}
-}
-
-void K04::question4()
-{
-	try
-	{
-		cout << "–––‚¨‚Ý‚­‚¶ƒvƒƒOƒ‰ƒ€–––\n";
-		cout << "‚¨‚Ý‚­‚¶‚ðˆø‚«‚Ü‚·‚©@i‚Í‚¢F‚P@‚¢‚¢‚¦F‚Oj@„";
-		int choice = 0;
-		cin >> choice;
-
-		if (choice >= 1)
-		{
-			mt19937 generator(static_cast<mt19937::result_type>(time(nullptr)));
-			uniform_int_distribution<> randNumGen(0, 4);
-			int oracle = randNumGen(generator);
-
-			switch (oracle)
-			{
-			case 0:
-				cout << "‘å‹g@‚Æ‚Á‚Ä‚à‚¢‚¢‚±‚Æ‚ª‚ ‚è‚»‚¤II\n";
-				break;
-			case 1:
-				cout << "’†‹g@‚«‚Á‚Æ‚¢‚¢‚±‚Æ‚ ‚é‚ñ‚¶‚á‚È‚¢‚©‚È\n";
-				break;
-			case 2:
-				cout << "¬‹g@­‚µ‚®‚ç‚¢‚Í‚¢‚¢‚±‚Æ‚ ‚é‚©‚à‚Ë\n";
-				break;
-			case 3:
-				cout << "‹¥@¡“ú‚Í‚¨‚Æ‚È‚µ‚­‚Ä‚¨‚¢‚½•û‚ª‚¢‚¢‚©‚à\n";
-				break;
-			case 4:
-				cout << "‘å‹¥@‚±‚ê‚¶‚á‚â‚Î‚­‚È‚¢H‘‚­‰Æ‚É‹A‚Á‚½•û‚ª‚¢‚¢‚©‚à\n";
-				break;
-			default:
-				break;
-			}
-		}
-
-	}
-	catch (const std::exception & ex)
-	{
-		cout << ex.what();
-	}
+    }
+    catch (const std::exception &ex) {
+        cout << ex.what();
+    }
 }

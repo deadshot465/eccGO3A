@@ -6,132 +6,100 @@
 #include "K03.h"
 
 
+K03::K03() = default;
 
-K03::K03()
-{
+
+K03::~K03() = default;
+
+void K03::question1() {
+    try {
+        std::cout << "å¹´é½¢ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼";
+        auto age = 0;
+        std::cin >> age;
+
+        if (age < 20) {
+            std::cout << "æœªæˆå¹´ãªã®ã§è³¼å…¥ã§ãã¾ã›ã‚“ã€‚\n";
+        }
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 }
 
+void K03::question2() {
+    try {
+        std::cout << "èº«é•·ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼";
+        auto height = 0.0f;
+        std::cin >> height;
+        height /= 100.0f;
+        std::cout << "ä½“é‡ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚ï¼";
+        auto weight = 0.0f;
+        std::cin >> weight;
 
-K03::~K03()
-{
+        const auto standard = height * height * 22.0f;
+        std::cout << "ã‚ãªãŸã®æ¨™æº–ä½“é‡ã¯" << standard << "ã§ã™ã€‚\n";
+
+        if (weight > standard && (weight - standard) / standard * 100.0f > 14.0f) {
+            std::cout << "å¤ªã‚Šæ°—å‘³ã§ã™ã€‚\n";
+        } else if (weight < standard && (weight - standard) / standard * 100.0f < -14.0f) {
+            std::cout << "ç—©ã›æ°—å‘³ã§ã™ã€‚\n";
+        } else {
+            std::cout << "æ™®é€šã§ã™ã­ã€‚\n";
+        }
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
+
 }
 
-void K03::question1()
-{
-	try
-	{
-		std::cout << "”N—î‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-		int age = 0;
-		std::cin >> age;
-		
-		if (age < 20)
-		{
-			std::cout << "–¢¬”N‚È‚Ì‚Åw“ü‚Å‚«‚Ü‚¹‚ñB\n";
-		}
-	}
-	catch (const std::exception& ex)
-	{
-		std::cout << ex.what();
-	}
+void K03::question3() {
+    try {
+        std::mt19937 generator(static_cast<std::mt19937::result_type>(std::time(nullptr)));
+        std::uniform_int_distribution<> randNumGen(0, 99);
+
+        const auto randNum = randNumGen(generator);
+
+        std::cout << "ï¼ã‹ã‚‰ï¼™ï¼™ã®ç¯„å›²ã®æ•°å€¤ãŒæ±ºå®šã•ã‚Œã¾ã—ãŸã€‚\n";
+        std::cout << "æ±ºã‚ã‚‰ã‚ŒãŸæ•°å€¤ã‚’äºˆæƒ³ã—ã€ã“ã®æ•°å€¤ã‚ˆã‚Šã‚‚å¤§ããªå€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼";
+        auto guess = 0;
+        std::cin >> guess;
+
+        std::cout << "æ±ºã‚ã‚‰ã‚ŒãŸæ•°å€¤ã¯" << randNum << "ã§ã™ã€‚\n";
+        std::cout << ((guess > randNum) ? "æ­£è§£ã§ã™ã€‚\n" : "ä¸æ­£è§£ã§ã™ã€‚\n");
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 }
 
-void K03::question2()
-{
-	try
-	{
-		std::cout << "g’·‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-		float height = 0.0f;
-		std::cin >> height;
-		height /= 100.0f;
-		std::cout << "‘Ìd‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B„";
-		float weight = 0.0f;
-		std::cin >> weight;
-		
-		float standard = height * height * 22.0f;
-		std::cout << "‚ ‚È‚½‚Ì•W€‘Ìd‚Í" << standard << "‚Å‚·B\n";
+void K03::question4() {
+    try {
+        std::mt19937 generator(static_cast<std::mt19937::result_type>(std::time(nullptr)));
+        std::uniform_int_distribution<> randNumGen(0, 99);
 
-		if (weight > standard && (weight - standard) / standard * 100.0f > 14.0f)
-		{
-			std::cout << "‘¾‚è‹C–¡‚Å‚·B\n";
-		}
-		else if (weight < standard && (weight - standard) / standard * 100.0f < -14.0f)
-		{
-			std::cout << "‘‰‚¹‹C–¡‚Å‚·B\n";
-		}
-		else
-		{
-			std::cout << "•’Ê‚Å‚·‚ËB\n";
-		}
-	}
-	catch (const std::exception& ex)
-	{
-		std::cout << ex.what();
-	}
-	
-}
+        const auto randNum = randNumGen(generator);
 
-void K03::question3()
-{
-	try
-	{
-		std::mt19937 generator(static_cast<std::mt19937::result_type>(std::time(nullptr)));
-		std::uniform_int_distribution<> randNumGen(0, 99);
+        std::cout << "ï¼ã‹ã‚‰ï¼™ï¼™ã®ç¯„å›²ã®æ•°å€¤ãŒæ±ºå®šã•ã‚Œã¾ã—ãŸã€‚\n";
+        std::cout << "æ±ºã‚ã‚‰ã‚ŒãŸæ•°å€¤ã‚’äºˆæƒ³ã—ã€ã“ã®æ•°å€¤ã‚ˆã‚Šã‚‚å¤§ããªå€¤ã‚’å…¥åŠ›ã—ã¦ãã ã•ã„ï¼";
+        auto guess = 0;
+        std::cin >> guess;
 
-		int randNum = randNumGen(generator);
+        std::cout << "æ±ºã‚ã‚‰ã‚ŒãŸæ•°å€¤ã¯" << randNum << "ã§ã™ã€‚\n";
 
-		std::cout << "‚O‚©‚ç‚X‚X‚Ì”ÍˆÍ‚Ì”’l‚ªŒˆ’è‚³‚ê‚Ü‚µ‚½B\n";
-		std::cout << "Œˆ‚ß‚ç‚ê‚½”’l‚ğ—\‘z‚µA‚±‚Ì”’l‚æ‚è‚à‘å‚«‚È’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢„";
-		int guess = 0;
-		std::cin >> guess;
-		
-		std::cout << "Œˆ‚ß‚ç‚ê‚½”’l‚Í" << randNum << "‚Å‚·B\n";
-		std::cout << ((guess > randNum) ? "³‰ğ‚Å‚·B\n" : "•s³‰ğ‚Å‚·B\n");
-	}
-	catch (const std::exception & ex)
-	{
-		std::cout << ex.what();
-	}
-}
-
-void K03::question4()
-{
-	try
-	{
-		std::mt19937 generator(static_cast<std::mt19937::result_type>(std::time(nullptr)));
-		std::uniform_int_distribution<> randNumGen(0, 99);
-
-		int randNum = randNumGen(generator);
-
-		std::cout << "‚O‚©‚ç‚X‚X‚Ì”ÍˆÍ‚Ì”’l‚ªŒˆ’è‚³‚ê‚Ü‚µ‚½B\n";
-		std::cout << "Œˆ‚ß‚ç‚ê‚½”’l‚ğ—\‘z‚µA‚±‚Ì”’l‚æ‚è‚à‘å‚«‚È’l‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢„";
-		int guess = 0;
-		std::cin >> guess;
-
-		std::cout << "Œˆ‚ß‚ç‚ê‚½”’l‚Í" << randNum << "‚Å‚·B\n";
-		
-		if (guess < 0 || guess > 100)
-		{
-			std::cout << "”½‘¥‚Å‚·I";
-		}
-		else if (guess > randNum && guess - randNum <= 10)
-		{
-			std::cout << "‘å³‰ğ‚Å‚·I";
-		}
-		else if (guess < randNum && guess - randNum >= -10)
-		{
-			std::cout << "É‚µ‚¢I";
-		}
-		else if (guess == randNum)
-		{
-			std::cout << "‚¨Œ©–I";
-		}
-		else
-		{
-			std::cout << ((guess > randNum) ? "³‰ğ‚Å‚·B\n" : "•s³‰ğ‚Å‚·B\n");
-		}
-	}
-	catch (const std::exception & ex)
-	{
-		std::cout << ex.what();
-	}
+        if (guess < 0 || guess > 100) {
+            std::cout << "åå‰‡ã§ã™ï¼";
+        } else if (guess > randNum && guess - randNum <= 10) {
+            std::cout << "å¤§æ­£è§£ã§ã™ï¼";
+        } else if (guess < randNum && guess - randNum >= -10) {
+            std::cout << "æƒœã—ã„ï¼";
+        } else if (guess == randNum) {
+            std::cout << "ãŠè¦‹äº‹ï¼";
+        } else {
+            std::cout << ((guess > randNum) ? "æ­£è§£ã§ã™ã€‚\n" : "ä¸æ­£è§£ã§ã™ã€‚\n");
+        }
+    }
+    catch (const std::exception &ex) {
+        std::cout << ex.what();
+    }
 }
