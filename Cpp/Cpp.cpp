@@ -19,6 +19,7 @@
 #include "K14.h"
 #include "Kex.h"
 #include "Kex_2.h"
+#include "Musicians/BandSupervisor.h"
 //#include "FileControl.h"
 //#include "Sort.h"
 
@@ -87,31 +88,36 @@ int main()
 	std::cout << "100) Kex\t";
 	std::cout << "101) Kex_2\n";
 	std::cout << "102) Sort\n";
+    std::cout << "103) Band Supervisor\n";
 	std::cin >> choice;
 
-	if (choice == 100)
-	{
-		Kex kex;
-		kex.Execute();
-		return 0;
-	}
-	else if (choice == 101)
-	{
-		Kex_2 kex_2;
-		kex_2.Execute();
-		return 0;
-	}
-	else if (choice == 102)
-	{
-		//Sort sort;
-		//sort.Execute();
-		return 0;
-	}
-
-	showSelections(choice);
-	int choice2 = 0;
-	std::cin >> choice2;
-	executables[choice - 1]->execute(choice2);
+    switch (choice) {
+        case 100:
+        {
+            auto kex = Kex{};
+            kex.Execute();
+            break;
+        }
+        case 101:
+        {
+            auto kex_2 = Kex_2{};
+            kex_2.Execute();
+            break;
+        }
+        case 103:
+        {
+            BandSupervisor::start_band(3);
+            break;
+        }
+        default:
+        {
+            showSelections(choice);
+            auto choice_2 = 0;
+            std::cin >> choice_2;
+            executables[choice - 1]->execute(choice_2);
+            break;
+        }
+    }
 
 	return 0;
 }

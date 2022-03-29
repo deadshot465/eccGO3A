@@ -14,4 +14,4 @@ add_executable(cpp Cpp.cpp
         K11.h K11.cpp K12.h K12.cpp K13.h K13.cpp
         K14.h K14.cpp Kex.h Kex.cpp Kex_1sub.h Kex_1sub.cpp
         Kex_2.h Kex_2.cpp Kex_2_Battle.h Kex_2_Battle.cpp
-        Kex_2_Enemy.h Kex_2_Enemy.cpp)
+        Kex_2_Enemy.h Kex_2_Enemy.cpp Musicians/Musician.cpp Musicians/Musician.h Musicians/SkillLevel.h Musicians/BandSupervisor.cpp Musicians/BandSupervisor.h)
